@@ -1,4 +1,4 @@
-baseurl      = "https://www.david-burgstaller.de/"
+baseurl      = "https://david-burgstaller.de/"
 title        = "David Burgstaller"
 languageCode = "en-us"
 theme        = "hello-friend-ng"
