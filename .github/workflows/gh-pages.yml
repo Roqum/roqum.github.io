@@ -1,0 +1,30 @@
+name: Deploy to GitHub Pages
+
+# Trigger the workflow on push to the 'master' or 'main' branch
+on:
+  push:
+    branches:
+      - master  # or 'main' if your default branch is 'main'
+
+# Define the jobs
+jobs:
+  deploy:
+    runs-on: ubuntu-latest  # The OS for running the job
+
+    steps:
+    - name: Checkout code  # Step 1: Checkout the repository code
+      uses: actions/checkout@v2
+
+    - name: Setup Hugo  # Step 2: Setup Hugo
+      uses: peaceiris/actions-hugo@v2
+      with:
+        hugo-version: 'latest'
+
+    - name: Build the site  # Step 3: Build the Hugo site
+      run: hugo --minify
+
+    - name: Deploy to GitHub Pages  # Step 4: Deploy to GitHub Pages
+      uses: peaceiris/actions-gh-pages@v3
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}  # GitHub token is automatically provided
+        publish_dir: ./public  # The directory containing the built site
