@@ -4,9 +4,9 @@
         <h1 class="header-title center">{{ .Title }}</h1>
     </header>
     <main class="page-content" aria-label="Content">
-        {{ range .Pages.GroupByDate "2006" }}
-        {{ $year := .Key }}
-        <h2 class="post-year">{{ $year }}</h2>
+        {{ range .Pages.GroupByParam "topic" }}
+        {{ $topic := .Key }}
+        <h2 class="post-year">{{ $topic }}</h2>
 
         {{/* create a list of posts for each month, with month as heading */}}
 
@@ -16,7 +16,7 @@
 
         {{ end }} {{/* end range .Pages */}}
 
-        {{ end }} {{/* end range .Pages.GroupByDate "2006" */}}
+        {{ end }} {{/* end range .Pages.GroupByDate "Default" */}}
 
     </main>
 </div>
