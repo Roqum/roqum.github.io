@@ -43,8 +43,7 @@ yarn.lock
 # GitHub Pages branch (optional)
 gh-pages
 
-# Hugo Themes (optional, if using git submodules for themes)
-themes/*
+
 
 # Build artifacts and caches
 *.bak
