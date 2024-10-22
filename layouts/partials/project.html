@@ -1,0 +1,20 @@
+<article class="project-item">
+    <div class="project-item-header">
+        <h4 class="post-item-title">
+            <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+        </h4>
+    
+        {{/* format date string to create an ISO 8601 string */}}
+        {{ $ISO_date := "2006-01-02T15:04:05Z0700" }}
+        {{ $configDateFormat := .Site.Params.dateFormat | default "2 Jan 2006" }}
+        
+        <time class="project-item-meta" datetime="{{ dateFormat $ISO_date .Date }}">
+            {{ time.Format $configDateFormat .Date }}
+            {{/* OLD FORMAT: .Date.Format $configDateFormat */}}
+        </time>
+    </div>
+    <div class="project-item-preview">
+        Test
+    </div>
+</article>
+
