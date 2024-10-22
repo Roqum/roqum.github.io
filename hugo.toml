@@ -1,83 +1,93 @@
-baseurl      = "https://david-burgstaller.de/"
+# baseurl      = "https://david-burgstaller.de/"
+baseurl      = ""
 title        = "David Burgstaller"
-languageCode = "en-us"
-theme        = "hello-friend-ng"
+theme        = "hugo-blog-awesome"
 paginate     = 10
 
-[params]
-  dateform        = "Jan 2, 2006"
-  dateformShort   = "Jan 2"
-  dateformNum     = "2006-01-02"
-  dateformNumTime = "2006-01-02 15:04"
 
-  # Subtitle for home
-  homeSubtitle = "David Burgstaller"
+# This is what goes in <html lang="">
+languageCode = 'en-us'
 
-  # Set disableReadOtherPosts to true in order to hide the links to other posts.
-  disableReadOtherPosts = false
+# This defines how dates are formatted
+defaultContentLanguage = "en-gb"
 
-  # Enable sharing buttons, if you like
-  enableSharingButtons = true
+
+############################## English language ################################
+[Languages.en-gb]
+  languageName = "English"
+  languageCode = "en-gb"
+  contentDir = "content/en"
+  weight = 1
+
+  [Languages.en-gb.menu]
+  [[Languages.en-gb.menu.main]]
+    pageRef="/"
+    name = 'Home'
+    url = '/'
+    weight = 10
+  [[Languages.en-gb.menu.main]]
+    pageRef="posts"
+    name = 'Devlog'
+    url = '/posts/'
+    weight = 20
+  [[Languages.en-gb.menu.main]]
+    pageRef="about"
+    name = 'About'
+    url = '/about/'
+    weight = 30
+    [[Languages.en-gb.menu.main]]
+    pageRef="documentation"
+    name = 'Documentation'
+    url = '/documentation/'
+    weight = 40
+    [[Languages.en-gb.menu.main]]
+    pageRef="projects"
+    name = 'Projects'
+    url = '/projects/'
+    weight = 50
+
+
+[Languages.en-gb.params]
+  sitename = "David Burgstaller"
+  defaultColor = "dark" 
+  description = "Minimal Hugo blog theme with light and dark mode support"
+  mainSections = ['posts']
+  toc = true # set to false to disable table of contents 'globally'
+  tocOpen = false # set to true to open table of contents by default
+  goToTop = true # set to false to disable 'go to top' button
+  dateFormat = "" # date format used to show dates on various pages. If nothing is specified, then "2 Jan 2006" format is used.
+  rssFeedDescription = "summary" # available options: 1) summary 2) full
+  # summary - includes a short summary of the blog post in the RSS feed. Generated using Hugo .Summary .
+  # full - includes full blog post in the RSS feed. Generated using Hugo .Content .
+  # By default (or if nothing is specified), summary is used.
+
+[Languages.en-gb.params.author]
+  #avatar = "avatar.jpg" # put the file in assets folder; also ensure that image has same height and width
+  # Note: image is not rendered if the resource(avatar image) is not found. No error is displayed.
+  intro = "David Burgstaller"
+  name = "David Burgstaller"
+  description = "Game Developer \n Frankfurt am Main \n Germany"
+
+# Allow to override webmanifest options
+[Languages.en-gb.params.webmanifest]
+  name = "sitename" # will use "params.sitename" or "title" by default
+  short_name = "sitename" # same as name
+  start_url = "/" # will use homepage url by default
+  theme_color = "#434648" # default is "#434648" (base color of text). Also will override html `<meta name="theme-color" />`
+  background_color = "#fff" # by default depend on "params.defaultColor" for "light" or "auto" will be set to "#fff" for dark will be "#131418" (color of dark mode background)
+  display = "standalone"
+
+ [[params.socialIcons]]
+  name = "email"
+  url = "david.burgstaller@yahoo.de"
   
-  # Show a global language switcher in the navigation bar
-  enableGlobalLanguageMenu = true
+  [[params.socialIcons]]
+  name = "github"
+  url = "https://github.com/Roqum"
 
-  # Metadata mostly used in document's head
-  description = "My new homepage or blog"
-  keywords = "homepage, blog"
-  images = [""]
+  [[params.socialIcons]]
+  name = "linkedin"
+  url = "https://www.linkedin.com/in/david-burgstaller/"
 
-[taxonomies]
-    category = "blog"
-    tag      = "tags"
-    series   = "series"
+ 
 
-[languages]
-  [languages.en]
-    title = "David Burgstaller"
-    keywords = ""
-    copyright = '<a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">CC BY-NC 4.0</a>'
-    readOtherPosts = "Read other posts"
-
-  [languages.en.params]
-    subtitle  = "A simple theme for Hugo"
-
-    [languages.en.params.logo]
-      logoText = "hello friend ng"
-      logoHomeLink = "/"
-    # or
-    #
-    # path = "/img/your-example-logo.svg"
-    # alt = "Your example logo alt text"
-
-  # And you can even create generic menu
-[menu]
-  [[menu.main]]
-    identifier = "about"
-    name = "About"
-    url = "/about/"
-    weight = 1
-
-  [[menu.main]]
-    identifier = "projects"
-    name = "Projects"
-    url = "/projects/"
-    weight = 2
-
-  [[menu.main]]
-    identifier = "blog"
-    name = "Blog"
-    url = "/blog/"
-    weight = 3
-
-  [[menu.main]]
-    identifier = "wiki"
-    name = "Wiki"
-    url = "/wiki/"
-    weight = 4
-
-  [[menu.main]]
-    identifier = "contact"
-    name = "Contact"
-    url = "/contact/"
-    weight = 5
