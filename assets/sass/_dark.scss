@@ -217,7 +217,7 @@
     }
 
     .project-item-date {
-      color: $dark-white;
+      color: $dark-text-base-color;
     }
 
     .project-item-title {
@@ -292,6 +292,14 @@
         border-color: $dark-light;
       }
     }
+  }
+  .project-item-tag {
+    cursor: not-allowed;
+    pointer-events: none;
+    background-color: $dark-inline-code-bg;
+    border-style: none;
+    border-radius: 3px;
+    color: $dark-text-base-color;
   }
 
   // Footer

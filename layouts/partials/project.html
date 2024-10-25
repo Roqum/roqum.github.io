@@ -1,4 +1,5 @@
-<article class="project-item">
+
+<article class="project-item"  onclick="location.href='{{ .RelPermalink }}'">
     <div class="project-item-image-container">
         {{ $imagePath := printf "/%s/%s.jpg" .Section .File.BaseFileName }}
         {{ $image := resources.Get $imagePath }}
@@ -12,13 +13,13 @@
     </div>
     <div class="project-item-content">
         <h4 class="project-item-title">
-            <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+            <a>{{ .Title }}</a>
             <span>
                 {{/* format date string to create an ISO 8601 string */}}
                 {{ $ISO_date := "2006-01-02T15:04:05Z0700" }}
                 {{ $configDateFormat := .Site.Params.dateFormat | default "2 Jan 2006" }}
                 
-                <time class="project-item-meta" datetime="{{ dateFormat $ISO_date .Date }}">
+                <time class="project-item-date" datetime="{{ dateFormat $ISO_date .Date }}">
                     {{ time.Format $configDateFormat .Date }}
                     {{/* OLD FORMAT: .Date.Format $configDateFormat */}}
                 </time>
@@ -42,4 +43,3 @@
     </div>
 
 </article>
-

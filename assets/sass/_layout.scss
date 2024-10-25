@@ -56,7 +56,7 @@
 
   .post-item-date {
     min-width: 96px;
-    color: $black;
+    color: $text-base-color;
 
     @include media-query($on-mobile) {
       font-size: 16px;
@@ -98,8 +98,10 @@
   display: flex;
   align-items: stretch;
   height: 200px;
-  margin-bottom: 20px;
+  margin-bottom: 40px;
   border-radius: 10px;
+
+  cursor: pointer;
 
   .project-item-image-container {
     display: flex;
@@ -132,18 +134,18 @@
   }
 
   .project-item-date {
+    color: $text-base-color;
     min-width: 96px;
-    color: $black;
 
     @include media-query($on-mobile) {
       font-size: 16px;
     }
 
-    .project-item-description {
-      margin-bottom: 20px;
-      height: 100%;
-    }
+  }
 
+  .project-item-description {
+    margin-bottom: 20px;
+    height: 100%;
   }
 
   .project-item-tags {
@@ -153,15 +155,23 @@
   }
 
   .project-item-tag {
-    cursor: pointer;
+    cursor: not-allowed;
+    pointer-events: none;
+    background-color: $inline-code-bg;
+    border-style: none;
+    border-radius: 3px;
+    color: $text-base-color;
   }
   
   .project-item-title {
     display: flex;
     justify-content: space-between;
-    font-size: $base-font-size;
+    font-size: $base-font-size * 1.2;
     font-weight: normal;
     letter-spacing: 0.1px;
+    margin-top: 10px;
+    font-weight: $bold-weight;
+    
 
     @include media-query($on-mobile) {
       max-width: 15rem;
