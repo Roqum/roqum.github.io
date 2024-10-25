@@ -99,12 +99,21 @@
   align-items: stretch;
   height: 200px;
   margin-bottom: 20px;
+  border-radius: 10px;
 
-  .project-item-image {
+  .project-item-image-container {
     display: flex;
     width: 30%;
     justify-content: center;
     align-items: center;
+
+
+    .project-item-image {
+      width: 100%;
+      height: 100%;
+      border-radius: 10px;
+
+    }
   }
 
   .project-item-header {
@@ -115,6 +124,7 @@
   .project-item-content {
     width: 70%;
     position: relative;
+    margin-left: 20px;
   }
 
   &:not(:first-child) {

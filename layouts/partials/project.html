@@ -1,6 +1,14 @@
 <article class="project-item">
-    <div class="project-item-image">\
-        Test
+    <div class="project-item-image-container">
+        {{ $imagePath := printf "/%s/%s.jpg" .Section .File.BaseFileName }}
+        {{ $image := resources.Get $imagePath }}
+
+        <!-- Display image if it exists; otherwise, display the default image -->
+        {{ if $image }}
+            <img src="{{ $imagePath }}" class="project-item-image" alt="{{ .Title }} featured image">
+        {{ else }}
+            <img src="{{ "/projects/default.jpg" }}" class="project-item-image" alt="{{ .Title }} featured image">
+        {{ end }}
     </div>
     <div class="project-item-content">
         <h4 class="project-item-title">
