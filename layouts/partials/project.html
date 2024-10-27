@@ -1,15 +1,11 @@
 
 <article class="project-item"  onclick="location.href='{{ .RelPermalink }}'">
     <div class="project-item-image-container">
-        {{ $imagePath := printf "/%s/%s.jpg" .Section .File.BaseFileName }}
-        {{ $image := resources.Get $imagePath }}
+        {{ $imagePath := printf "/projects/%s.jpg" .File.BaseFileName }}
 
         <!-- Display image if it exists; otherwise, display the default image -->
-        {{ if $image }}
-            <img src="{{ $imagePath }}" class="project-item-image" alt="{{ .Title }} featured image">
-        {{ else }}
-            <img src="{{ "/projects/default.jpg" }}" class="project-item-image" alt="{{ .Title }} featured image">
-        {{ end }}
+
+        <img src="{{ $imagePath | relURL }}" onerror="this.src='/projects/default.jpg'" class="project-item-image" alt="{{ .Title }} featured image">
     </div>
     <div class="project-item-content">
         <h4 class="project-item-title">

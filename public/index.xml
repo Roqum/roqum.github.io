@@ -60,11 +60,11 @@ asdfasdfas&lt;/p&gt;</description>
     </item>
     
     <item>
-      <title>Projects1</title>
-      <link>//localhost:1313/projects/project1/</link>
+      <title>Charming Hell</title>
+      <link>//localhost:1313/projects/charminghell/</link>
       <pubDate>Mon, 21 Oct 2024 16:12:33 +0200</pubDate>
       
-      <guid>//localhost:1313/projects/project1/</guid>
+      <guid>//localhost:1313/projects/charminghell/</guid>
       
       <description>&lt;h3 id=&#34;test&#34;&gt;Test&lt;/h3&gt;
 &lt;p&gt;some text&lt;/p&gt;</description>
@@ -73,10 +73,10 @@ asdfasdfas&lt;/p&gt;</description>
     
     <item>
       <title>Projects1</title>
-      <link>//localhost:1313/projects/project2/</link>
+      <link>//localhost:1313/projects/project1/</link>
       <pubDate>Mon, 21 Oct 2024 16:12:33 +0200</pubDate>
       
-      <guid>//localhost:1313/projects/project2/</guid>
+      <guid>//localhost:1313/projects/project1/</guid>
       
       <description>&lt;h3 id=&#34;test&#34;&gt;Test&lt;/h3&gt;
 &lt;p&gt;some text&lt;/p&gt;</description>

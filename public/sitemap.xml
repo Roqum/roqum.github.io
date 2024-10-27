@@ -29,6 +29,9 @@
     <loc>//localhost:1313/categories/</loc>
     <lastmod>2024-10-21T16:12:33+02:00</lastmod>
   </url><url>
+    <loc>//localhost:1313/projects/charminghell/</loc>
+    <lastmod>2024-10-21T16:12:33+02:00</lastmod>
+  </url><url>
     <loc>//localhost:1313/categories/godot/</loc>
     <lastmod>2024-10-21T16:12:33+02:00</lastmod>
   </url><url>
@@ -39,9 +42,6 @@
     <lastmod>2024-10-21T16:12:33+02:00</lastmod>
   </url><url>
     <loc>//localhost:1313/projects/project1/</loc>
-    <lastmod>2024-10-21T16:12:33+02:00</lastmod>
-  </url><url>
-    <loc>//localhost:1313/projects/project2/</loc>
     <lastmod>2024-10-21T16:12:33+02:00</lastmod>
   </url><url>
     <loc>//localhost:1313/categories/unreal-engine/</loc>
