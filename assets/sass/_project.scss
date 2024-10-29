@@ -1,8 +1,8 @@
 // project wrapper
 .wrapper.project {
   @include media-query($on-mobile) {
-    padding-left: $spacing-half;
-    padding-right: $spacing-half;
+    padding-left: 0;
+    padding-right: 0;
   }
 }
 
