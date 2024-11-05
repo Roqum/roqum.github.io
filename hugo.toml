@@ -11,6 +11,16 @@ languageCode = 'en-us'
 # This defines how dates are formatted
 defaultContentLanguage = "en-gb"
 
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.extensions]
+      [markup.goldmark.extensions.passthrough]
+        enable = true
+        [markup.goldmark.extensions.passthrough.delimiters]
+          block = [['\[', '\]'], ['$$', '$$']]
+          inline = [['\(', '\)']]
+[params]
+  math = true
 
 ############################## English language ################################
 [Languages.en-gb]

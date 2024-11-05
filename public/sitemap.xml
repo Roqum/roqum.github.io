@@ -29,13 +29,7 @@
     <loc>//localhost:1313/categories/</loc>
     <lastmod>2024-10-21T16:12:33+02:00</lastmod>
   </url><url>
-    <loc>//localhost:1313/projects/charminghell/</loc>
-    <lastmod>2024-10-21T16:12:33+02:00</lastmod>
-  </url><url>
     <loc>//localhost:1313/categories/godot/</loc>
-    <lastmod>2024-10-21T16:12:33+02:00</lastmod>
-  </url><url>
-    <loc>//localhost:1313/categories/photoshop/</loc>
     <lastmod>2024-10-21T16:12:33+02:00</lastmod>
   </url><url>
     <loc>//localhost:1313/projects/</loc>
@@ -44,11 +38,17 @@
     <loc>//localhost:1313/projects/project1/</loc>
     <lastmod>2024-10-21T16:12:33+02:00</lastmod>
   </url><url>
-    <loc>//localhost:1313/categories/unreal-engine/</loc>
-    <lastmod>2024-10-21T16:12:33+02:00</lastmod>
-  </url><url>
     <loc>//localhost:1313/about/</loc>
     <lastmod>2024-10-21T16:10:50+02:00</lastmod>
+  </url><url>
+    <loc>//localhost:1313/projects/charminghell/</loc>
+    <lastmod>2023-12-27T16:12:33+02:00</lastmod>
+  </url><url>
+    <loc>//localhost:1313/categories/photoshop/</loc>
+    <lastmod>2023-12-27T16:12:33+02:00</lastmod>
+  </url><url>
+    <loc>//localhost:1313/categories/unreal-engine/</loc>
+    <lastmod>2023-12-27T16:12:33+02:00</lastmod>
   </url><url>
     <loc>//localhost:1313/tags/</loc>
   </url>
