@@ -60,7 +60,15 @@ For example, if the player has 100 residents, they’ll earn 100 gold every 5 se
 As mentioned, the population count is essential for generating gold. You can increase the number of residents by constructing housing. However, the population is limited by the maximum population capacity. Once this limit is reached, building additional housing is no longer possible.
 ###### Maximum Population Capacity
 The maximum population capacity is calculated based on the "Total Charm" using the following formula.
-$$  max\_villagers = \frac{{(total\_charm)}^2}{400} $$
+<br/>
+<div style="display: flex; flex-direction: row; gap: 10px; align-items: center;">
+<div> $ max\_villagers = \frac{{(total\_charm)}^2}{400} $</div>
+<img align="left" padding="50px" width="200" src="/images/CharmingHell/maxVillagerCalculationGraph.jpg"/>
+
+</div>
+
+
+
 As the population grows, the "total Charm" will be more effectivly at increasing the capacity. 
 ###### Total Charm
 The overall charm is responsible for the maximum population capacity. This value is the foundation for kickstarting the gold flow and can be increased by constructing specific buildings. 
