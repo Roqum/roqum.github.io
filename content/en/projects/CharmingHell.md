@@ -37,7 +37,7 @@ Now my idea was ready to be refined so that development can begin.
 
 As the player, you take on the role of the villain — a ruthless landlord who just snagged a prime piece of land at a bargain price. Your goal? To rent it out and make as much gold as possible. To attract tenants willing to pay top dollar, you’ll need to make the land as “charming” as possible. The trick is to invest wisely so you can walk away with a hefty profit. Oh, and there’s an active volcano right next door that’s allready erupting, so you’ll have to act fast to collect rent before all the buildings are destroyed.
 
-## Gameplay Mechanics
+## Gameplay Mechanics Explanation
 
 
 Here’s a smooth translation for this section:
@@ -60,15 +60,33 @@ For example, if the player has 100 residents, they’ll earn 100 gold every 5 se
 As mentioned, the population count is essential for generating gold. You can increase the number of residents by constructing housing. However, the population is limited by the maximum population capacity. Once this limit is reached, building additional housing is no longer possible.
 ###### Maximum Population Capacity
 The maximum population capacity is calculated based on the "Total Charm" using the following formula.
-<br/>
-<div style="display: flex; flex-direction: row; gap: 10px; align-items: center;">
-<div> $ max\_villagers = \frac{{(total\_charm)}^2}{400} $</div>
-<img align="left" padding="50px" width="200" src="/images/CharmingHell/maxVillagerCalculationGraph.jpg"/>
 
+
+<div style="display: flex; flex-direction: row; gap: 100px; align-items: center; justify-content: center;">
+<div width="300"> $ max\_villagers = \frac{{(total\_charm)}^2}{400} $</div>
+<div>
+    <img align="left" padding="50px" width="300" src="/images/CharmingHell/maxVillagerCalculationGraph.jpg"/>
+</div>
 </div>
 
+As you can see in the graph, the "total Charm" becomes more effectivly at increasing the capacity as it grows. 
 
-
-As the population grows, the "total Charm" will be more effectivly at increasing the capacity. 
 ###### Total Charm
-The overall charm is responsible for the maximum population capacity. This value is the foundation for kickstarting the gold flow and can be increased by constructing specific buildings. 
+The overall charm is responsible for the maximum population capacity. This value is the foundation for kickstarting the gold income and can be increased by constructing specific buildings. 
+
+###### Buildings
+
+| Building     | Produces                                                              | Costs                             | Specials                                     |
+| ------------ | ------------------------------                                        | -----------                       | --------------------------------------       |
+| Small House <img align="right"  width="25" src="/images/CharmingHell/SmallHouse.png"/>  | Villagers: 8 <br/> Charm: 2    | Gold: 20    | None                              |
+| Medium House <img align="right"  width="25" src="/images/CharmingHell/MediumHouse.png"/> | Villagers: 12 <br/> Charm: 5   | Gold: 50    | None                             |
+| Big House  <img align="right"  width="25" src="/images/CharmingHell/BigHouse.png"/>   | Villagers: 30 <br/> Charm: 12  | Gold: 100   | 2x1 Tile size                       |
+| Mine  <img align="right"  width="25" src="/images/CharmingHell/Mine.png"/>        | Villagers: 0 <br/> Charm: 20   | Gold: 30    | Can only be placed on mountain terrain  |
+| Church  <img align="right"  width="25" src="/images/CharmingHell/Church.png"/>      |Villagers: 0  <br/> Charm: 50  | Gold: 150   | 2x1 Tile size                          |
+| Castle <img align="right"  width="35" src="/images/CharmingHell/Castle.png"/>       | Villagers: 100 <br/> Charm: 30   | Gold: 500     | 2x2 Tile size                     |
+
+
+
+
+
+###### Gameplay Mechanics Implementation
