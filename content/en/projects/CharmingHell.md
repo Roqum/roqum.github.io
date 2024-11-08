@@ -37,16 +37,16 @@ Now my idea was ready to be refined so that development can begin.
 
 As the player, you take on the role of the villain — a ruthless landlord who just snagged a prime piece of land at a bargain price. Your goal? To rent it out and make as much gold as possible. To attract tenants willing to pay top dollar, you’ll need to make the land as “charming” as possible. The trick is to invest wisely so you can walk away with a hefty profit. Oh, and there’s an active volcano right next door that’s allready erupting, so you’ll have to act fast to collect rent before all the buildings are destroyed.
 
-## Gameplay Mechanics Explanation
+## Gameplay Mechanics
 
 ###### Gameloop
-The player starts the game with a single small house on the map and 100 gold. This gold can be spent to boost production by constructing new buildings. They need charm to attract more residents and residents to generate as much gold income as possible.
+The player starts the game with a single small house on the map and 100 gold. This gold can be spent to boost production by constructing new buildings. They need build building that produce charm so that he can have more villagers. More villagers means more gold income.
 
-The round starts slowly, with a catastrophe occurring every few seconds. The longer the game goes on, the faster new catastrophes happen, and the more tiles are destroyed.
+The round starts slowly, with a two tiles being struct by a catastrophe every few seconds. The longer the game goes on, the faster new catastrophes happen, and the more tiles are getting destroyed.
 
-The game ends when the player has no remaining residents. The more gold they have at this point, the higher their ranking on the subsequent leaderboard.
+The game ends when the player has no remaining villagerd. The more gold they have at this point, the higher their ranking on the subsequent leaderboard. 
 
-###### Wiki
+###### Key Parameters
 In this game, there are five key parameters:
 
 - Gold
@@ -54,6 +54,7 @@ In this game, there are five key parameters:
 - Population Count
 - Maximum Population Capacity
 - Total Charm
+
 ###### Gold
 Gold serves a dual purpose: it’s the currency you need to build new structures, and it’s also your final score at the end of each round. To achieve the highest possible score, you’ll want to keep as much gold as possible by the end of the game. At the same time, you’ll need to spend gold to increase your gold income.
 
@@ -90,14 +91,66 @@ The overall charm is responsible for the maximum population capacity. This value
 | Church  <img align="right"  width="25" src="/images/CharmingHell/Church.png"/>           | Villagers: 0  <br/> Charm: 50  | Gold: 150   | 2x1 Tile size                          |
 | Castle <img align="right"  width="35" src="/images/CharmingHell/Castle.png"/>            | Villagers: 100 <br/> Charm: 30 | Gold: 500   | 2x2 Tile size                          |
 
-| Terrain      | Produces                       | Specials                                                                                |
-| ------------ | ------------------------------ | --------------------------------------                                                  |
-| Tree         | Charm:                         | - Blocks Building Placement - Destroyed on hit - Not Repairable                         |
-| River        | Charm:                         | - Blocks Lava - Not Repairable                                                          |
-| Lava         | Charm:                         | - Removes placements on flooding - Allways starts at mountain - Randomly grows or stops |
-| Sea          | Charm:                         | - Blocks Lava - Undestructible                                                          |
+###### Terrain
+
+| Terrain      | Produces                       | Specials                                                                                                                |
+| ------------ | ------------------------------ | --------------------------------------                                                                                  |            
+| Tree         | Charm: 2                       | - Blocks building placement <br/> - Destroyed on hit <br/> - Not Repairable                                             |
+| Bushes       | Charm: 1                       | - Blocks building placement <br/> - Destroyed on hit                                                                    |
+| River        | Charm: 2                       | - Can only be destroyed by lava <br/>                                                                                   |
+| Lava         | Charm: -2                      | - Removes every placements on flooding<br/> - Starts at mountain<br/> - Randomly grows or stops (Gaussian distribution) |
+| Sea          | Charm: 2                       | - Blocks Lava <br/> - Undestructible                                                                                    |
 
 
+### Implementation
+
+###### Tilemap
+
+For implementing the game world, I chose a tilemap system. Using multiple layers makes it easy to draw the map and also helps distinguish between the visual landscape and code relevant objects.
+
+In this project, I mainly used five layers:
+
+- Ground/Terrain
+- Rivers and Lakes
+- Placements
+- Selector
+- Danger Zone
+- Destroyed Layer
+
+The Terrain and Rivers layers form the scenery of the map. The Placements layer contains all placeable objects, such as buildings and trees already positioned on the map. The Selector layer is solely for visually highlighting selected tiles. For example tiles affected by a disaster are higlithed red or marking tiles while placing new buildings. The "danger zone" layer markes all tiles that can be randomly selected to be destroyed by a disaster. Lastly, there’s the the "destroyed layer". This layer marks all tiles that are allready destroyed and give no income anymore.
+
+###### Tile Data
+
+Godot allows you to add custom data to tileset. Individual values of this custom data can be assign to specific tiles. Doing it this way, this data is availible on each placement on the drawn from this tileset tile. I used this to save my data for each building and terrain. This no eases up the my implementation because I do not need any classes of building, placements etc. and assign each of them specific values. Its like the tileset tile is a struct with all the data I need. For this small scope game it was totaly fine.
+
+To calculate the total charm and villagers I used a plain for loop which loops over each placement tile on my tilemap. Accessing the custom data of each tile I can just add up the charm and villagers values. 
+
+###### Destryoing Tiles
+
+At the beginning of the game every 8 second two fields are destroyed by a random disaster. These disasters are getting worse over time. I could explain you how it is implemented but it is so straigthforward that I will just show you the code.
+
+```gdscript
+func initiate_disaster():
+    disaster_counter += 1
+
+    if disaster_counter % 3 == 0:
+        number_of_disasters_at_once += 1
+
+    if disaster_counter == 10:
+        time_until_next_disaster = 5
+        timer.start(time_until_next_disaster)
+
+    if disaster_counter == 20:	
+        MusicPlayer.play_music("dramatic")
+        time_until_next_disaster = 3
+        timer.start(time_until_next_disaster)
+```
+
+if the music becomes "dramatic", it is getting really bad.
 
 
-###### Gameplay Mechanics Implementation
+To choose which field is getting destroyed I radomly choosed fields from the "danger zone" layer I meantioned before. If a field is selected, I look up it up in the placement. If there it is found in the placement layer, then something is placed there that can be destroyed. I dont care what it is, I just add this tile to the "destroyed layer" and let it burn by an fire texture. By adding it to the "destroyed layer" it is Later on ignored by the sum up of the total charm and villagers count.
+
+Initially I thought about deleting the allready destroyed field from the "danger zone" layer so that destroyed field are not choosen by the randomness for the next distaster. But it turned out to imbalance the game pretty hard because the selectable fields are shrinking over time. So I did not implemented it but the "danger zone" layer still existed.
+
+
