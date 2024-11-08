@@ -39,9 +39,14 @@ As the player, you take on the role of the villain — a ruthless landlord who j
 
 ## Gameplay Mechanics Explanation
 
+###### Gameloop
+The player starts the game with a single small house on the map and 100 gold. This gold can be spent to boost production by constructing new buildings. They need charm to attract more residents and residents to generate as much gold income as possible.
 
-Here’s a smooth translation for this section:
+The round starts slowly, with a catastrophe occurring every few seconds. The longer the game goes on, the faster new catastrophes happen, and the more tiles are destroyed.
 
+The game ends when the player has no remaining residents. The more gold they have at this point, the higher their ranking on the subsequent leaderboard.
+
+###### Wiki
 In this game, there are five key parameters:
 
 - Gold
@@ -76,21 +81,21 @@ The overall charm is responsible for the maximum population capacity. This value
 
 ###### Buildings
 
-| Building     | Produces                                                              | Costs                             | Specials                                     |
-| ------------ | ------------------------------                                        | -----------                       | --------------------------------------       |
-| Small House <img align="right"  width="25" src="/images/CharmingHell/SmallHouse.png"/>  | Villagers: 8 <br/> Charm: 2    | Gold: 20    | None                              |
-| Medium House <img align="right"  width="25" src="/images/CharmingHell/MediumHouse.png"/> | Villagers: 12 <br/> Charm: 5   | Gold: 50    | None                             |
-| Big House  <img align="right"  width="25" src="/images/CharmingHell/BigHouse.png"/>   | Villagers: 30 <br/> Charm: 12  | Gold: 100   | 2x1 Tile size                       |
-| Mine  <img align="right"  width="25" src="/images/CharmingHell/Mine.png"/>        | Villagers: 0 <br/> Charm: 20   | Gold: 30    | Can only be placed on mountain terrain  |
-| Church  <img align="right"  width="25" src="/images/CharmingHell/Church.png"/>      |Villagers: 0  <br/> Charm: 50  | Gold: 150   | 2x1 Tile size                          |
-| Castle <img align="right"  width="35" src="/images/CharmingHell/Castle.png"/>       | Villagers: 100 <br/> Charm: 30   | Gold: 500     | 2x2 Tile size                     |
+| Building                                                                                 | Produces                       | Costs       | Specials                               |
+| ---------------------------------------------------------------------------------------- | ------------------------------ | ----------- | -------------------------------------- |
+| Small House <img align="right"  width="25" src="/images/CharmingHell/SmallHouse.png"/>   | Villagers: 8 <br/> Charm: 2    | Gold: 20    | None                                   |
+| Medium House <img align="right"  width="25" src="/images/CharmingHell/MediumHouse.png"/> | Villagers: 12 <br/> Charm: 5   | Gold: 50    | None                                   |
+| Big House  <img align="right"  width="25" src="/images/CharmingHell/BigHouse.png"/>      | Villagers: 30 <br/> Charm: 12  | Gold: 100   | 2x1 Tile size                          |
+| Mine  <img align="right"  width="25" src="/images/CharmingHell/Mine.png"/>               | Villagers: 0 <br/> Charm: 20   | Gold: 30    | Can only be placed on mountain terrain |
+| Church  <img align="right"  width="25" src="/images/CharmingHell/Church.png"/>           | Villagers: 0  <br/> Charm: 50  | Gold: 150   | 2x1 Tile size                          |
+| Castle <img align="right"  width="35" src="/images/CharmingHell/Castle.png"/>            | Villagers: 100 <br/> Charm: 30 | Gold: 500   | 2x2 Tile size                          |
 
-| Terrain      | Produces                                                | Specials                                                                               |
-| ------------ | ------------------------------                          | --------------------------------------                                                 |
-| Tree         | Charm:                                                  | - Blocks Building Placement - Destroyed on hit - Not Repairable                        |
-| River        | Charm:                                                  | - Blocks Lava - Not Repairable                                                         |
-| Lava         | Charm:                                                  | - Removes placements on flooding - Allways starts at mountain - Randomly grows or stops|
-| Sea          | Charm:                                                  | - Blocks Lava - Undestructible                                                         |
+| Terrain      | Produces                       | Specials                                                                                |
+| ------------ | ------------------------------ | --------------------------------------                                                  |
+| Tree         | Charm:                         | - Blocks Building Placement - Destroyed on hit - Not Repairable                         |
+| River        | Charm:                         | - Blocks Lava - Not Repairable                                                          |
+| Lava         | Charm:                         | - Removes placements on flooding - Allways starts at mountain - Randomly grows or stops |
+| Sea          | Charm:                         | - Blocks Lava - Undestructible                                                          |
 
 
 
