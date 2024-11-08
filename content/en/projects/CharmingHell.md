@@ -85,6 +85,12 @@ The overall charm is responsible for the maximum population capacity. This value
 | Church  <img align="right"  width="25" src="/images/CharmingHell/Church.png"/>      |Villagers: 0  <br/> Charm: 50  | Gold: 150   | 2x1 Tile size                          |
 | Castle <img align="right"  width="35" src="/images/CharmingHell/Castle.png"/>       | Villagers: 100 <br/> Charm: 30   | Gold: 500     | 2x2 Tile size                     |
 
+| Terrain      | Produces                                                | Specials                                                                               |
+| ------------ | ------------------------------                          | --------------------------------------                                                 |
+| Tree         | Charm:                                                  | - Blocks Building Placement - Destroyed on hit - Not Repairable                        |
+| River        | Charm:                                                  | - Blocks Lava - Not Repairable                                                         |
+| Lava         | Charm:                                                  | - Removes placements on flooding - Allways starts at mountain - Randomly grows or stops|
+| Sea          | Charm:                                                  | - Blocks Lava - Undestructible                                                         |
 
 
 
