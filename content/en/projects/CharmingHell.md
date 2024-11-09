@@ -106,9 +106,9 @@ The overall charm is responsible for the maximum population capacity. This value
 
 ###### Tilemap
 
-For implementing the game world, I chose a tilemap system. Using multiple layers makes it easy to draw the map and also helps distinguish between the visual landscape and code relevant objects.
+For implementing the game world, I chose a tilemap system. Using multiple layers makes it easy to draw the map and also helps distinguish between the visual landscape and code-relevant objects.
 
-In this project, I mainly used five layers:
+In this project, I mainly used six layers:
 
 - Ground/Terrain
 - Rivers and Lakes
@@ -117,17 +117,17 @@ In this project, I mainly used five layers:
 - Danger Zone
 - Destroyed Layer
 
-The Terrain and Rivers layers form the scenery of the map. The Placements layer contains all placeable objects, such as buildings and trees already positioned on the map. The Selector layer is solely for visually highlighting selected tiles. For example tiles affected by a disaster are higlithed red or marking tiles while placing new buildings. The "danger zone" layer markes all tiles that can be randomly selected to be destroyed by a disaster. Lastly, there’s the the "destroyed layer". This layer marks all tiles that are allready destroyed and give no income anymore.
+The Terrain and Rivers layers form the map’s scenery. The Placements layer contains all placeable objects, such as buildings and trees already positioned on the map. The Selector layer is solely for visually highlighting selected tiles, such as marking tiles in red when affected by a disaster or highlighting tiles while placing new buildings. The "Danger Zone" layer marks all tiles that could potentially be destroyed by a disaster. Lastly, there’s the "Destroyed Layer," which marks all tiles that are already destroyed and no longer generate income.
 
 ###### Tile Data
 
-Godot allows you to add custom data to tileset. Individual values of this custom data can be assign to specific tiles. Doing it this way, this data is availible on each placement on the drawn from this tileset tile. I used this to save my data for each building and terrain. This no eases up the my implementation because I do not need any classes of building, placements etc. and assign each of them specific values. Its like the tileset tile is a struct with all the data I need. For this small scope game it was totaly fine.
+Godot allows you to add custom data to a tileset. Individual values from this custom data can be assigned to specific tiles. By doing it this way, the data is available for each placement made from that tileset tile. I used this approach to store data for each building and terrain type. This simplifies the implementation, as I don’t need separate classes for buildings or placements with individually assigned values. It’s like each tileset tile acts as a struct containing all the data I need. For a game of this small scope, this approach works perfectly fine.
 
-To calculate the total charm and villagers I used a plain for loop which loops over each placement tile on my tilemap. Accessing the custom data of each tile I can just add up the charm and villagers values. 
+To calculate the total charm and number of villagers, I used a simple for-loop that iterates over each placement tile on the tilemap. Accessing the custom data of each tile, I can easily add up the charm and villager values.
 
 ###### Destryoing Tiles
 
-At the beginning of the game every 8 second two fields are destroyed by a random disaster. These disasters are getting worse over time. I could explain you how it is implemented but it is so straigthforward that I will just show you the code.
+At the beginning of the game, every 8 seconds, two tiles are destroyed by a random disaster. These disasters increase in severity over time. I could explain the implementation, but it's pretty straightforward so I'll just show you the code.
 
 ```gdscript
 func initiate_disaster():
@@ -152,6 +152,14 @@ So you see, if the music becomes "dramatic", it is getting really bad.
 To choose which field is getting destroyed I radomly choosed fields from the "danger zone" layer I meantioned before. If a field is selected, I look up it up in the placement. If there it is found in the placement layer, then something is placed there that can be destroyed. I dont care what it is, I just add this tile to the "destroyed layer" and let it burn by an fire texture. By adding it to the "destroyed layer" it is Later on ignored by the sum up of the total charm and villagers count.
 
 Initially I thought about deleting the allready destroyed field from the "danger zone" layer so that destroyed field are not choosen by the randomness for the next distaster. But it turned out to imbalance the game pretty hard because the selectable fields are shrinking over time. So I did not implemented it but the "danger zone" layer still existed.
+
+###### Lava Growth
+
+The lava flow starts from the mountain whenever a mountain tile is struck by a disaster. From that point onward, it’s randomly decided for each lava flow whether it will continue to grow or stop. Once a flow stops, it stops permanently. A Gaussian distribution was used for this randomness, as it provides a more "natural" random effect.
+
+To achieve this, the end positions of each lava flow are stored in a vector. For each position in this vector, the Gaussian distribution determines whether it should be completely removed from the list (indicating the flow stops) or moved one position downward (indicating the flow grows). 
+
+This calculation is performed each time a disaster occurs. Since only the end pieces of the lava flow are considered, the computation is not too performance-intensive.
 
 ###### Animation and Art
 
@@ -182,9 +190,9 @@ The reason for this are animations. What may look like identical textures at fir
 These four tiles are played in sequence within one second. The result is a simple animation that makes the waterfall appear as though it’s flowing. Thats why some tiles  ofthe tileset have multiple similar textures.
 
 <br>
-<div>
-<div style="display: flex; justify-content: flex-end; align-items: flex-end; float: right; margin-left: 20px;">        
-    <img padding="50px" width="250" heigh="auto" src="/images/CharmingHell/LavaRiver.png"/>
+<div >
+<div style="display: flex; justify-content: flex-end; align-items: flex-end; float: right; margin-left: 20px; margin-right: 20px;">        
+    <img padding="50px" width="200" heigh="auto" src="/images/CharmingHell/LavaRiver.png"/>
 </div>
 
 <div style="display: flex; justify-content: flex-end; align-items: flex-end; float: right">        
