@@ -146,11 +146,49 @@ func initiate_disaster():
         timer.start(time_until_next_disaster)
 ```
 
-if the music becomes "dramatic", it is getting really bad.
+So you see, if the music becomes "dramatic", it is getting really bad.
 
 
 To choose which field is getting destroyed I radomly choosed fields from the "danger zone" layer I meantioned before. If a field is selected, I look up it up in the placement. If there it is found in the placement layer, then something is placed there that can be destroyed. I dont care what it is, I just add this tile to the "destroyed layer" and let it burn by an fire texture. By adding it to the "destroyed layer" it is Later on ignored by the sum up of the total charm and villagers count.
 
 Initially I thought about deleting the allready destroyed field from the "danger zone" layer so that destroyed field are not choosen by the randomness for the next distaster. But it turned out to imbalance the game pretty hard because the selectable fields are shrinking over time. So I did not implemented it but the "danger zone" layer still existed.
 
+###### Animation and Art
 
+There are many free pixel art assets available online. I chose two tilesets that matched each other stylistically, giving me a good selection of buildings and terrain.
+<div style="display: flex; gap: 50px;align-items: flex-end; align-items: center; justify-content: center;">
+    <div>
+        <img align="left" padding="50px" height="400" src="/images/CharmingHell/TileMap2.png"/>
+    </div>
+    <div>
+        <img align="right" padding="50px" height="450" src="/images/CharmingHell/TileMap1.png"/>
+    </div>
+</div>
+
+If you’re not familiar with tilesets, you might wonder why some tiles have the same texture multiple times—like with water, for example. But, isn’t one texture enough? Why are there four versions of the same set?
+
+The reason for this are animations. What may look like identical textures at first glance are actually slight variations of a texture. When you play these textures in sequence, you create an animation. This can be seen, for example, with the waterfall: by cycling through these frames, the water appears to flow or cascade, adding dynamic movement to the scene.
+
+<div style="display: flex; align-items: center; justify-content: space-evenly;">    
+    <div>    
+        <img height="80" src="/images/CharmingHell/Watterfall.png"/>
+    </div>
+    <div> 
+        <img align="left" width="80"  src="/images/CharmingHell/AnimationExample.gif"/> 
+    </div>
+</div>
+
+
+These four tiles are played in sequence within one second. The result is a simple animation that makes the waterfall appear as though it’s flowing. Thats why some tiles  ofthe tileset have multiple similar textures.
+
+<br>
+<div>
+<div style="display: flex; justify-content: flex-end; align-items: flex-end; float: right; margin-left: 20px;">        
+    <img padding="50px" width="250" heigh="auto" src="/images/CharmingHell/LavaRiver.png"/>
+</div>
+
+<div style="display: flex; justify-content: flex-end; align-items: flex-end; float: right">        
+    <img style="position:absolute; bottom: 0; width:150; heigh: auto; float: right" src="/images/CharmingHell/LavaEdges.png"/> 
+</div>
+For the lava flow, I used the water tiles and edited them in Photoshop. Although as you can see it doesn’t blend perfectly with the map — there’s no smooth transition at the edge of the lava tile. It just snaps from grey to green. Unfortunatly, I didn’t have much time to polish it.
+</div>
