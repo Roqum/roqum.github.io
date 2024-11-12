@@ -8,17 +8,6 @@
     <language>en-gb</language>
     <lastBuildDate>Mon, 21 Oct 2024 18:47:54 +0200</lastBuildDate><atom:link href="//localhost:1313/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Devlog 1:Why I’m Creating This Game</title>
-      <link>//localhost:1313/posts/devlog1/</link>
-      <pubDate>Mon, 21 Oct 2024 18:47:54 +0200</pubDate>
-      
-      <guid>//localhost:1313/posts/devlog1/</guid>
-      
-      <description>&lt;h3 id=&#34;devlog-1-why-im-creating-this-game&#34;&gt;Devlog 1: Why I’m Creating This Game&lt;/h3&gt;</description>
-      
-    </item>
-    
-    <item>
       <title>Gameplay Ability System</title>
       <link>//localhost:1313/documentation/gameplayabilitysystem/</link>
       <pubDate>Mon, 21 Oct 2024 18:47:54 +0200</pubDate>
@@ -53,6 +42,29 @@ asdfasdfas&lt;/p&gt;</description>
       <guid>//localhost:1313/about/</guid>
       
       <description>&lt;p&gt;Its all about something&lt;/p&gt;</description>
+      
+    </item>
+    
+    <item>
+      <title>Devlog 1: Why I’m Creating This Game</title>
+      <link>//localhost:1313/posts/devlog1/</link>
+      <pubDate>Mon, 10 Jun 2024 18:47:54 +0200</pubDate>
+      
+      <guid>//localhost:1313/posts/devlog1/</guid>
+      
+      <description>&lt;p&gt;My game project will be introduced in the next devlog. In this one, I’d like to share a bit about why I started this project and the journey that led me here.&lt;/p&gt;
+&lt;p&gt;I started programming when I was 13 years old. Even then, I was fascinated by the idea of creating games, which led me to learn C++, the programming language commonly used for game development. From that point on, I knew I wanted to become a programmer. Interestingly, becoming a game developer didn’t immediately cross my mind — probably because the industry wasn’t as large at the time, and most games were developed in the United States. It felt as distant as dreaming about working in Hollywood.&lt;/p&gt;</description>
+      
+    </item>
+    
+    <item>
+      <title>Devlog 2: Project Introduction</title>
+      <link>//localhost:1313/posts/devlog2/</link>
+      <pubDate>Mon, 10 Jun 2024 18:47:54 +0200</pubDate>
+      
+      <guid>//localhost:1313/posts/devlog2/</guid>
+      
+      <description></description>
       
     </item>
     
