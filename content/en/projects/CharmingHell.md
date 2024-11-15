@@ -2,7 +2,7 @@
 date = '2023-12-27T16:12:33+02:00'
 draft = false
 title = 'Charming Hell'
-categories = ['C++', 'Unreal Engine', 'Photoshop']
+categories = ['Godot', 'Photoshop']
 projectDescription = ["As an evil landlord, the player has to invest his gold wisely and quickly to plunder as much money as possible from the tenants before his land faces its doom.", "", "Submission for the three-day game jam 'Melon Jam 2023'"]
 +++
 
