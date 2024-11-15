@@ -58,7 +58,7 @@ asdfasdfas&lt;/p&gt;</description>
     </item>
     
     <item>
-      <title>Devlog 3: </title>
+      <title>Devlog 3: First </title>
       <link>//localhost:1313/posts/devlog3/</link>
       <pubDate>Mon, 10 Jun 2024 18:47:54 +0200</pubDate>
       
@@ -94,8 +94,15 @@ Working Hours: ~30h&lt;/p&gt;
       
       <guid>//localhost:1313/projects/datavisualization/</guid>
       
-      <description>&lt;h3 id=&#34;test&#34;&gt;Test&lt;/h3&gt;
-&lt;p&gt;some text&lt;/p&gt;</description>
+      <description>&lt;h3 id=&#34;project-info&#34;&gt;Project Info&lt;/h3&gt;
+&lt;p&gt;Live Demo: &lt;a href=&#34;https://dashboard.iplus.svc.educs-hosting.net/&#34; target=&#34;_blank&#34;&gt;Link&lt;/a&gt; &lt;br&gt;
+Bachelor Thesis (German): &lt;a href=&#34;//localhost:1313/pdfs/Bachelorarbeit_David_Burgstaller.pdf&#34; target=&#34;_blank&#34;&gt;Open PDF&lt;/a&gt;&lt;/p&gt;
+&lt;h5 id=&#34;project-goal-and-implementation&#34;&gt;Project Goal and Implementation&lt;/h5&gt;
+&lt;p&gt;This project had two main goals. First, &lt;a href=&#34;https://www.dipf.de/de&#34;  target=&#34;_blank&#34; rel=&#34;noreferrer nofollow&#34;&gt;DIPF&lt;/a&gt;
+ wanted to gain better insights into the data of the &lt;a href=&#34;https://www.iwwb.de/kurssuche/startseite.html&#34;  target=&#34;_blank&#34; rel=&#34;noreferrer nofollow&#34;&gt;IWWB&lt;/a&gt;
+ meta-search engine. Second, they aimed to make the search engine more user-friendly, enabling users to easily find educational courses tailored to their interests and located near them.&lt;/p&gt;
+&lt;p&gt;For the data analysis, I wrote small algorithms to extract relevant data from the massive JSON database. One of the key features I implemented was a simple categorization algorithm that organizes courses into thematic categories based on customizable keywords. These data are visualized in various ways on the dashboard.
+To enhance user-friendliness, I implemented a map with a search function. By using color-coded markers for course topics, users can explore their area for interesting courses with ease.&lt;/p&gt;</description>
       
     </item>
     
