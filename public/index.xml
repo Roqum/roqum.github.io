@@ -23,18 +23,6 @@ asdfasdfas&lt;/p&gt;</description>
     </item>
     
     <item>
-      <title>Projects1</title>
-      <link>//localhost:1313/projects/project1/</link>
-      <pubDate>Mon, 21 Oct 2024 16:12:33 +0200</pubDate>
-      
-      <guid>//localhost:1313/projects/project1/</guid>
-      
-      <description>&lt;h3 id=&#34;test&#34;&gt;Test&lt;/h3&gt;
-&lt;p&gt;some text&lt;/p&gt;</description>
-      
-    </item>
-    
-    <item>
       <title>About</title>
       <link>//localhost:1313/about/</link>
       <pubDate>Mon, 21 Oct 2024 16:10:50 +0200</pubDate>
@@ -96,6 +84,18 @@ Working Hours: ~30h&lt;/p&gt;
 &lt;h2 id=&#34;the-beginning&#34;&gt;The Beginning&lt;/h2&gt;
 &lt;p&gt;The theme for the Winter Melon Jam 2023 was &amp;ldquo;Charm.&amp;rdquo; I was disappointed. I already had several cool game genres in mind that I was excited to try out. So my anticipation for the jam was huge. But &amp;ldquo;Charm&amp;rdquo;? What should I do with that? It did not fit any idea at all.&lt;/p&gt;
 &lt;p&gt;However, I had already set aside the three days, so I decided to give it a shot. The theme was announced around 6 pm., so I chose not to start programming that evening. Instead, I spent the rest of the night planning the following days and, most importantly, coming up with a game idea.&lt;/p&gt;</description>
+      
+    </item>
+    
+    <item>
+      <title>Data Mining/Visualization Website</title>
+      <link>//localhost:1313/projects/datavisualization/</link>
+      <pubDate>Fri, 29 Sep 2023 16:12:33 +0200</pubDate>
+      
+      <guid>//localhost:1313/projects/datavisualization/</guid>
+      
+      <description>&lt;h3 id=&#34;test&#34;&gt;Test&lt;/h3&gt;
+&lt;p&gt;some text&lt;/p&gt;</description>
       
     </item>
     

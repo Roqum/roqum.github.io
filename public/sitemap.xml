@@ -11,21 +11,6 @@
     <loc>//localhost:1313/documentation/gameplayabilitysystem/</loc>
     <lastmod>2024-10-21T18:47:54+02:00</lastmod>
   </url><url>
-    <loc>//localhost:1313/categories/c&#43;&#43;/</loc>
-    <lastmod>2024-10-21T16:12:33+02:00</lastmod>
-  </url><url>
-    <loc>//localhost:1313/categories/</loc>
-    <lastmod>2024-10-21T16:12:33+02:00</lastmod>
-  </url><url>
-    <loc>//localhost:1313/categories/godot/</loc>
-    <lastmod>2024-10-21T16:12:33+02:00</lastmod>
-  </url><url>
-    <loc>//localhost:1313/projects/</loc>
-    <lastmod>2024-10-21T16:12:33+02:00</lastmod>
-  </url><url>
-    <loc>//localhost:1313/projects/project1/</loc>
-    <lastmod>2024-10-21T16:12:33+02:00</lastmod>
-  </url><url>
     <loc>//localhost:1313/about/</loc>
     <lastmod>2024-10-21T16:10:50+02:00</lastmod>
   </url><url>
@@ -35,17 +20,44 @@
     <loc>//localhost:1313/posts/devlog2/</loc>
     <lastmod>2024-06-10T18:47:54+02:00</lastmod>
   </url><url>
+    <loc>//localhost:1313/posts/devlog3/</loc>
+    <lastmod>2024-06-10T18:47:54+02:00</lastmod>
+  </url><url>
     <loc>//localhost:1313/posts/</loc>
     <lastmod>2024-06-10T18:47:54+02:00</lastmod>
   </url><url>
+    <loc>//localhost:1313/categories/</loc>
+    <lastmod>2023-12-27T16:12:33+02:00</lastmod>
+  </url><url>
     <loc>//localhost:1313/projects/charminghell/</loc>
+    <lastmod>2023-12-27T16:12:33+02:00</lastmod>
+  </url><url>
+    <loc>//localhost:1313/categories/godot/</loc>
     <lastmod>2023-12-27T16:12:33+02:00</lastmod>
   </url><url>
     <loc>//localhost:1313/categories/photoshop/</loc>
     <lastmod>2023-12-27T16:12:33+02:00</lastmod>
   </url><url>
-    <loc>//localhost:1313/categories/unreal-engine/</loc>
+    <loc>//localhost:1313/projects/</loc>
     <lastmod>2023-12-27T16:12:33+02:00</lastmod>
+  </url><url>
+    <loc>//localhost:1313/categories/css/</loc>
+    <lastmod>2023-09-29T16:12:33+02:00</lastmod>
+  </url><url>
+    <loc>//localhost:1313/categories/d3js/</loc>
+    <lastmod>2023-09-29T16:12:33+02:00</lastmod>
+  </url><url>
+    <loc>//localhost:1313/projects/datavisualization/</loc>
+    <lastmod>2023-09-29T16:12:33+02:00</lastmod>
+  </url><url>
+    <loc>//localhost:1313/categories/html/</loc>
+    <lastmod>2023-09-29T16:12:33+02:00</lastmod>
+  </url><url>
+    <loc>//localhost:1313/categories/javascript/</loc>
+    <lastmod>2023-09-29T16:12:33+02:00</lastmod>
+  </url><url>
+    <loc>//localhost:1313/categories/pyhton/</loc>
+    <lastmod>2023-09-29T16:12:33+02:00</lastmod>
   </url><url>
     <loc>//localhost:1313/tags/</loc>
   </url>
