@@ -14,11 +14,8 @@
       
       <guid>//localhost:1313/documentation/gameplayabilitysystem/</guid>
       
-      <description>&lt;h1 id=&#34;introduction&#34;&gt;Introduction&lt;/h1&gt;
-&lt;p&gt;adfgafgasdf asdf asdf asdf asdf asd&lt;/p&gt;
-&lt;h3 id=&#34;section-two&#34;&gt;section two&lt;/h3&gt;
-&lt;p&gt;asd
-asdfasdfas&lt;/p&gt;</description>
+      <description>&lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;
+&lt;h2 id=&#34;attribute-set&#34;&gt;Attribute Set&lt;/h2&gt;</description>
       
     </item>
     
@@ -58,13 +55,14 @@ asdfasdfas&lt;/p&gt;</description>
     </item>
     
     <item>
-      <title>Devlog 3: First </title>
+      <title>Devlog 3: First Steps</title>
       <link>//localhost:1313/posts/devlog3/</link>
       <pubDate>Mon, 10 Jun 2024 18:47:54 +0200</pubDate>
       
       <guid>//localhost:1313/posts/devlog3/</guid>
       
-      <description></description>
+      <description>&lt;h3 id=&#34;gameplay-ability-system&#34;&gt;Gameplay Ability System&lt;/h3&gt;
+&lt;p&gt;I chose Unreal Engine because I’m a C++ programmer, and there are plenty of resources available for UE development online. After some research, I decided to use the Gameplay Ability System developed by Epic Games. Originally created in conjunction with Paragon, it serves as a framework for developing multiplayer RPGs. The framework is both powerful and flexible—it’s not limited to RPGs. For example, it’s also used in the development of Fortnite.&lt;/p&gt;</description>
       
     </item>
     
