@@ -16,7 +16,7 @@ If you need more resources, I highly recommend [tranek’s documentation](https:
 I’m currently working with Unreal Engine 5.4, so this documentation is tailored to that version. Everything of it should work with other versions as well, but I can’t guarantee compatibility. If I’m aware of any version-specific issues, I will make a note of them in the documentation.
 ## Overview
 
-If you’re here to learn GAS, I want to encourage you to stick with it. It’s a very powerful and well-designed tool, but it’s also quite complex. The good news is that you don’t need to fully understand all of GAS’s complexity to start working with it. However, it’s helpful to first grasp the basic concepts and how it works. And Very
+If you’re here to learn GAS, I want to encourage you to stick with it. It’s a very powerful and well-designed tool, but it’s also quite complex. The good news is that you don’t need to fully understand all of GAS’s complexity to start working with it. However, it’s helpful to first grasp the basic concepts and how it works.
 
 
 ## Setup Gameplay Ability System (GAS)
