@@ -11,6 +11,7 @@ languageCode = 'en-us'
 # This defines how dates are formatted
 defaultContentLanguage = "en-gb"
 
+
 [services]
   [services.googleAnalytics]
     id = "G-67BGNEWG64"
