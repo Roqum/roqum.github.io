@@ -10,6 +10,7 @@ languageCode = 'en-us'
 
 # This defines how dates are formatted
 defaultContentLanguage = "en-gb"
+googleAnalytics = "G-67BGNEWG64"
 
 [markup]
   [markup.goldmark]
@@ -23,6 +24,7 @@ defaultContentLanguage = "en-gb"
           inline = [['\(', '\)']]
 [params]
   math = true
+
 
 ############################## English language ################################
 [Languages.en-gb]
