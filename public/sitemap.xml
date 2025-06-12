@@ -2,34 +2,31 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>//localhost:1313/article/</loc>
+    <lastmod>2024-10-21T18:47:54+02:00</lastmod>
+  </url><url>
     <loc>//localhost:1313/</loc>
-    <lastmod>2024-10-21T18:47:54+02:00</lastmod>
-  </url><url>
-    <loc>//localhost:1313/documentation/</loc>
-    <lastmod>2024-10-21T18:47:54+02:00</lastmod>
-  </url><url>
-    <loc>//localhost:1313/documentation/gameplayabilitysystem/</loc>
     <lastmod>2024-10-21T18:47:54+02:00</lastmod>
   </url><url>
     <loc>//localhost:1313/about/</loc>
     <lastmod>2024-10-21T16:10:50+02:00</lastmod>
   </url><url>
-    <loc>//localhost:1313/posts/devlog1/</loc>
+    <loc>//localhost:1313/devlog/devlog1/</loc>
     <lastmod>2024-06-10T18:47:54+02:00</lastmod>
   </url><url>
-    <loc>//localhost:1313/posts/devlog2/</loc>
+    <loc>//localhost:1313/devlog/devlog2/</loc>
     <lastmod>2024-06-10T18:47:54+02:00</lastmod>
   </url><url>
-    <loc>//localhost:1313/posts/devlog3/</loc>
+    <loc>//localhost:1313/devlog/devlog3/</loc>
     <lastmod>2024-06-10T18:47:54+02:00</lastmod>
   </url><url>
-    <loc>//localhost:1313/posts/</loc>
+    <loc>//localhost:1313/devlog/</loc>
     <lastmod>2024-06-10T18:47:54+02:00</lastmod>
   </url><url>
     <loc>//localhost:1313/categories/</loc>
     <lastmod>2023-12-27T16:12:33+02:00</lastmod>
   </url><url>
-    <loc>//localhost:1313/projects/charminghell/</loc>
+    <loc>//localhost:1313/project/charminghell/</loc>
     <lastmod>2023-12-27T16:12:33+02:00</lastmod>
   </url><url>
     <loc>//localhost:1313/categories/godot/</loc>
@@ -38,7 +35,7 @@
     <loc>//localhost:1313/categories/photoshop/</loc>
     <lastmod>2023-12-27T16:12:33+02:00</lastmod>
   </url><url>
-    <loc>//localhost:1313/projects/</loc>
+    <loc>//localhost:1313/project/</loc>
     <lastmod>2023-12-27T16:12:33+02:00</lastmod>
   </url><url>
     <loc>//localhost:1313/categories/css/</loc>
@@ -47,7 +44,7 @@
     <loc>//localhost:1313/categories/d3js/</loc>
     <lastmod>2023-09-29T16:12:33+02:00</lastmod>
   </url><url>
-    <loc>//localhost:1313/projects/datavisualization/</loc>
+    <loc>//localhost:1313/project/datavisualization/</loc>
     <lastmod>2023-09-29T16:12:33+02:00</lastmod>
   </url><url>
     <loc>//localhost:1313/categories/html/</loc>

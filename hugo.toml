@@ -43,9 +43,9 @@ defaultContentLanguage = "en-gb"
     url = '/'
     weight = 10
   [[Languages.en-gb.menu.main]]
-    pageRef="posts"
-    name = 'Devlog'
-    url = '/posts/'
+    pageRef="devlog"
+    name = 'Devlogs'
+    url = '/devlogs/'
     weight = 20
   [[Languages.en-gb.menu.main]]
     pageRef="about"
@@ -53,12 +53,12 @@ defaultContentLanguage = "en-gb"
     url = '/about/'
     weight = 30
     [[Languages.en-gb.menu.main]]
-    pageRef="documentation"
-    name = 'Documentation'
-    url = '/documentation/'
+    pageRef="article"
+    name = 'Articles'
+    url = '/articles/'
     weight = 40
     [[Languages.en-gb.menu.main]]
-    pageRef="projects"
+    pageRef="project"
     name = 'Projects'
     url = '/projects/'
     weight = 50
@@ -68,7 +68,7 @@ defaultContentLanguage = "en-gb"
   sitename = "David Burgstaller"
   defaultColor = "dark" 
   description = "Minimal Hugo blog theme with light and dark mode support"
-  mainSections = ['posts']
+  mainSections = ['devlog', 'article', 'project']
   toc = true # set to false to disable table of contents 'globally'
   tocOpen = false # set to true to open table of contents by default
   goToTop = true # set to false to disable 'go to top' button

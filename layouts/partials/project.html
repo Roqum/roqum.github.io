@@ -1,11 +1,11 @@
 
 <article class="project-item"  onclick="location.href='{{ .RelPermalink }}'">
     <div class="project-item-image-container">
-        {{ $imagePath := printf "/projects/%s.jpg" .File.BaseFileName }}
+        {{ $imagePath := printf "/project/%s.jpg" .File.BaseFileName }}
 
         <!-- Display image if it exists; otherwise, display the default image -->
 
-        <img src="{{ $imagePath | relURL }}" onerror="this.src='/projects/default.jpg'" class="project-item-image" alt="{{ .Title }} featured image">
+        <img src="{{ $imagePath | relURL }}" onerror="this.src='/project/default.jpg'" class="project-item-image" alt="{{ .Title }} featured image">
     </div>
     <div class="project-item-content">
         <h4 class="project-item-title">
