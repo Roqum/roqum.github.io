@@ -6,7 +6,60 @@
     <description>Recent content on David Burgstaller</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-gb</language>
-    <lastBuildDate>Mon, 21 Oct 2024 18:47:54 +0200</lastBuildDate><atom:link href="//localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 03 Jul 2025 15:07:36 +0200</lastBuildDate><atom:link href="//localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Voxel Renderer / Engine</title>
+      <link>//localhost:1313/project/voxelengine/</link>
+      <pubDate>Thu, 03 Jul 2025 15:07:36 +0200</pubDate>
+      
+      <guid>//localhost:1313/project/voxelengine/</guid>
+      
+      <description>&lt;br&gt;
+&lt;div style=&#34;display: grid; grid-template-columns: 150px 1fr; &#34;&gt;
+  &lt;div&gt;Status:&lt;/div&gt;
+  &lt;div&gt;Currently in progress... &lt;/div&gt;
+  &lt;div&gt;Started:&lt;/div&gt;
+  &lt;div&gt;26. April 2025&lt;/div&gt;
+  &lt;div&gt;Working Hours:&lt;/div&gt;
+  &lt;div&gt;~30h&lt;/div&gt;
+  &lt;div&gt;Source Code:&lt;/div&gt;
+  &lt;a href=&#34;https://github.com/Roqum/VoxelGameEngine&#34; style=&#34;color:rgb(158, 166, 174); text-decoration: underline;&#34;&gt;github.com/Roqum/VoxelGameEngine&lt;/a&gt;
+&lt;/div&gt;
+&lt;br&gt;
+&lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;
+&lt;p&gt;I’m deeply interested in game engine programming and am seriously considering transitioning fully from game development to engine development. I love the combination of solving math-heavy challenges, writing performance-critical code, and designing thoughtful systems. That’s what led me to start this project.&lt;/p&gt;
+&lt;p&gt;This voxel engine serves as my learning environment. My goal is to build a simple voxel world using procedural generation and to focus on optimizing the rendering pipeline as much as possible. There are many algorithms I’ve read about and am eager to experiment with, combine, and refine. At the end, I want to gain a deep understanding of how things work under the hood in modern game engines.&lt;/p&gt;</description>
+      
+    </item>
+    
+    <item>
+      <title>Chained By Eternity</title>
+      <link>//localhost:1313/project/chainedbyeternity/</link>
+      <pubDate>Thu, 26 Jun 2025 12:39:17 +0200</pubDate>
+      
+      <guid>//localhost:1313/project/chainedbyeternity/</guid>
+      
+      <description>&lt;h2 id=&#34;project-info&#34;&gt;Project Info&lt;/h2&gt;
+&lt;p&gt;Project Start: 17. February 2024&lt;br&gt;
+Teamsize: 2 Programmers&lt;br&gt;
+My currently invested working hours: ~400h&lt;/p&gt;
+&lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;</description>
+      
+    </item>
+    
+    <item>
+      <title>Gameplay Ability System</title>
+      <link>//localhost:1313/article/gameplayabilitysystem/</link>
+      <pubDate>Mon, 21 Oct 2024 18:47:54 +0200</pubDate>
+      
+      <guid>//localhost:1313/article/gameplayabilitysystem/</guid>
+      
+      <description>&lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;
+&lt;p&gt;I am creating this documentation to organize and deepen my knowledge of the Gameplay Ability System (GAS). Additionally, I’m happy if it can also help other developers along the way.&lt;/p&gt;
+&lt;p&gt;This documentation is still a work in progress. I will continue to update and expand it as I gain more experience while working with GAS. I can’t guarantee for absolute accuracy, but I will do my best to present the topics as clearly and correctly as possible. If you find any incorrect informations or have suggestions for improvement, please don’t hesitate to reach out to me via email.&lt;/p&gt;</description>
+      
+    </item>
+    
     <item>
       <title>About</title>
       <link>//localhost:1313/about/</link>
