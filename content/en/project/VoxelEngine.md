@@ -83,42 +83,47 @@ First step was to implement a functional render pipeline to get Vulkan working. 
 
 ## Challanges I Faced
 
-With a working rendering pipeline as fundament I was finally able to get to the fun part. Rendering my first voxel. A simple cube with 6 faces, 12 traingles. 
-That should be easy, I thought....
-Well, I felt very dumb because somehow my coordinates in my head that should make up a cube did not align with the results of my rendering.
-It was just later when I found that the issue were not the coordinates...
-but instead of logic I used try and error to get my cube rendered.
+With a working rendering pipeline as a foundation, I finally got to the fun part: rendering my first voxel - a simple cube with 6 faces and 12 triangles.
 
-Trying to render a chunk in my next step, revelead that something is not working correctly. It did not matter what indicies and verticies I used I always got something looking like this:
+That should be easy, I thought...
+
+But I quickly realized something was wrong. The cube I imagined in my head didn't match what appeared on screen. I assumed my coordinates were off, so I kept tweaking values - even drew it on paper - but still couldn’t get it right. Eventually, through trial and error, I got a cube that looked correct.
+Since I couldn’t understand why those coordinates worked, I felt pretty dumb. Maybe I had just mixed up the coordinate axes, I thought. So I decided to test that by rendering a 16×16 voxel chunk next.
+
+But the results were even more confusing. No matter what vertices or indices I used, it looked totally broken:
 
 <img src="/images/VoxelEngine/IndiciesInt16Bug.gif" alt="Buggy Chunk" style="display: block; width: 40%; margin: 0 auto;">
 
-Hours of debugging, searching and testing and I finally found the issue:
+At that point, I knew something in my rendering pipeline was off, so I took a step back and started reviewing my setup.
+After hours of debugging, searching, and testing, I finally found the issue:
 
-Binding my index buffer I usen following code:
 ```cpp
 vkCmdBindIndexBuffer(commandBuffer, vkIndexBuffer, 0, VK_INDEX_TYPE_UINT16);
 ```
-Everything is fine. Thats how it should be bind
-But I defined my indicies vector like this:
+This line binds the index buffer - and it looked fine at first. But I had defined my indices like this:
+
 ```cpp
 	std::vector<uint32_t> indices;
 ```
-You probably spotted the issue. I was telling Vulkan that my to work with indicies of type uint16 but defined my indicies vector of type uint32 which leads to wrong memory allocation and accessing. 
+Spot the issue? I told Vulkan to interpret the buffer as 16-bit indices, but actually gave it 32-bit data. That caused incorrect memory alignment and unpredictable rendering behavior.
 
-Once I changed my binding to VK_INDEX_TYPE_UINT32. Everything worked perfectly and I did not feel dumb for not getting the verticies correct anymore.
+Once I fixed it by switching to `VK_INDEX_TYPE_UINT32`, everything rendered correctly - and suddenly the cube coordinates I had in my mind made a lot more sense!
 
 <img src="/images/VoxelEngine/16x16ChunkRendering.gif" alt="Buggy Chunk" style="display: block; width: 65%; margin: 0 auto;">
 
 
-I learned the harsh reality of graphics programming. No error messages, no warning, no hint where to search. But honestly I love it. Sure its frustrating to search for a bug for hours but its so rewarding to finially fix it. To create new stuff from almost nothing feels amazing. Thats why I love programming and espacially game development.
+This experience reminded me of the harsh reality of low-level graphics programming: no error messages, no warnings, just a broken rendering image.
+
+But honestly, I love it.
+
+Sure, it's frustrating to spend hours tracking down a small bug. But finally solving it is incredibly rewarding. And especially in graphics programming, creating new something new out of pure code feels amazing. That's why I love programming and especially game development.
 
 ## What comes next?
 
-Firstly, I need to refactor this mess. I just wanted to get stuff working and did not bother about organizing my code. But now I have to clean up a little bit otherwise it will be a pain later to work on this project. 
+Firstly, I need to refactor the mess. I just wanted to get stuff working and didn't bother about organizing my code. But now it’s time to clean it up. Otherwise, continuing development will become a pain later on.
 
-After that I want to use some king of perlin noise algorithm to generate a voxel world terrain which I want to render. 
+After that I want to  implement an algorithm using perlin noise to generate a voxel world terrain to render. 
 
-And finally if that is working I want to optimize my rendering so that I can make this world huge.
+And finally, if that is works, I'm going to focus on optimizing my rendering so I can make the world huge without performance losses.
 
-These are my next steps but it may take a while as this is just my side project and I need to focus on my main project a Top Down ARPG which you can find [here](https://www.david-burgstaller.de/project/ChainedByEternity).
+These are my next steps, but it may take a while, since this is just my side project and I need to stay focused on my main project: a top down ARPG, which you can find [here](https://www.david-burgstaller.de/project/ChainedByEternity).
