@@ -65,21 +65,23 @@ To be more specific about my goals these are some milestones which I want to ach
   <li><span style="display: inline-block; width: 12px; height: 12px; border: 1px solid #aaa; background-color: white; margin-right: 8px; vertical-align: middle; position: relative; top: -1px;"></span> Improve voxel memory allocation</li>
 </ul>
 
-## Current Setuo
+## Current Setup
 
 First step was to implement a functional render pipeline to get Vulkan working. So there was a lot to learn about Vulkan initialization and a lot of boiler plate coding to do. Following the [vulkan-tutorial.com](https://vulkan-tutorial.com/) tutorial I got a grasp of how stuff is running pretty fast and could make some refinement alongway.
 
-My current Vulkan Setup looks like this:
-- Window and Surface Setup using GLFW
-- Swapchain handling a double buffered presentation
-- vertex and index buffers
-- Staging buffer which is using a explicit transfer queue family if available
-- Uniform buffer for adding perspective and rotation
-- depth buffer 
-- texture loading with stb_image library
+- **Window and surface** using GLFW  
+- **Swapchain** handling double-buffered presentation
+- **Render pass and framebuffers**
+- **Graphics pipeline** with custom vertex and fragment shaders 
+- **Vertex and index buffers** for mesh data  
+- **Staging buffer** using a dedicated transfer queue family (if available)  
+- **Uniform buffer** for camera perspective and mesh rotation 
+- **Depth buffer** for proper 3D depth rendering  
+- **Texture loading** using `stb_image`
+- **Command buffers and command pool** for recording rendering commands  
+- **CPU-GPU Synchronization** using semaphores and fences
 
-
-## Challanges
+## Challanges I Faced
 
 With a working rendering pipeline as fundament I was finally able to get to the fun part. Rendering my first voxel. A simple cube with 6 faces, 12 traingles. 
 That should be easy, I thought....
@@ -91,7 +93,7 @@ Trying to render a chunk in my next step, revelead that something is not working
 
 <img src="/images/VoxelEngine/IndiciesInt16Bug.gif" alt="Buggy Chunk" style="display: block; width: 40%; margin: 0 auto;">
 
-I learned the harsh reality of graphics programming. No error messages, no warning, no hint where to search. Hours of debugging, searching and testing and I finally found the issue:
+Hours of debugging, searching and testing and I finally found the issue:
 
 Binding my index buffer I usen following code:
 ```cpp
@@ -108,4 +110,15 @@ Once I changed my binding to VK_INDEX_TYPE_UINT32. Everything worked perfectly a
 
 <img src="/images/VoxelEngine/16x16ChunkRendering.gif" alt="Buggy Chunk" style="display: block; width: 65%; margin: 0 auto;">
 
-## What I want
+
+I learned the harsh reality of graphics programming. No error messages, no warning, no hint where to search. But honestly I love it. Sure its frustrating to search for a bug for hours but its so rewarding to finially fix it. To create new stuff from almost nothing feels amazing. Thats why I love programming and espacially game development.
+
+## What comes next?
+
+Firstly, I need to refactor this mess. I just wanted to get stuff working and did not bother about organizing my code. But now I have to clean up a little bit otherwise it will be a pain later to work on this project. 
+
+After that I want to use some king of perlin noise algorithm to generate a voxel world terrain which I want to render. 
+
+And finally if that is working I want to optimize my rendering so that I can make this world huge.
+
+These are my next steps but it may take a while as this is just my side project and I need to focus on my main project a Top Down ARPG which you can find [here](https://www.david-burgstaller.de/project/ChainedByEternity).
