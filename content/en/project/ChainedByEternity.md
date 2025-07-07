@@ -120,33 +120,35 @@ By seperating items from their effects, we've built a flexible and scalable syst
 
 While there's still much work to be done in this area, we’ve already implemented a foundational system that’s flexible and extensible - and at least one abilitiy that is worth showcasing.
 
-#### Abilities Architecture
+### Abilities Architecture
 
-At the core of our system is a custom `UBaseGameplayAbility` class, which inherits from GAS's `UGameplayAbility`. This base class stores input `FGameplayTag`. 
+At the core of our system is a custom `UBaseGameplayAbility` class, which inherits from GAS's `UGameplayAbility`. This base class stores an input `FGameplayTag` and implements ability cooldown functionality.
 
-This approach allows us to:
+This setup allows us to:
 - Activate the ability by it's input `FGameplayTag`
 - Dynamically bind an ability to a `InputAction`
-- Let players assign abilities to input keys they prefer
+- Let players assign abilities to their preferred input keys
+- Set the cooldown duration to any value
 
-In addition, we’ve implemented a `UDamageGameplayAbility` class that  handles damage-specific logic. This class defines:
+
+In addition, we’ve implemented a `UDamageGameplayAbility` class that handles damage-specific abilities. This class defines:
 - Raw damage value
 - Damage types by `FGameplayTags`
-- A apply damage function that is using a custom `UGameplayEffectExecutionCalculation` class.
+- A custom `ApplyDamage()` function that is using a custom `UGameplayEffectExecutionCalculation` class.
 
-This `UGameplayEffectExecutionCalculation` class is handling complex damage calculations considiring the target attributes and the source attributes. As this class is quite comples I will present it in a seperate chapter.
+This `UGameplayEffectExecutionCalculation` class is handling the complex damage calculations considering both source and target attributes. Since this class is relatively complex, I’ll describe it in more detail in a dedicated section.
 
-#### Implemented Abilities
+
+### Implemented Abilities
 We currently have three working prototype abilities. Most of them are still basic implementations, but one - the Rain of Arrows - already demonstrates more advanced logic:
 
 - Projectile Ability
   Fires a projectile that applies a `UGameplayEffect` on hit.
-
 - Melee sword attack
   A close-range sword attack that deals damage on hit.
-
 - Rain of Arrows (AOE)
   A area-of-effect ability that spawns multiple damaging projectiles raining down a targeted area.
 
-
+##### Rain of Arrows
+For this ability I created a Niagara System, 
 
