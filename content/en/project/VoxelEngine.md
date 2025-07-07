@@ -1,6 +1,6 @@
 +++
 date = '2025-07-03T15:07:36+02:00'
-draft = true
+draft = false
 title = 'Voxel Renderer / Engine'
 categories = ['Vulkan', 'C++', 'SDL']
 projectDescription = ["An ongoing project to explore graphics and engine programming with Vulkan. The goal is to render a voxel world with a focus on performance and visual quality optimization."]
@@ -57,6 +57,7 @@ To be more specific about my goals these are some milestones which I want to ach
   <li><span style="display: inline-flex; width: 12px; height: 12px; border: 1px solid #aaa; background-color: white; color: green; font-size: 16px; font-weight: 900; justify-content: center; align-items: center; margin-right: 8px; line-height: 1; vertical-align: middle; position: relative; top: -1px;">✓</span> Implement face culling</li>
   <li><span style="display: inline-block; width: 12px; height: 12px; border: 1px solid #aaa; background-color: white; margin-right: 8px; vertical-align: middle; position: relative; top: -1px;"></span> Implement greedy meshing</li>
   <li><span style="display: inline-block; width: 12px; height: 12px; border: 1px solid #aaa; background-color: white; margin-right: 8px; vertical-align: middle; position: relative; top: -1px;"></span> Try out binary meshing</li>
+  <li><span style="display: inline-block; width: 12px; height: 12px; border: 1px solid #aaa; background-color: white; margin-right: 8px; vertical-align: middle; position: relative; top: -1px;"></span> Implement Dynamic Chunk loading</li>
   <li><span style="display: inline-block; width: 12px; height: 12px; border: 1px solid #aaa; background-color: white; margin-right: 8px; vertical-align: middle; position: relative; top: -1px;"></span> octree-based chunk management (Not sure yet)</li>
 </ul>
 
