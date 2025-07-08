@@ -3,7 +3,7 @@ date = '2025-07-03T15:07:36+02:00'
 draft = false
 title = 'Voxel Renderer / Engine'
 categories = ['Vulkan', 'C++', 'SDL']
-projectDescription = ["An ongoing project to explore graphics and engine programming with Vulkan. The goal is to render a voxel world with a focus on performance and visual quality optimization."]
+projectDescription = ["An ongoing side project to explore graphics and engine programming with Vulkan. The goal is to render a voxel world with a focus on performance and visual quality optimization."]
 +++
 
 <br>

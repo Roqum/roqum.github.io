@@ -2,6 +2,7 @@
 date = '2024-06-10T18:47:54+02:00'
 title = '#1 Why I’m Creating This Game'
 author = 'David'
+draft = true
 +++
 
 My game project will be introduced in the next devlog. In this one, I’d like to share a bit about why I started this project and the journey that led me here.

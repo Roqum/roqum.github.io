@@ -3,7 +3,7 @@ date = '2023-09-29T16:12:33+02:00'
 draft = false
 title = 'Data Mining/Visualization Website'
 categories = ['Pyhton', 'd3js', 'javascript' , 'html', 'css']
-projectDescription = ['As part of my bachelor`s thesis, I created a website for the DIPF that mines data from a massive database and visualizes it. It is used to ease up the search and analysis of the data collected by theire meta-seach engine']
+projectDescription = ['As part of my bachelor`s thesis, I created a website for the DIPF that mines data from a massive database and visualizes it. It is used to ease up the search and analysis of the data collected by theire meta-search engine']
 +++
 
 ### Project Info

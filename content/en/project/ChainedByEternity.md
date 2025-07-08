@@ -1,9 +1,9 @@
 +++
-title = 'Chained By Eternity'
+title = 'Chained By Eternity (Main Project)'
 date = '2025-06-26T12:39:17+02:00'
-draft = true
+draft = false
 categories = ['Unreal Engine 5', 'Gameplay Ability System', 'C++']
-projectDescription = ["A vertical slice of a classic action RPG, built in Unreal Engine with the Gameplay Ability System. Started in March 2024 as a long-term side project, it showcases all core mechanices of a classic RPG like real-time combat, character progression, ability sytsem and much more."]
+projectDescription = ["A vertical slice of a classic action RPG, built in Unreal Engine 5 using the Gameplay Ability System. Started in March 2024 as a long-term project. It showcases all core mechanices of a classic RPG like real-time combat, character progression, ability system and much more."]
 +++
 
 ## Project Info
