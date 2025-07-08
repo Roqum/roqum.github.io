@@ -24,6 +24,10 @@ projectDescription = ["A vertical slice of a classic action RPG, built in Unreal
 This project is built using **Unreal Engine 5 (UE5)** and the **Gameplay Ability System (GAS)**. We're developing almost **entirely in C++**, with minimal use of Blueprints.
 Since this is a portfolio presentation and not a tutorial, I won’t go into detailed explanations of UE5 or GAS concepts.
 
+> **Note 2:**  
+> Thanks for taking the time to read about my project.  
+> I would really appreciate any kind of **feedback** - whether it’s about the project, my writing style, or even my grammar.  
+> Feel free to send me an email - **it really helps!**
 ## Intorduction
 
 **Chained By Eternity** is my most ambitious and dedicated project to date. My goal with this project is to showcase my skills and finally land a job in the game development industry.
@@ -140,15 +144,52 @@ This `UGameplayEffectExecutionCalculation` class is handling the complex damage 
 
 
 ### Implemented Abilities
-We currently have three working prototype abilities. Most of them are still basic implementations, but one - the Rain of Arrows - already demonstrates more advanced logic:
+We currently have three working prototype abilities.
 
 - Projectile Ability
   Fires a projectile that applies a `UGameplayEffect` on hit.
-- Melee sword attack
-  A close-range sword attack that deals damage on hit.
+- Melee Combo Attack 
+  A close-range attack that supports combo chaining 
 - Rain of Arrows (AOE)
   A area-of-effect ability that spawns multiple damaging projectiles raining down a targeted area.
 
-##### Rain of Arrows
-For this ability I created a Niagara System, 
+All of these abilities use Animation Montages for playing animations. To synchronize gameplay logic with the animation, we use Gameplay Events, which broadcast an FGameplayTag at specific animation frames.
 
+Using GAS’s `AbilityTask_WaitGameplayTag`, we listen for these events to time key moments in the ability’s execution like spawning a hitbox or projectile at the correct moment.
+
+##### Melee Combo Attack 
+We decided to store references to the basic attack animation montages inside our weapon class - specifically, as an array of attack montages. This setup allows us to automate combo chaining directly within the ability logic.
+
+The melee ability reads this array to:
+- Determine the maximum number of combo steps
+- Play each montage in sequence as the player chains attacks
+
+To smooth out gameplay, we implemented two Gameplay Events inside each animation montage:
+
+- One event allows the next combo attack to be triggered before the current animation finishes (early input window)
+- The other resets the combo if the animation ends without input (combo timeout)
+
+This design gives us the flexibility to define unique combo chains for each weapon, simply by assigning different montages with the appropriate events.
+
+
+##### Rain of Arrows
+
+For this ability, we created a Niagara System that spawns multiple arrows in a circular pattern above the ground. These arrows rapidly shoot downward, "raining" onto enemies in the target area.
+
+To enhance combat feel and realism, I wanted the ability to hit enemies multiple times, as several arrows are hitting the enemy.
+
+I considered three possible approaches:
+
+1. **Spawn a large hitbox** covering the area and trigger it multiple times.
+2. **Predefine the arrow spawn positions**, send them to the Niagara system, and do a line trace from each point down to the ground.
+3. **Listen to Niagara particle collision events** and trigger a small hitbox at each impact location.
+
+The **first solution** would’ve been the simplest to implement - but I was aiming for something more realistic.
+
+The **third option** felt ideal at first: it's reactive and precise. However, it's not adviced to mix VFX with gameplay logic. Even though in my implementation, the VFX would only trigger an event (and the gameplay logic responds), this approach can cause problems - especially in multiplayer games. That’s because VFX systems like Niagara are often client-side only and not run on the server, meaning they can desynchronize from core gameplay.
+
+So in theory, the **second solution** is the cleanest: define spawn locations up front, trigger the VFX based on them, and handle all gameplay logic (e.g., line traces, damage) independently and safely.
+
+> **But… I still went with the third option.** 😅  
+> Why?  
+> Because we're making a single-player game, and I wanted it to get done before going on vacation! 😄

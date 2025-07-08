@@ -77,7 +77,9 @@ Since this is a portfolio presentation and not a tutorial, I won’t go into det
       
       <guid>//localhost:1313/about/</guid>
       
-      <description>&lt;p&gt;Its all about something&lt;/p&gt;</description>
+      <description>&lt;h3 id=&#34;about-me&#34;&gt;About Me&lt;/h3&gt;
+&lt;p&gt;Hi, I’m David - a full-time C++ software developer based in Frankfurt am Main, Germany. I&amp;rsquo;m married and recently became a father to a three-month-old child.&lt;/p&gt;
+&lt;p&gt;I discovered programming at the age of 13 and quickly developed a strong interest in game development. Unfortunately, becoming a game programmer didn’t feel like a realistic career path at the time, and I lost a few valuable years exploring other options.&lt;/p&gt;</description>
       
     </item>
     
