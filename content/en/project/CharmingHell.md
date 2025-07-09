@@ -12,7 +12,6 @@ GitHub: [github.com/Roqum/CharmingHell](https://github.com/Roqum/CharmingHell_3D
 Play in Browser: [roqum.itch.io/charming-hell](https://roqum.itch.io/charming-hell)\
 Working Hours: ~30h
 
-
 ## The Beginning
 
 The theme for the Winter Melon Jam 2023 was "Charm." I was disappointed. I already had several cool game genres in mind that I was excited to try out. So my anticipation for the jam was huge. But "Charm"? What should I do with that? It did not fit any idea at all.

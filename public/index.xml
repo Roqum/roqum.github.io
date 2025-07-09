@@ -6,51 +6,67 @@
     <description>Recent content on David Burgstaller</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-gb</language>
-    <lastBuildDate>Mon, 21 Oct 2024 18:47:54 +0200</lastBuildDate><atom:link href="//localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 03 Jul 2025 15:07:36 +0200</lastBuildDate><atom:link href="//localhost:1313/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>About</title>
+      <title>Voxel Renderer / Engine</title>
+      <link>//localhost:1313/project/voxelengine/</link>
+      <pubDate>Thu, 03 Jul 2025 15:07:36 +0200</pubDate>
+      
+      <guid>//localhost:1313/project/voxelengine/</guid>
+      
+      <description>&lt;br&gt;
+&lt;div style=&#34;display: grid; grid-template-columns: 150px 1fr; &#34;&gt;
+  &lt;div&gt;Status:&lt;/div&gt;
+  &lt;div&gt;Currently in progress... &lt;/div&gt;
+  &lt;div&gt;Started:&lt;/div&gt;
+  &lt;div&gt;26. April 2025&lt;/div&gt;
+  &lt;div&gt;Working Hours:&lt;/div&gt;
+  &lt;div&gt;~30h&lt;/div&gt;
+  &lt;div&gt;Source Code:&lt;/div&gt;
+  &lt;a href=&#34;https://github.com/Roqum/VoxelGameEngine&#34; style=&#34;color:rgb(158, 166, 174); text-decoration: underline;&#34;&gt;github.com/Roqum/VoxelGameEngine&lt;/a&gt;
+&lt;/div&gt;
+&lt;br&gt;
+&lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;
+&lt;p&gt;I’m deeply interested in game engine programming and am seriously considering transitioning fully from game development to engine development. I love the combination of solving math-heavy challenges, writing performance-critical code, and designing thoughtful systems. That’s what led me to start this project.&lt;/p&gt;
+&lt;p&gt;This voxel engine serves as my learning environment. My goal is to build a simple voxel world using procedural generation and to focus on optimizing the rendering pipeline as much as possible. There are many algorithms I’ve read about and am eager to experiment with, combine, and refine. At the end, I want to gain a deep understanding of how things work under the hood in modern game engines.&lt;/p&gt;</description>
+      
+    </item>
+    
+    <item>
+      <title>Chained By Eternity (Main Project)</title>
+      <link>//localhost:1313/project/chainedbyeternity/</link>
+      <pubDate>Thu, 26 Jun 2025 12:39:17 +0200</pubDate>
+      
+      <guid>//localhost:1313/project/chainedbyeternity/</guid>
+      
+      <description>&lt;h2 id=&#34;project-info&#34;&gt;Project Info&lt;/h2&gt;
+&lt;br&gt;
+&lt;div style=&#34;display: grid; grid-template-columns: 150px 1fr; &#34;&gt;
+  &lt;div&gt;Status:&lt;/div&gt;&lt;div&gt;Currently in progress...&lt;/div&gt;
+  &lt;div&gt;Started:&lt;/div&gt;&lt;div&gt;17. February 2024&lt;/div&gt;
+  &lt;div&gt;Teamsize:&lt;/div&gt;&lt;div&gt;2 Programmers&lt;/div&gt;
+  &lt;div&gt;My Working Hours:&lt;/div&gt;&lt;div&gt;~400h&lt;/div&gt;
+  &lt;div&gt;Source Code:&lt;/div&gt;&lt;div&gt;Coming soon&lt;/div&gt;
+  &lt;div&gt;Demo:&lt;/div&gt;&lt;div&gt;Coming soon&lt;/div&gt;
+&lt;/div&gt;
+&lt;br&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;Note:&lt;/strong&gt; &lt;br&gt;
+This project is built using &lt;strong&gt;Unreal Engine 5 (UE5)&lt;/strong&gt; and the &lt;strong&gt;Gameplay Ability System (GAS)&lt;/strong&gt;. We&amp;rsquo;re developing almost &lt;strong&gt;entirely in C++&lt;/strong&gt;, with minimal use of Blueprints.
+Since this is a portfolio presentation and not a tutorial, I won’t go into detailed explanations of UE5 or GAS concepts.&lt;/p&gt;</description>
+      
+    </item>
+    
+    <item>
+      <title>About Me</title>
       <link>//localhost:1313/about/</link>
       <pubDate>Mon, 21 Oct 2024 16:10:50 +0200</pubDate>
       
       <guid>//localhost:1313/about/</guid>
       
-      <description>&lt;p&gt;Its all about something&lt;/p&gt;</description>
-      
-    </item>
-    
-    <item>
-      <title>#1 Why I’m Creating This Game</title>
-      <link>//localhost:1313/devlog/devlog1/</link>
-      <pubDate>Mon, 10 Jun 2024 18:47:54 +0200</pubDate>
-      
-      <guid>//localhost:1313/devlog/devlog1/</guid>
-      
-      <description>&lt;p&gt;My game project will be introduced in the next devlog. In this one, I’d like to share a bit about why I started this project and the journey that led me here.&lt;/p&gt;
-&lt;p&gt;I started programming when I was 13 years old. Even then, I was fascinated by the idea of creating games, which led me to learn C++, the programming language commonly used for game development. From that point on, I knew I wanted to become a programmer. Interestingly, becoming a game developer didn’t immediately cross my mind — probably because the industry wasn’t as large at the time, and most games were developed in the United States. It felt as distant as dreaming about working in Hollywood.&lt;/p&gt;</description>
-      
-    </item>
-    
-    <item>
-      <title>#2 Project Introduction</title>
-      <link>//localhost:1313/devlog/devlog2/</link>
-      <pubDate>Mon, 10 Jun 2024 18:47:54 +0200</pubDate>
-      
-      <guid>//localhost:1313/devlog/devlog2/</guid>
-      
-      <description>&lt;p&gt;As you may have read in the last devlog, this game is a showcase project. My goal is to expand and demonstrate my skills in game development.&lt;/p&gt;
-&lt;p&gt;With that goal in mind, I’ve decided not to create a fully-fledged game but rather a vertical slice of what could potentially be a complete game. As a solo developer, delivering a large amount of high-quality content is simply not feasible, especially since I’m also working full-time. For this reason, I’m focusing on the quality of the game, but I’ll need to limit the content, length, and complexity. The result will be more of a &amp;ldquo;vertical slice&amp;rdquo;—a &amp;ldquo;demo&amp;rdquo; with around 15 minutes of gameplay.&lt;/p&gt;</description>
-      
-    </item>
-    
-    <item>
-      <title>#3 First Steps</title>
-      <link>//localhost:1313/devlog/devlog3/</link>
-      <pubDate>Mon, 10 Jun 2024 18:47:54 +0200</pubDate>
-      
-      <guid>//localhost:1313/devlog/devlog3/</guid>
-      
-      <description>&lt;h3 id=&#34;gameplay-ability-system&#34;&gt;Gameplay Ability System&lt;/h3&gt;
-&lt;p&gt;I chose Unreal Engine because I’m a C++ programmer, and there are plenty of resources available for UE development online. After some research, I decided to use the Gameplay Ability System developed by Epic Games. Originally created in conjunction with Paragon, it serves as a framework for developing multiplayer RPGs. The framework is both powerful and flexible—it’s not limited to RPGs. For example, it’s also used in the development of Fortnite.&lt;/p&gt;</description>
+      <description>&lt;p&gt;Hi, I’m David - a full-time C++ software developer based in Frankfurt am Main, Germany. I&amp;rsquo;m married and recently became a father to a three-month-old child.&lt;/p&gt;
+&lt;p&gt;I discovered programming at the age of 13 and quickly developed a strong interest in game development. Unfortunately, becoming a game programmer didn’t feel like a realistic career path at the time, and I lost a few valuable years exploring other options.&lt;/p&gt;
+&lt;p&gt;However, my passion for programming never faded. I pursued a degree in computer science and began building a professional career as a software developer. Over time, my perspective on game development shifted - and I’m now more determined than ever to enter the industry.&lt;/p&gt;</description>
       
     </item>
     

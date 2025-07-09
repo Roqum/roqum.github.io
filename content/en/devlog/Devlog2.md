@@ -2,6 +2,7 @@
 date = '2024-06-10T18:47:54+02:00'
 title = '#2 Project Introduction'
 author = 'David'
+draft = true
 +++
 
 As you may have read in the last devlog, this game is a showcase project. My goal is to expand and demonstrate my skills in game development.

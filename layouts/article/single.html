@@ -12,7 +12,9 @@
                 </div>
                 {{ end }}
             </header>
-            {{ partial "toc.html" .}}
+            {{ if .Params.toc }}
+                {{ partial "toc.html" . }}
+            {{ end }}
             <div class="page-content">
                 {{ .Content }}
             </div>
