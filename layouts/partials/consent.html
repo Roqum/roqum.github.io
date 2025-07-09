@@ -43,8 +43,11 @@
 </div>
 <script>
 
-    const scripts = [];{{ range $index, $item := (where .Site.Data.consent.items "is_functional" false) }}
-    scripts[{{ $index }}] = "/js/{{ $item.script_file }}";{{ end }}
+    {{ with .Site.Data.consent.items }}
+        {{ range $index, $item := (where . "is_functional" false) }}
+            scripts[{{ $index }}] = "/js/{{ $item.script_file }}";
+        {{ end }}
+    {{ end }}
 
     function createCookie(name,value,days) {
         var expires = "";
