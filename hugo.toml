@@ -15,7 +15,10 @@ defaultContentLanguage = "en-gb"
   [services.googleAnalytics]
     id = "G-67BGNEWG64"
 
-[markup]
+[markup] 
+  [markup.tableOfContents]
+    startLevel = 2
+    endLevel = 4
   [markup.goldmark]
   [markup.goldmark.renderer]
   unsafe = true
@@ -106,5 +109,4 @@ defaultContentLanguage = "en-gb"
   name = "linkedin"
   url = "https://www.linkedin.com/in/david-burgstaller/"
 
- 
 

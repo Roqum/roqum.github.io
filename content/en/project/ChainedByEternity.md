@@ -2,6 +2,7 @@
 title = 'Chained By Eternity (Main Project)'
 date = '2025-06-26T12:39:17+02:00'
 draft = false
+tocVisible = true
 categories = ['Unreal Engine 5', 'Gameplay Ability System', 'C++']
 projectDescription = ["A vertical slice of a classic action RPG, built in Unreal Engine 5 using the Gameplay Ability System. Started in March 2024 as a long-term project. It showcases all core mechanices of a classic RPG like real-time combat, character progression, ability system and much more."]
 +++
@@ -28,6 +29,7 @@ Since this is a portfolio presentation and not a tutorial, I won’t go into det
 > Thanks for taking the time to read about my project.  
 > I would really appreciate any kind of **feedback** - whether it’s about the project, my writing style, or even my grammar.  
 > Feel free to send me an email - **it really helps!**
+
 ## Intorduction
 
 **Chained By Eternity** is my most ambitious and dedicated project to date. My goal with this project is to showcase my skills and finally land a job in the game development industry.
@@ -37,6 +39,7 @@ Together with a friend, we set out to build something technically challenging. W
 
 ## Current State
 
+### Overview 
 We've already achieved a lot, but there's still a long road ahead. Many systems are implemented and working, but not yet at the level of quality we're aiming for. We're currently focused on building a solid foundation, following the principle:
 
 > "Make it work first, make it good later."
@@ -81,7 +84,7 @@ Please keep that in mind when reading the overview below. Most of the listed sys
   Refine animations, add effects and sound, optimize performance, etc.
 
 
-## Inventory and Item System
+### Inventory and Item System
 
 We use a grid-based, jigsaw-style inventory system in our game, inspired by classics like Diablo II. The core of this system is a custom `UObject` class called `InventoryManager`, stored in the player’s `PlayerState`.
 
@@ -93,7 +96,7 @@ The InventoryManager is responsible for all inventory logic, including:
 
 All of this logic is cleanly seperated from the UI since we are following a strict separation of concerns between gameplay logic and presentation. Communication between the systems is handled via an custom event system. The `InventoryManager` emits and responds to relevant UI events, keeping gameplay code decoupled.
 
-##### Item Structure
+#### Item Structure
 Items are represented as `UObjects` and store their data in a `FItemData` `FStruct`. Using `UObjects` rather than plain structs gives us the ability to work with pointers, which simplifies management - for example, an empty inventory slot simply points to `nullptr`.
 
 Our item classes follow a hierarchical inheritance pattern like this:
@@ -101,8 +104,9 @@ Our item classes follow a hierarchical inheritance pattern like this:
 - `UEquipment` inherits from `UItem`, adding functionality for equipping and unequipping.
 - `UWeapon` inherits from `UEquipment`, and adds weapon-specific behavior like granting abilities and changing animation layers when equipped.
 
+<img src="/images/ChainedByEternity/ChangeWeapon.gif" alt="Inventory" style="display: block; width: 65%; margin: 0 auto;">
 
-##### Gameplay Integration
+#### Gameplay Integration
 We use the Gameplay Ability System (GAS) to implement our item effects. For Example:
   - Character Attribute Manipulation
     Each equipment stores an array of `GameplayEffectModifiers`. When equipped, a `GameplayEffect` is created dynamically, filled with those modifiers, and applied to the character.
@@ -111,7 +115,7 @@ We use the Gameplay Ability System (GAS) to implement our item effects. For Exam
   - Consumables
     Items like health or mana potions don’t grant abilities - instead, they activate an ability instantly, such as applying a healing effect on use.
 
-##### Design Benefits
+#### Design Benefits
 
 By seperating items from their effects, we've built a flexible and scalable system. Creating new item types becomes straightforward. Even more complex item behaivios like this are still easy to handle: 
 
@@ -120,11 +124,11 @@ By seperating items from their effects, we've built a flexible and scalable syst
 - Providing conditional effects (e.g., immunity to specific damage types)
 
 
-## Player Abilities
+### Player Abilities
 
 While there's still much work to be done in this area, we’ve already implemented a foundational system that’s flexible and extensible - and at least one abilitiy that is worth showcasing.
 
-### Abilities Architecture
+#### Abilities Architecture
 
 At the core of our system is a custom `UBaseGameplayAbility` class, which inherits from GAS's `UGameplayAbility`. This base class stores an input `FGameplayTag` and implements ability cooldown functionality.
 
@@ -143,7 +147,7 @@ In addition, we’ve implemented a `UDamageGameplayAbility` class that handles d
 This `UGameplayEffectExecutionCalculation` class is handling the complex damage calculations considering both source and target attributes. Since this class is relatively complex, I’ll describe it in more detail in a dedicated section.
 
 
-### Implemented Abilities
+#### Implemented Abilities
 We currently have three working prototype abilities.
 
 - Projectile Ability
@@ -171,6 +175,10 @@ To smooth out gameplay, we implemented two Gameplay Events inside each animation
 
 This design gives us the flexibility to define unique combo chains for each weapon, simply by assigning different montages with the appropriate events.
 
+<img src="/images/ChainedByEternity/AttackMontage.png" alt="Inventory" style="display: block; width: 80%; margin: 0 auto;">
+<br>
+<img src="/images/ChainedByEternity/MeleeAttackCombo.gif" alt="Inventory" style="display: block; width: 80%; margin: 0 auto;">
+
 
 ##### Rain of Arrows
 
@@ -193,3 +201,13 @@ So in theory, the **second solution** is the cleanest: define spawn locations up
 > **But… I still went with the third option.** 😅  
 > Why?  
 > Because we're making a single-player game, and I wanted it to get done before going on vacation! 😄
+
+Custom ability task for area-of-effect selection using a decal:
+<img src="/images/ChainedByEternity/RainOfArrowAreaSelection.gif" alt="Inventory" style="display: block; width: 80%; margin: 0 auto;">
+
+Rain of Arrows damaging enemies showcase:
+<img src="/images/ChainedByEternity/RainOfArrowDamage.gif" alt="Inventory" style="display: block; width: 80%; margin: 0 auto;">
+
+
+### To be continued...
+This project page isn’t finished - there’s still a lot more to present. I’ll continue adding new chapters over time.
