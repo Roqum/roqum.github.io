@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Unreal Engine 5 on David Burgstaller</title><link>/categories/unreal-engine-5/</link><description>Recent content in Unreal Engine 5 on David Burgstaller</description><generator>Hugo -- gohugo.io</generator><language>en-gb</language><lastBuildDate>Thu, 26 Jun 2025 12:39:17 +0200</lastBuildDate><atom:link href="/categories/unreal-engine-5/index.xml" rel="self" type="application/rss+xml"/><item><title>Chained By Eternity (Main Project)</title><link>/project/chainedbyeternity/</link><pubDate>Thu, 26 Jun 2025 12:39:17 +0200</pubDate><guid>/project/chainedbyeternity/</guid><description>&lt;h2 id="project-info">Project Info&lt;/h2>
+&lt;br>
+&lt;div style="display: grid; grid-template-columns: 150px 1fr; ">
+&lt;div>Status:&lt;/div>&lt;div>Currently in progress...&lt;/div>
+&lt;div>Started:&lt;/div>&lt;div>17. February 2024&lt;/div>
+&lt;div>Teamsize:&lt;/div>&lt;div>2 Programmers&lt;/div>
+&lt;div>My Working Hours:&lt;/div>&lt;div>~400h&lt;/div>
+&lt;div>Source Code:&lt;/div>&lt;div>Coming soon&lt;/div>
+&lt;div>Demo:&lt;/div>&lt;div>Coming soon&lt;/div>
+&lt;/div>
+&lt;br>
+&lt;blockquote>
+&lt;p>&lt;strong>Note:&lt;/strong> &lt;br>
+This project is built using &lt;strong>Unreal Engine 5 (UE5)&lt;/strong> and the &lt;strong>Gameplay Ability System (GAS)&lt;/strong>. We&amp;rsquo;re developing almost &lt;strong>entirely in C++&lt;/strong>, with minimal use of Blueprints.
+Since this is a portfolio presentation and not a tutorial, I won’t go into detailed explanations of UE5 or GAS concepts.&lt;/p></description></item></channel></rss>
