@@ -10,7 +10,7 @@ I discovered programming at the age of 13 and quickly developed a strong interes
 
 However, my passion for programming never faded. I pursued a degree in computer science and began building a professional career as a software developer. Over time, my perspective on game development shifted - and I’m now more determined than ever to enter the industry.
 
-In my free time, I’m developing a game using Unreal Engine 5, focusing heavily on C++ and the Gameplay Ability System (GAS). It’s a way to advance and showcase my game programming skills. You can learn more about it [here](https://www.david-burgstaller.de/project/ChainedByEternity)
+In my free time, I’m developing a game using Unreal Engine 5, focusing heavily on C++ and the Gameplay Ability System (GAS). It’s a way to advance and showcase my game programming skills. You can learn more about it [here](https://www.david-burgstaller.de/project/chainedbyeternity/)
 
 ## Contact
 <div style="display: grid; grid-template-columns: 150px 1fr; ">

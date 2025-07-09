@@ -127,4 +127,4 @@ After that I want to  implement an algorithm using perlin noise to generate a vo
 
 And finally, if that is works, I'm going to focus on optimizing my rendering so I can make the world huge without performance losses.
 
-These are my next steps, but it may take a while, since this is just my side project and I need to stay focused on my main project: a top down ARPG, which you can find [here](https://www.david-burgstaller.de/project/ChainedByEternity).
+These are my next steps, but it may take a while, since this is just my side project and I need to stay focused on my main project: a top down ARPG, which you can find [here](https://www.david-burgstaller.de/project/chainedbyeternity/).
