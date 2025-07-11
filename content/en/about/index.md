@@ -22,6 +22,10 @@ In my free time, I’m developing a game using Unreal Engine 5, focusing heavily
   <div>GitHub:</div>
   <a href="https://github.com/Roqum" style="color:rgb(158, 166, 174); text-decoration: underline;">github.com/Roqum
   </a>
+  <div>Twitter:</div>
+  <a href="https://x.com/DavidBGameDev" style="color:rgb(158, 166, 174); text-decoration: underline;">x.com/DavidBGameDev
+  </a>
+  
 </div>
 
 ## Random Stuff

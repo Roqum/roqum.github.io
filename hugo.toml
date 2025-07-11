@@ -109,4 +109,8 @@ defaultContentLanguage = "en-gb"
   name = "linkedin"
   url = "https://www.linkedin.com/in/david-burgstaller/"
 
+  [[params.socialIcons]]
+  name = "twitter"
+  url = "https://x.com/DavidBGameDev"
+
 
