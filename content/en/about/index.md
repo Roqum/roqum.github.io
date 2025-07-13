@@ -34,6 +34,36 @@ In my free time, I’m developing a game using Unreal Engine 5, focusing heavily
   <div>Favorite Game:</div><div>Gothic 2</div>
   <div>Most Played Game:</div><div>Civilization Series</div>
   <div>Favorite Genre:</div><div>RTS, Strategy, RPGs</div>
-  <div>Currently Playing:</div><div>Unreal Editor 😅</div>
+  <div>Currently Playing:</div><div>Path of Exile 2</div>
   <div>Favorite Movies:</div><div>Lord of the Rings, Ghibli Studio Movies</div>
 </div>
+
+## Some books I read
+
+<section style="display:grid; grid-template-columns:repeat(auto-fill, minmax(160px, 1fr)); gap:1rem;">
+    <!-- Book 1 -->
+    <a href="https://gameprogrammingpatterns.com/" style="text-align:center; text-decoration:none; color:inherit;">
+      <img src="/images/Books/GameDesignPattern.jpg" alt="Book 1 cover" style="width:100%; height:auto; display:block; border-radius:4px;">
+    </a>
+    <!-- Book 2 -->
+    <a href="https://doi.org/10.1201/9781315267845" style="text-align:center; text-decoration:none; color:inherit;">
+      <img src="/images/Books/GameEngineArchitecture.jpg" alt="Book 2 cover" style="width:100%; height:auto; display:block; border-radius:4px;">
+    </a>
+    <!-- Book 3 -->
+    <a href="https://example.com/book3" style="text-align:center; text-decoration:none; color:inherit;">
+      <img src="/images/Books/cleanCode.jpg" alt="Book 3 cover" style="width:100%; height:auto; display:block; border-radius:4px;">
+    </a>
+    <!-- Book 4 -->
+    <a href="https://example.com/book4" style="text-align:center; text-decoration:none; color:inherit;">
+      <img src="/images/Books/PragmaticProgrammer.jpg" alt="Book 4 cover" style="width:100%; height:auto; display:block; border-radius:4px;">
+    </a>
+    <!-- Book 5 -->
+    <a href="https://example.com/book5" style="text-align:center; text-decoration:none; color:inherit;">
+      <img src="/images/Books/DeepWork.jpg" alt="Book 5 cover" style="width:100%; height:auto; display:block; border-radius:4px;">
+    </a>
+    <!-- Book 6 -->
+    <a href="/images/ChainedByEternity/AttackMontage.png" style="text-align:center; text-decoration:none; color:inherit;">
+      <div style="margin-top:0.0rem; margin-bottom:0.5rem; font-size:1.2rem;">Currently reading...</div>
+      <img src="/images/Books/CppDesign.jpg" alt="Book 6 cover" style="width:100%; height:auto; display:block; border-radius:4px;">
+    </a>
+  </section>
