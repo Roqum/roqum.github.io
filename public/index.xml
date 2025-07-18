@@ -58,6 +58,32 @@ Since this is a portfolio presentation and not a tutorial, I won’t go into det
     </item>
     
     <item>
+      <title>Niagara System: Export Particle Data to C&#43;&#43;/Blueprint</title>
+      <link>//localhost:1313/article/unrealeditorprogramming/</link>
+      <pubDate>Sat, 21 Jun 2025 18:47:54 +0200</pubDate>
+      
+      <guid>//localhost:1313/article/unrealeditorprogramming/</guid>
+      
+      <description>&lt;h2 id=&#34;overview&#34;&gt;Overview&lt;/h2&gt;
+&lt;p&gt;In a Niagara System you able to create events which are normaly bind to inside the System. But Unreal Engine offers you a have to bind to Niagara System Events even outside of the system.&lt;/p&gt;
+&lt;p&gt;But it should be said that its a not a good practive to mix VFX and gameplay logic, espacially in multiplayer games since VFX runs almost client side only. So use this with caution.&lt;/p&gt;</description>
+      
+    </item>
+    
+    <item>
+      <title>Gameplay Ability System</title>
+      <link>//localhost:1313/article/gameplayabilitysystem/</link>
+      <pubDate>Mon, 21 Oct 2024 18:47:54 +0200</pubDate>
+      
+      <guid>//localhost:1313/article/gameplayabilitysystem/</guid>
+      
+      <description>&lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;
+&lt;p&gt;I am creating this documentation to organize and deepen my knowledge of the Gameplay Ability System (GAS). Additionally, I’m happy if it can also help other developers along the way.&lt;/p&gt;
+&lt;p&gt;This documentation is still a work in progress. I will continue to update and expand it as I gain more experience while working with GAS. I can’t guarantee for absolute accuracy, but I will do my best to present the topics as clearly and correctly as possible. If you find any incorrect informations or have suggestions for improvement, please don’t hesitate to reach out to me via email.&lt;/p&gt;</description>
+      
+    </item>
+    
+    <item>
       <title>About Me</title>
       <link>//localhost:1313/about/</link>
       <pubDate>Mon, 21 Oct 2024 16:10:50 +0200</pubDate>
@@ -67,6 +93,66 @@ Since this is a portfolio presentation and not a tutorial, I won’t go into det
       <description>&lt;p&gt;Hi, I’m David - a full-time C++ software developer based in Frankfurt am Main, Germany. I&amp;rsquo;m married and recently became a father to a three-month-old child.&lt;/p&gt;
 &lt;p&gt;I discovered programming at the age of 13 and quickly developed a strong interest in game development. Unfortunately, becoming a game programmer didn’t feel like a realistic career path at the time, and I lost a few valuable years exploring other options.&lt;/p&gt;
 &lt;p&gt;However, my passion for programming never faded. I pursued a degree in computer science and began building a professional career as a software developer. Over time, my perspective on game development shifted - and I’m now more determined than ever to enter the industry.&lt;/p&gt;</description>
+      
+    </item>
+    
+    <item>
+      <title>#2 Inventory &amp; Item System</title>
+      <link>//localhost:1313/devlog/devlog1/</link>
+      <pubDate>Mon, 10 Jun 2024 18:47:54 +0200</pubDate>
+      
+      <guid>//localhost:1313/devlog/devlog1/</guid>
+      
+      <description>&lt;p&gt;Project of the devlog: &lt;a href=&#34;https://www.david-burgstaller.de/project/chainedbyeternity/&#34;  target=&#34;_blank&#34; rel=&#34;noreferrer nofollow&#34;&gt;Chained by Eternity&lt;/a&gt;
+&lt;/p&gt;
+&lt;p&gt;One of the first things I implemented after the attribute set of my character was the inventory system since items play a major role in an ARPG. Almost everything is based or influenced by items, so I decided to take them on early.&lt;/p&gt;
+&lt;h2 id=&#34;inventory-and-item-system&#34;&gt;Inventory and Item System&lt;/h2&gt;
+&lt;p&gt;We use a grid-based, jigsaw-style inventory system in our game, inspired by classics like Diablo II. The core of this system is a custom &lt;code&gt;UObject&lt;/code&gt; class called &lt;code&gt;InventoryManager&lt;/code&gt;, stored in the player’s &lt;code&gt;PlayerState&lt;/code&gt;.&lt;/p&gt;</description>
+      
+    </item>
+    
+    <item>
+      <title>#2 Player Abilities</title>
+      <link>//localhost:1313/devlog/devlog4/</link>
+      <pubDate>Mon, 10 Jun 2024 18:47:54 +0200</pubDate>
+      
+      <guid>//localhost:1313/devlog/devlog4/</guid>
+      
+      <description>&lt;p&gt;While there&amp;rsquo;s still much work to be done in this area, we’ve already implemented a foundational system that’s flexible and extensible - and at least one abilitiy that is worth showcasing.&lt;/p&gt;
+&lt;h4 id=&#34;abilities-architecture&#34;&gt;Abilities Architecture&lt;/h4&gt;
+&lt;p&gt;At the core of our system is a custom &lt;code&gt;UBaseGameplayAbility&lt;/code&gt; class, which inherits from GAS&amp;rsquo;s &lt;code&gt;UGameplayAbility&lt;/code&gt;. This base class stores an input &lt;code&gt;FGameplayTag&lt;/code&gt; and implements ability cooldown functionality.&lt;/p&gt;
+&lt;p&gt;This setup allows us to:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Activate the ability by it&amp;rsquo;s input &lt;code&gt;FGameplayTag&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Dynamically bind an ability to a &lt;code&gt;InputAction&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Let players assign abilities to their preferred input keys&lt;/li&gt;
+&lt;li&gt;Set the cooldown duration to any value&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;In addition, we’ve implemented a &lt;code&gt;UDamageGameplayAbility&lt;/code&gt; class that handles damage-specific abilities. This class defines:&lt;/p&gt;</description>
+      
+    </item>
+    
+    <item>
+      <title>#2 Project Introduction</title>
+      <link>//localhost:1313/devlog/devlog2/</link>
+      <pubDate>Mon, 10 Jun 2024 18:47:54 +0200</pubDate>
+      
+      <guid>//localhost:1313/devlog/devlog2/</guid>
+      
+      <description>&lt;p&gt;As you may have read in the last devlog, this game is a showcase project. My goal is to expand and demonstrate my skills in game development.&lt;/p&gt;
+&lt;p&gt;With that goal in mind, I’ve decided not to create a fully-fledged game but rather a vertical slice of what could potentially be a complete game. As a solo developer, delivering a large amount of high-quality content is simply not feasible, especially since I’m also working full-time. For this reason, I’m focusing on the quality of the game, but I’ll need to limit the content, length, and complexity. The result will be more of a &amp;ldquo;vertical slice&amp;rdquo;—a &amp;ldquo;demo&amp;rdquo; with around 15 minutes of gameplay.&lt;/p&gt;</description>
+      
+    </item>
+    
+    <item>
+      <title>#3 First Steps</title>
+      <link>//localhost:1313/devlog/devlog3/</link>
+      <pubDate>Mon, 10 Jun 2024 18:47:54 +0200</pubDate>
+      
+      <guid>//localhost:1313/devlog/devlog3/</guid>
+      
+      <description>&lt;h3 id=&#34;gameplay-ability-system&#34;&gt;Gameplay Ability System&lt;/h3&gt;
+&lt;p&gt;I chose Unreal Engine because I’m a C++ programmer, and there are plenty of resources available for UE development online. After some research, I decided to use the Gameplay Ability System developed by Epic Games. Originally created in conjunction with Paragon, it serves as a framework for developing multiplayer RPGs. The framework is both powerful and flexible—it’s not limited to RPGs. For example, it’s also used in the development of Fortnite.&lt;/p&gt;</description>
       
     </item>
     

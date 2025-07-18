@@ -1,11 +1,15 @@
 +++
 date = '2024-06-10T18:47:54+02:00'
-title = '#2 Project Introduction'
+title = '#1 Project Introduction (Chained by Eternity)'
 author = 'David'
 draft = true
 +++
 
-As you may have read in the last devlog, this game is a showcase project. My goal is to expand and demonstrate my skills in game development.
+Welcome to my Devlog for Chained by Eternity.
+Chained by Eternity is an ambitious project and I want to take you on my jouney tackling game development challanges. As I myself like to read how other fellow gamedeveloper handled some difficult tasks, my devlog may help you at some point. 
+
+## Intention
+This project started during my job application process after my studies. I applied for several game studios and not supprisingly got rejected from all of them. I realized that I don't have anything to show.  
 
 With that goal in mind, I’ve decided not to create a fully-fledged game but rather a vertical slice of what could potentially be a complete game. As a solo developer, delivering a large amount of high-quality content is simply not feasible, especially since I’m also working full-time. For this reason, I’m focusing on the quality of the game, but I’ll need to limit the content, length, and complexity. The result will be more of a "vertical slice"—a "demo" with around 15 minutes of gameplay.
 

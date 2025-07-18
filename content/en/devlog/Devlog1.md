@@ -1,22 +1,50 @@
 +++
 date = '2024-06-10T18:47:54+02:00'
-title = '#1 Why I’m Creating This Game'
+title = '#2 Inventory & Item System'
 author = 'David'
 draft = true
 +++
 
-My game project will be introduced in the next devlog. In this one, I’d like to share a bit about why I started this project and the journey that led me here.
+Project of the devlog: [Chained by Eternity](https://www.david-burgstaller.de/project/chainedbyeternity/)
 
-I started programming when I was 13 years old. Even then, I was fascinated by the idea of creating games, which led me to learn C++, the programming language commonly used for game development. From that point on, I knew I wanted to become a programmer. Interestingly, becoming a game developer didn’t immediately cross my mind — probably because the industry wasn’t as large at the time, and most games were developed in the United States. It felt as distant as dreaming about working in Hollywood.
+One of the first things I implemented after the attribute set of my character was the inventory system since items play a major role in an ARPG. Almost everything is based or influenced by items, so I decided to take them on early.
 
-As the years passed, the industry evolved. What once seemed like a distant dream job now felt possible. With the rise of popular game engines like Unreal Engine, Unity, and CryEngine, as well as the emergence of many indie studios, even in Germany, my career path became more achievable.
+## Inventory and Item System
 
-And this brings me to the reason for starting this project. Until now, I hadn’t specifically focused on a career in game development. My personal projects spanned a variety of fields—from game development to websites and even neural networks. While this gave me broad and valuable experience, it wasn’t particularly tailored to game development positions.
+We use a grid-based, jigsaw-style inventory system in our game, inspired by classics like Diablo II. The core of this system is a custom `UObject` class called `InventoryManager`, stored in the player’s `PlayerState`.
 
-What’s worse, almost none of my personal projects were documented. I didn’t realize how essential this would be for the application process. I had finished games, completed websites, and even some 3D graphics programming projects, but I have no proof of these achievements. Some projects were lost on old devices, others won’t run due to outdated dependencies, and a few simply vanished — I don’t even know where I lost them.
+The InventoryManager is responsible for all inventory logic, including:
+ - Adding and removing items
+ - Finding free space in the grid
+ - Equipping and unequipping gear
+ - Validating item requirements
 
-Without visible proof, I can’t convince recruiters of what I’m capable of. Not surprisingly, my applications to game companies right after graduation were unsuccessful.
+All of this logic is cleanly seperated from the UI since we are following a strict separation of concerns between gameplay logic and presentation. Communication between the systems is handled via an custom event system. The `InventoryManager` emits and responds to relevant UI events, keeping gameplay code decoupled.
 
-I want to change that. I’ve allready decided to become a game developer, and that’s what I’m going to work for. To achieve this, I started this project to showcase my programming experience. For years, I’ve been involved in game development in various ways — working with game engines, exploring art, studying game design and much more. I’ve learned a lot but I could not prove it. I hope this project will change that and it will gain me more attention in my next application process.
+### Item Structure
+Items are represented as `UObjects` and store their data in a `FItemData` `FStruct`. Using `UObjects` rather than plain structs gives us the ability to work with pointers, which simplifies management - for example, an empty inventory slot simply points to `nullptr`.
 
-Above all, for myself — but also for other developers — I want to document my progress and the knowledge I gain on my website. Maybe it will help someone along the way. For me, it definitely helps to organize what I’ve learned and to deepen my understanding.
+Our item classes follow a hierarchical inheritance pattern like this:
+- `UItem` is the base class for all items and is the type the inventory system operates on.
+- `UEquipment` inherits from `UItem`, adding functionality for equipping and unequipping.
+- `UWeapon` inherits from `UEquipment`, and adds weapon-specific behavior like granting abilities and changing animation layers when equipped.
+
+<img src="/images/ChainedByEternity/ChangeWeapon.gif" alt="Inventory" style="display: block; width: 65%; margin: 0 auto;">
+
+### Gameplay Integration
+We use the Gameplay Ability System (GAS) to implement our item effects. For Example:
+  - Character Attribute Manipulation
+    Each equipment stores an array of `GameplayEffectModifiers`. When equipped, a `GameplayEffect` is created dynamically, filled with those modifiers, and applied to the character.
+  - Granting Abilities
+    Our Weapon stores an array `GameplayAbility` classes that is granted to the character when equipped.
+  - Consumables
+    Items like health or mana potions don’t grant abilities - instead, they activate an ability instantly, such as applying a healing effect on use.
+
+### Design Benefits
+
+By seperating items from their effects, we've built a flexible and scalable system. Creating new item types becomes straightforward. Even more complex item behaivios like this are still easy to handle: 
+
+- Granting passive or active abilities
+- Triggering complex effects (e.g., throwing bombs, summoning allies)
+- Providing conditional effects (e.g., immunity to specific damage types)
+
