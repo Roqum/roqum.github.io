@@ -1,50 +1,52 @@
 +++
 date = '2024-06-10T18:47:54+02:00'
-title = '#2 Inventory & Item System'
+title = '#1 Project Introduction (Chained by Eternity)'
 author = 'David'
-draft = true
+draft = false
 +++
 
-Project of the devlog: [Chained by Eternity](https://www.david-burgstaller.de/project/chainedbyeternity/)
+Welcome to my Devlog for [Chained by Eternity](https://www.david-burgstaller.de/project/chainedbyeternity/).
+Chained by Eternity is an ambitious project, and I want to take you along on my journey as I tackle upcoming challenges of game development. As someone who enjoys reading how fellow game developers solve their problems, I hope this devlog might be helpful or inspiring to others as well.
 
-One of the first things I implemented after the attribute set of my character was the inventory system since items play a major role in an ARPG. Almost everything is based or influenced by items, so I decided to take them on early.
+## Intention and Goals
+This project began during my job search after graduating from university. I applied to several game studios and, unsurprisingly, was rejected by most of them almost immediately. That taught me a hard but valuable lesson: no matter how much knowledge or experience I might have, it doesn't mean much if I can't show and prove it. 
 
-## Inventory and Item System
+I cannot blame the studios or the current job market for rejecting me — honestly, I probably would’ve rejected my own application too if I had been in their position.
 
-We use a grid-based, jigsaw-style inventory system in our game, inspired by classics like Diablo II. The core of this system is a custom `UObject` class called `InventoryManager`, stored in the player’s `PlayerState`.
+Looking back, I regret not realizing this sooner...
 
-The InventoryManager is responsible for all inventory logic, including:
- - Adding and removing items
- - Finding free space in the grid
- - Equipping and unequipping gear
- - Validating item requirements
+Nevertheless, it led me to start this project with three main goals in mind:
+- **Showcase my skill** to finally land a job in the industry
+- **Learn more about game development**, because I genuinely want to become one of the best — and I know I’m still far from that.
+- **Document my progress** - to have proof of my work, to deepen my understanding and maybe even help other developers who read this.
 
-All of this logic is cleanly seperated from the UI since we are following a strict separation of concerns between gameplay logic and presentation. Communication between the systems is handled via an custom event system. The `InventoryManager` emits and responds to relevant UI events, keeping gameplay code decoupled.
+With these goals in mind, I decided to focus on delivering high quality — even if that meant cutting back on the amount of content. So instead of building a full game, I aimed for a vertical slice: a polished demo level with around 15 minutes of gameplay.
 
-### Item Structure
-Items are represented as `UObjects` and store their data in a `FItemData` `FStruct`. Using `UObjects` rather than plain structs gives us the ability to work with pointers, which simplifies management - for example, an empty inventory slot simply points to `nullptr`.
+In my mind, it wasn’t enough to just create a game — I wanted to make sure it was a high-quality, standout experience.
+(Looking back, I might regret that decision.)
 
-Our item classes follow a hierarchical inheritance pattern like this:
-- `UItem` is the base class for all items and is the type the inventory system operates on.
-- `UEquipment` inherits from `UItem`, adding functionality for equipping and unequipping.
-- `UWeapon` inherits from `UEquipment`, and adds weapon-specific behavior like granting abilities and changing animation layers when equipped.
+The game itself is a **3D top-down ARPG** with **Souls-like combat**. The closest comparison would be `No Rest for the Wicked`. I chose this genre for several reasons, which I’ll explain shortly.
 
-<img src="/images/ChainedByEternity/ChangeWeapon.gif" alt="Inventory" style="display: block; width: 65%; margin: 0 auto;">
+##### Why did I pick such a difficult genre?
 
-### Gameplay Integration
-We use the Gameplay Ability System (GAS) to implement our item effects. For Example:
-  - Character Attribute Manipulation
-    Each equipment stores an array of `GameplayEffectModifiers`. When equipped, a `GameplayEffect` is created dynamically, filled with those modifiers, and applied to the character.
-  - Granting Abilities
-    Our Weapon stores an array `GameplayAbility` classes that is granted to the character when equipped.
-  - Consumables
-    Items like health or mana potions don’t grant abilities - instead, they activate an ability instantly, such as applying a healing effect on use.
+First of all, I love RPGs — and passion is a valuable resource when developing games.
 
-### Design Benefits
+Secondly, RPGs feature several complex systems that deeply interact with each other. This makes them especially challenging for programmers, as it’s easy to end up with spaghetti code if things aren't well structured. That makes it a perfect challenge for me — and a great opportunity to showcase my skills.
 
-By seperating items from their effects, we've built a flexible and scalable system. Creating new item types becomes straightforward. Even more complex item behaivios like this are still easy to handle: 
+And last but not least, it’s a classic genre where I don’t have to reinvent the wheel.
 
-- Granting passive or active abilities
-- Triggering complex effects (e.g., throwing bombs, summoning allies)
-- Providing conditional effects (e.g., immunity to specific damage types)
+##### Why Top-Down?
+
+I’d love to develop a third-person RPG but I consciously decided against. In a third-person perspective, animations play a crucial role. Poor or mismatched animations are immediately noticeable and can make a game feel unfinished. Since I neither have the skills nor the resources for high-quality animations, I decide to go for a Top-Down perspective. 
+
+While animations are still matter a lot in a top-down view, it’s easier to hide imperfections. Cleverly placed effects and smart design choices can help cover limitations and maintain the game quality and feel. 
+There is a fantastic GDC talk which talking about that: [Dreamscaper: Killer Combat on an Indie Budget](https://www.youtube.com/watch?v=3Omb5exWpd4&t=3274s&ab_channel=GDC2025)
+
+##### Which Engine did I chose and why?
+
+I decided to go with Unreal Engine for several reasons:
+- I wanted to program in C++, as it is a widely used language in professional game development
+- It’s a cutting-edge engine apable of delivering AAA-quality - and it’s free to use
+- Unreal offers powerful tools and features that make it easier to achieve high-quality results.
+- It has great documentation 
 

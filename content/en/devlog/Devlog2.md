@@ -1,50 +1,196 @@
 +++
 date = '2024-06-10T18:47:54+02:00'
-title = '#1 Project Introduction (Chained by Eternity)'
+title = '#3 Flexible Input System (Chained by Eternity)'
 author = 'David'
 draft = true
 +++
+Project of the devlog: [Chained by Eternity](https://www.david-burgstaller.de/project/chainedbyeternity/)
 
-Welcome to my Devlog for Chained by Eternity.
-Chained by Eternity is an ambitious project and I want to take you on my jouney tackling game development challanges. As I myself like to read how other fellow gamedeveloper handled some difficult tasks, my devlog may help you at some point. 
+One key conept of a RPG is to have a flexible and customable input system. The player should be able to decide which key he want to press to activate certain abilities or items.
 
-## Intention
-This project started during my job application process after my studies. I applied for several game studios and not supprisingly got rejected from all of them. I realized that I don't have anything to show.  
+So keeping that in mind I wanted to start my project by implementing my input system.
 
-With that goal in mind, I’ve decided not to create a fully-fledged game but rather a vertical slice of what could potentially be a complete game. As a solo developer, delivering a large amount of high-quality content is simply not feasible, especially since I’m also working full-time. For this reason, I’m focusing on the quality of the game, but I’ll need to limit the content, length, and complexity. The result will be more of a "vertical slice"—a "demo" with around 15 minutes of gameplay.
+### Input System 
 
-The game itself will be a 3D top-down ARPG with Souls-like combat. The closest comparison would be No Rest for the Wicked. I chose this genre for various reasons, which I’ll explain further.
+As I am using the **Gameplay Ability System (GAS)** which is decoupling gameplay abilities very well, a great chunk of this flexible input system is allready solved for me. GAS allows me to assign certain gameplay abilities (`UGameplayAbility`) to a player and activate a assigned ability by a simple tag (`FGameplayTag`). 
 
-##### Why an RPG? Isn’t that too ambitious for a beginner?
+Actually, by default GAS uses an `EAbilityInputID` enum which values can be assign to a gameplay ability. This ability can then by activated by its ID.
 
-Yes, it is. But I wouldn't consider myself as an beginner anymore. I’ve been learning about various aspects of game development for several years now, and even longer in software development. Still, creating an RPG is ambitious, and I spent a lot of time considering whether I wanted to take on this challenge.
+```cpp
+UENUM(BlueprintType)
+enum class EAbilityInputID : uint8
+{
+    None        UMETA(DisplayName = "None"),
+    Confirm     UMETA(DisplayName = "Confirm"),
+    Cancel      UMETA(DisplayName = "Cancel"),
+    Ability1    UMETA(DisplayName = "Ability1"),
+    Ability2    UMETA(DisplayName = "Ability2"),
+    [...]
+};
+```
+While this default approach works, it’s tightly coupled to code and scales bad.
+Instead of that ID am using `FGameplayTag` as they are more flexible and allready well integrated within GAS.In addition to that I want to make use of the the **Enhanced Input System (EIS)** as it needs manual integration to work with GAS. 
 
-On the other hand, an RPG is an excellent choice for me to challinging myself and showcasing my knowledge.
-An RPG includes many systems that, on their own, can become quite complex. These systems don’t operate in isolation but instead interact on many levels.
+To achieve this, I implemented a custom `UGameplayAbility` class that stores an input tag (`FGameplayTag`). This tag will be used by the `Ability System Component` to activate this ability by its tag. This class will be our base class of all our future gameplay abilities so that each ability we create can have a input tag assigned.
 
-Take the attribute system, for example. This alone could already become intricate, but it still sounds manageable—it’s just a few numbers used to calculate stuff, right? But this attribute system is not set and done. It depens on multiple things and multiple things depens on it. Maybe the damage is calculated based on your attributes. Equipment you wear or usable items you use are changing these value and need to be considered asswell. What about passive abilities or active ones that interact with these attributes for a short duration. Does the enemy character also have attributes, are these changed by equipment or levels aswell? 
+The Enhanced Input System setup in classical way, I created a `Mapping Context` and several `Input Actions`. This setup is allready well documented by epic [here](https://dev.epicgames.com/documentation/en-us/unreal-engine/enhanced-input-in-unreal-engine).
 
-So there are many parts that interact in a RPG. It is very easy to mess some number up and the whole game is imbalanced or feels off. 
-And these are just the mechanics of the a RPG game. What about the NPCs, the quest system and the progress in the storyline? 
+To link this setup with GAS I firstly created a custom `UDataAsset` links each `Input Action` with a `FGameplayTag`.
 
-This is a huge challenge, but it’s one I’m consciously choosing to take on. I want to build a functional and scalable foundation that could support a full RPG. However, my focus are these mechanics while minimizing the content and workload in other areas I am not skilled at like art, animation, effects, story, sound and so on. I really want to deliver a high-quality game and for that I need to reduce the content of this game.
+```cpp
+USTRUCT(BlueprintType)
+struct FGameInputAction
+{
+	GENERATED_BODY()
 
-##### Why Top-Down?
+	UPROPERTY(EditDefaultsOnly)
+	const class UInputAction* InputAction = nullptr;
 
-I’d love to develop a third-person RPG like Gothic, but I consciously decided against it. In a third-person perspective, animations play a crucial role. Poor or mismatched animations are immediately noticeable and make the game feel unfinished. Since I neither have the skills nor the resources for high-quality animations, I opted for a top-down perspective instead.
+	UPROPERTY(EditDefaultsOnly)
+	FGameplayTag InputTag = FGameplayTag();
+};
 
-While animations are still important in a top-down view, it’s easier to mask imperfections. Cleverly placed effects and smart design choices can help cover limitations and maintain the game quality and feel. There is a fantastic GDC talk which talking about that: [Dreamscaper: Killer Combat on an Indie Budget](https://www.youtube.com/watch?v=3Omb5exWpd4&t=3274s&ab_channel=GDC2025)
+UCLASS()
+class RPGTOPDOWN_API UGameInputConfig : public UDataAsset
+{
+	GENERATED_BODY()
+	
+public:
+	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly)
+	TArray<FGameInputAction> AbilityInputActions;
 
-##### Why 3D?
+	const UInputAction* FindAbilityInputActionForTag(const FGameplayTag& InputTag, bool bLogNotFound = false) const;
+};
+```
 
-A 2D game would undoubtedly be much simpler, and all the various RPG systems could still be implemented in a 2D game. It would save me a lot of effort in areas like animations and enviroment design. Many gameplay challenges are also much easier to solve in a 2D space.
+In addition to that I created a custom input component class that derives from `UEnhancedInputComponent`. This class is just implementing following template fucntion:
 
-However, 3D feels like the industry standard in game development. Since it’s highly likely that I’ll work on a 3D game in a future job, I want to prepare myself by working on a 3D project now. On the other hand, I simply love working in 3D
+```cpp
+template<class UserClass, typename PressedFuncType, typename ReleasedFuncType, typename HeldFuncType>
+void UCustomInputComponent::BindAbilityActions(const TArray<FGameInputAction>& InputActions, UserClass* Object, PressedFuncType PressedFunc, ReleasedFuncType ReleasedFunc, HeldFuncType HeldFunc)
+{
+	for (const FGameInputAction& Action : InputActions)
+	{
+		if (Action.InputAction && Action.InputTag.IsValid())
+		{
+			if (PressedFunc)
+			{
+				BindAction(Action.InputAction, ETriggerEvent::Started, Object, PressedFunc, Action.InputTag);
+			}
+			if (ReleasedFunc)
+			{
+				BindAction(Action.InputAction, ETriggerEvent::Completed, Object, ReleasedFunc, Action.InputTag);
+			}
+			if (HeldFunc)
+			{	
+				BindAction(Action.InputAction, ETriggerEvent::Triggered, Object, HeldFunc, Action.InputTag);
+			}
+			
+		}
+	}
+}
+```
+Before I explain whats happening here, lets look at my custom `APlayerController` class where I take use of that function:
 
-##### So, What’s the Game Actually About?
+```cpp
+void ADefaultPlayerController::SetupInputComponent()
+{
+    Super::SetupInputComponent();
 
-Game design is tough. I have several ideas that I’d love to incorporate into the game, but clearly outlining and designing them is not simple. I’m finding it quite difficult to pin down ideas at the moment. Probably, much of the design process will happen during the development. For now, I want to focus on building the foundation of a very classic RPG like character attributes, leveling systems, inventory management, and so on. Whether these elements will stay traditional or evolve into something different is something I’ll figure out along the way.
+    if (UCustomInputComponent *CustomInputComponent = CastChecked<UCustomInputComponent>(InputComponent))
+    {
+        check(InputConfig);
+        CustomInputComponent->BindAbilityActions(InputConfig->AbilityInputActions, this, &ThisClass::AbilityInputTagPressed, &ThisClass::AbilityInputTagReleased, &ThisClass::AbilityInputTagHeld);
+    }
+}
+void ADefaultPlayerController::AbilityInputTagPressed(const FInputActionValue &InputAction, FGameplayTag InputTag)
+{
 
-What I can say at this stage is that there won’t be a traditional class system. Instead, your playstyle will be determined by your weapon. For example, equipping a bow or a magic staff will change your attacks and abilities, similar to Elden Ring. But this concept isn’t fully fleshed out yet.
+}
+void ADefaultPlayerController::AbilityInputTagReleased(const FInputActionValue &InputAction, FGameplayTag InputTag)
+{
+    
+}
+void ADefaultPlayerController::AbilityInputTagHeld(const FInputActionValue &InputAction, FGameplayTag InputTag)
+{
+    
+}
+```
 
-In the upcoming devlogs, I’ll start with Unreal Engine and work on implementing the core RPG elements. I want to document my progress and solutions in a way that any reader could implement them on their own. Maybe, this will help others with their own projects.
+As you can see I am overriding the `SetupInputComponent()` to bind all input actions inside my `InputConfig` Data Asset. By using my custom `BindAbilityActions` template function I can pass in three function references to handle the input pressed, input released and input held case. In addition to that the corresponding gameplay tag to the input action is passed to the handler functions.
+
+Inside the handler function I can handle my input inside my player controler. In addition to that I can pass forward the gameplay tag to my ability system component where I can handle ability activation, retriggering or passing through input to active abilities:
+
+
+```cpp
+void ADefaultPlayerController::AbilityInputTagPressed(const FInputActionValue &InputAction, FGameplayTag InputTag)
+{
+    GetAbilitySystemComponent()->AbilityInputTagPressed(InputTag);
+}
+void ADefaultPlayerController::AbilityInputTagReleased(const FInputActionValue &InputAction, FGameplayTag InputTag)
+{
+    GetAbilitySystemComponent()->AbilityInputTagReleased(InputTag);
+}
+void ADefaultPlayerController::AbilityInputTagHeld(const FInputActionValue &InputAction, FGameplayTag InputTag)
+{
+    GetAbilitySystemComponent()->AbilityInputTagHeld(InputTag);
+}
+```
+Now, using the Mapping Context, I can bind any key to an input action such as “Activate Ability 1.” This input action activates any ability assigned the corresponding GameplayTag, enabling flexible, player-customizable controls.
+
+
+
+
+
+### Character Control
+
+In addition to a classical mouse control, I aimed for implementing a optional WASD control as well, because in Souls-like combat, mouse control can feel too clunky. I personally prefer the WASD control but I know some player dislike it. So I decided to give the player the option to chance the control setting between these two in the option menu.
+
+
+ 
+
+
+I chose Unreal Engine because I’m a C++ programmer, and there are plenty of resources available for UE development online. After some research, I decided to use the Gameplay Ability System developed by Epic Games. Originally created in conjunction with Paragon, it serves as a framework for developing multiplayer RPGs. The framework is both powerful and flexible—it’s not limited to RPGs. For example, it’s also used in the development of Fortnite.
+
+### Character Movement
+
+After setting up the project, I added a placeholder character and implemented basic movement controls. This included simple WASD movement as well as auto-run functionality toward mouse clicks, similar to *Diablo*. For this, I used the implementation from Unreal Engine's top-down template.
+
+While this approach has some flaws - it requires a Nav Mesh and isn’t multiplayer compatible  - I decided to stick with it initially to get things up and running.
+
+### Attribute Set
+
+After setting up the movement, I started working on an Attribute Set. The Attribute Set is part of the Gameplay Ability System (GAS) and manages each character's attributes.
+
+For now, I’ve divided my attributes into three categories: Vital Attributes, Primary Attributes, and Secondary Attributes.
+
+<div style="display: flex; justify-content: space-evenly;">
+<div>
+
+**Primary Attributes**
+- Stregth
+- Intelligance
+- Constitution
+- Dexterity
+</div>
+<div>
+
+**Secondary Attributes**
+- Max Health
+- Max Mana
+- Armor
+- Critical Chance
+- Critical Damage
+</div>
+<div>
+
+**Vital Attributes**
+- Health
+- Mana
+</div>
+
+</div>
+
+These attributes are initialized sequentially from left to right at the start of the game. Because the secondary attributes depend on the primary attributes, and the vital attributes depend on the secondary and primary ones.
+
+These attributes are just constant numbers for now. I’ll use solely the health attribute until the game reaches a stage where it makes sense to introduce additional attributes.

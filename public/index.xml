@@ -97,17 +97,17 @@ Since this is a portfolio presentation and not a tutorial, I won’t go into det
     </item>
     
     <item>
-      <title>#2 Inventory &amp; Item System</title>
+      <title>#1 Project Introduction (Chained by Eternity)</title>
       <link>//localhost:1313/devlog/devlog1/</link>
       <pubDate>Mon, 10 Jun 2024 18:47:54 +0200</pubDate>
       
       <guid>//localhost:1313/devlog/devlog1/</guid>
       
-      <description>&lt;p&gt;Project of the devlog: &lt;a href=&#34;https://www.david-burgstaller.de/project/chainedbyeternity/&#34;  target=&#34;_blank&#34; rel=&#34;noreferrer nofollow&#34;&gt;Chained by Eternity&lt;/a&gt;
-&lt;/p&gt;
-&lt;p&gt;One of the first things I implemented after the attribute set of my character was the inventory system since items play a major role in an ARPG. Almost everything is based or influenced by items, so I decided to take them on early.&lt;/p&gt;
-&lt;h2 id=&#34;inventory-and-item-system&#34;&gt;Inventory and Item System&lt;/h2&gt;
-&lt;p&gt;We use a grid-based, jigsaw-style inventory system in our game, inspired by classics like Diablo II. The core of this system is a custom &lt;code&gt;UObject&lt;/code&gt; class called &lt;code&gt;InventoryManager&lt;/code&gt;, stored in the player’s &lt;code&gt;PlayerState&lt;/code&gt;.&lt;/p&gt;</description>
+      <description>&lt;p&gt;Welcome to my Devlog for &lt;a href=&#34;https://www.david-burgstaller.de/project/chainedbyeternity/&#34;  target=&#34;_blank&#34; rel=&#34;noreferrer nofollow&#34;&gt;Chained by Eternity&lt;/a&gt;
+.
+Chained by Eternity is an ambitious project, and I want to take you along on my journey as I tackle upcoming challenges of game development. As someone who enjoys reading how fellow game developers solve their problems, I hope this devlog might be helpful or inspiring to others as well.&lt;/p&gt;
+&lt;h2 id=&#34;intention-and-goals&#34;&gt;Intention and Goals&lt;/h2&gt;
+&lt;p&gt;This project began during my job search after graduating from university. I applied to several game studios and, unsurprisingly, was rejected by most of them almost immediately. That taught me a hard but valuable lesson: no matter how much knowledge or experience I might have, it doesn&amp;rsquo;t mean much if I can&amp;rsquo;t show and prove it.&lt;/p&gt;</description>
       
     </item>
     
@@ -133,26 +133,33 @@ Since this is a portfolio presentation and not a tutorial, I won’t go into det
     </item>
     
     <item>
-      <title>#2 Project Introduction</title>
+      <title>#3 Flexible Input System (Chained by Eternity)</title>
       <link>//localhost:1313/devlog/devlog2/</link>
       <pubDate>Mon, 10 Jun 2024 18:47:54 +0200</pubDate>
       
       <guid>//localhost:1313/devlog/devlog2/</guid>
       
-      <description>&lt;p&gt;As you may have read in the last devlog, this game is a showcase project. My goal is to expand and demonstrate my skills in game development.&lt;/p&gt;
-&lt;p&gt;With that goal in mind, I’ve decided not to create a fully-fledged game but rather a vertical slice of what could potentially be a complete game. As a solo developer, delivering a large amount of high-quality content is simply not feasible, especially since I’m also working full-time. For this reason, I’m focusing on the quality of the game, but I’ll need to limit the content, length, and complexity. The result will be more of a &amp;ldquo;vertical slice&amp;rdquo;—a &amp;ldquo;demo&amp;rdquo; with around 15 minutes of gameplay.&lt;/p&gt;</description>
+      <description>&lt;p&gt;Project of the devlog: &lt;a href=&#34;https://www.david-burgstaller.de/project/chainedbyeternity/&#34;  target=&#34;_blank&#34; rel=&#34;noreferrer nofollow&#34;&gt;Chained by Eternity&lt;/a&gt;
+&lt;/p&gt;
+&lt;p&gt;One key conept of a RPG is to have a flexible and customable input system. The player should be able to decide which key he want to press to activate certain abilities or items.&lt;/p&gt;
+&lt;p&gt;So keeping that in mind I wanted to start my project by implementing my input system.&lt;/p&gt;
+&lt;h3 id=&#34;input-system&#34;&gt;Input System&lt;/h3&gt;
+&lt;p&gt;As I am using the &lt;strong&gt;Gameplay Ability System (GAS)&lt;/strong&gt; which is decoupling gameplay abilities very well, a great chunk of this flexible input system is allready solved for me. GAS allows me to assign certain gameplay abilities (&lt;code&gt;UGameplayAbility&lt;/code&gt;) to a player and activate a assigned ability by a simple tag (&lt;code&gt;FGameplayTag&lt;/code&gt;).&lt;/p&gt;</description>
       
     </item>
     
     <item>
-      <title>#3 First Steps</title>
+      <title>#3 Inventory &amp; Item System (Chained by Eternity)</title>
       <link>//localhost:1313/devlog/devlog3/</link>
       <pubDate>Mon, 10 Jun 2024 18:47:54 +0200</pubDate>
       
       <guid>//localhost:1313/devlog/devlog3/</guid>
       
-      <description>&lt;h3 id=&#34;gameplay-ability-system&#34;&gt;Gameplay Ability System&lt;/h3&gt;
-&lt;p&gt;I chose Unreal Engine because I’m a C++ programmer, and there are plenty of resources available for UE development online. After some research, I decided to use the Gameplay Ability System developed by Epic Games. Originally created in conjunction with Paragon, it serves as a framework for developing multiplayer RPGs. The framework is both powerful and flexible—it’s not limited to RPGs. For example, it’s also used in the development of Fortnite.&lt;/p&gt;</description>
+      <description>&lt;p&gt;Project of the devlog: &lt;a href=&#34;https://www.david-burgstaller.de/project/chainedbyeternity/&#34;  target=&#34;_blank&#34; rel=&#34;noreferrer nofollow&#34;&gt;Chained by Eternity&lt;/a&gt;
+&lt;/p&gt;
+&lt;p&gt;One of the first things I implemented after the attribute set of my character was the inventory system since items play a major role in an ARPG. Almost everything is based or influenced by items, so I decided to take them on early.&lt;/p&gt;
+&lt;h2 id=&#34;inventory-and-item-system&#34;&gt;Inventory and Item System&lt;/h2&gt;
+&lt;p&gt;We use a grid-based, jigsaw-style inventory system in our game, inspired by classics like Diablo II. The core of this system is a custom &lt;code&gt;UObject&lt;/code&gt; class called &lt;code&gt;InventoryManager&lt;/code&gt;, stored in the player’s &lt;code&gt;PlayerState&lt;/code&gt;.&lt;/p&gt;</description>
       
     </item>
     
