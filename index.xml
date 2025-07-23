@@ -28,11 +28,31 @@
 This project is built using &lt;strong>Unreal Engine 5 (UE5)&lt;/strong> and the &lt;strong>Gameplay Ability System (GAS)&lt;/strong>. We&amp;rsquo;re developing almost &lt;strong>entirely in C++&lt;/strong>, with minimal use of Blueprints.
 Since this is a portfolio presentation and not a tutorial, I won’t go into detailed explanations of UE5 or GAS concepts.&lt;/p></description></item><item><title>About Me</title><link>/about/</link><pubDate>Mon, 21 Oct 2024 16:10:50 +0200</pubDate><guid>/about/</guid><description>&lt;p>Hi, I’m David - a full-time C++ software developer based in Frankfurt am Main, Germany. I&amp;rsquo;m married and recently became a father to a three-month-old child.&lt;/p>
 &lt;p>I discovered programming at the age of 13 and quickly developed a strong interest in game development. Unfortunately, becoming a game programmer didn’t feel like a realistic career path at the time, and I lost a few valuable years exploring other options.&lt;/p>
-&lt;p>However, my passion for programming never faded. I pursued a degree in computer science and began building a professional career as a software developer. Over time, my perspective on game development shifted - and I’m now more determined than ever to enter the industry.&lt;/p></description></item><item><title>#1 Project Introduction (Chained by Eternity)</title><link>/devlog/devlog1/</link><pubDate>Mon, 10 Jun 2024 18:47:54 +0200</pubDate><guid>/devlog/devlog1/</guid><description>&lt;p>Welcome to my Devlog for &lt;a href="https://www.david-burgstaller.de/project/chainedbyeternity/" target="_blank" rel="noreferrer nofollow">Chained by Eternity&lt;/a>
-.
-Chained by Eternity is an ambitious project, and I want to take you along on my journey as I tackle upcoming challenges of game development. As someone who enjoys reading how fellow game developers solve their problems, I hope this devlog might be helpful or inspiring to others as well.&lt;/p>
-&lt;h2 id="intention-and-goals">Intention and Goals&lt;/h2>
-&lt;p>This project began during my job search after graduating from university. I applied to several game studios and, unsurprisingly, was rejected by most of them almost immediately. That taught me a hard but valuable lesson: no matter how much knowledge or experience I might have, it doesn&amp;rsquo;t mean much if I can&amp;rsquo;t show and prove it.&lt;/p></description></item><item><title>Charming Hell</title><link>/project/charminghell/</link><pubDate>Wed, 27 Dec 2023 16:12:33 +0200</pubDate><guid>/project/charminghell/</guid><description>&lt;h2 id="project-info">Project Info&lt;/h2>
+&lt;p>However, my passion for programming never faded. I pursued a degree in computer science and began building a professional career as a software developer. Over time, my perspective on game development shifted - and I’m now more determined than ever to enter the industry.&lt;/p></description></item><item><title>#1 Project Introduction (Chained by Eternity)</title><link>/devlog/devlog1_cbe/</link><pubDate>Mon, 10 Jun 2024 18:47:54 +0200</pubDate><guid>/devlog/devlog1_cbe/</guid><description>&lt;blockquote>
+&lt;p>&lt;strong>Hey There!&lt;/strong>&lt;br>
+Thanks for taking the time to read my devlog.&lt;br>
+I would really appreciate any kind of &lt;strong>feedback&lt;/strong> - whether it’s about the project, my programming, or even my writing style - &lt;strong>it really helps!&lt;/strong>
+And if you just feel like chatting about game development or want to connect, feel free to reach out.
+You can find my contact info &lt;a href="https://david-burgstaller.de/about/" target="_blank" rel="noreferrer nofollow">here&lt;/a>
+&lt;/p>
+&lt;p>This devlog covers the development of my project, &lt;a href="https://www.david-burgstaller.de/project/chainedbyeternity/" target="_blank" rel="noreferrer nofollow">Chained by Eternity&lt;/a>
+.&lt;/p></description></item><item><title>#2 Flexible Input System (Chained by Eternity)</title><link>/devlog/devlog2_cbe/</link><pubDate>Mon, 10 Jun 2024 18:47:54 +0200</pubDate><guid>/devlog/devlog2_cbe/</guid><description>&lt;blockquote>
+&lt;p>&lt;strong>Hey There!&lt;/strong>&lt;br>
+Thanks for taking the time to read my devlog.&lt;br>
+I would really appreciate any kind of &lt;strong>feedback&lt;/strong> - whether it’s about the project, my programming, or even my writing style - &lt;strong>it really helps!&lt;/strong>
+And if you just feel like chatting about game development or want to connect, feel free to reach out.
+You can find my contact info &lt;a href="https://david-burgstaller.de/about/" target="_blank" rel="noreferrer nofollow">here&lt;/a>
+&lt;/p>
+&lt;p>This devlog covers the development of my project, &lt;a href="https://www.david-burgstaller.de/project/chainedbyeternity/" target="_blank" rel="noreferrer nofollow">Chained by Eternity&lt;/a>
+.&lt;/p></description></item><item><title>#3 Attribute System (Chained by Eternity)</title><link>/devlog/devlog3_cbe/</link><pubDate>Mon, 10 Jun 2024 18:47:54 +0200</pubDate><guid>/devlog/devlog3_cbe/</guid><description>&lt;blockquote>
+&lt;p>&lt;strong>Hey There!&lt;/strong>&lt;br>
+Thanks for taking the time to read my devlog.&lt;br>
+I would really appreciate any kind of &lt;strong>feedback&lt;/strong> - whether it’s about the project, my programming, or even my writing style - &lt;strong>it really helps!&lt;/strong>
+And if you just feel like chatting about game development or want to connect, feel free to reach out.
+You can find my contact info &lt;a href="https://david-burgstaller.de/about/" target="_blank" rel="noreferrer nofollow">here&lt;/a>
+&lt;/p>
+&lt;p>This devlog covers the development of my project, &lt;a href="https://www.david-burgstaller.de/project/chainedbyeternity/" target="_blank" rel="noreferrer nofollow">Chained by Eternity&lt;/a>
+.&lt;/p></description></item><item><title>Charming Hell</title><link>/project/charminghell/</link><pubDate>Wed, 27 Dec 2023 16:12:33 +0200</pubDate><guid>/project/charminghell/</guid><description>&lt;h2 id="project-info">Project Info&lt;/h2>
 &lt;p>GitHub: &lt;a href="https://github.com/Roqum/CharmingHell_3DayGameJam" target="_blank" rel="noreferrer nofollow">github.com/Roqum/CharmingHell&lt;/a>
 &lt;br>
 Play in Browser: &lt;a href="https://roqum.itch.io/charming-hell" target="_blank" rel="noreferrer nofollow">roqum.itch.io/charming-hell&lt;/a>

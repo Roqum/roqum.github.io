@@ -1,5 +1,25 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Devlogs on David Burgstaller</title><link>/devlog/</link><description>Recent content in Devlogs on David Burgstaller</description><generator>Hugo -- gohugo.io</generator><language>en-gb</language><lastBuildDate>Mon, 10 Jun 2024 18:47:54 +0200</lastBuildDate><atom:link href="/devlog/index.xml" rel="self" type="application/rss+xml"/><item><title>#1 Project Introduction (Chained by Eternity)</title><link>/devlog/devlog1/</link><pubDate>Mon, 10 Jun 2024 18:47:54 +0200</pubDate><guid>/devlog/devlog1/</guid><description>&lt;p>Welcome to my Devlog for &lt;a href="https://www.david-burgstaller.de/project/chainedbyeternity/" target="_blank" rel="noreferrer nofollow">Chained by Eternity&lt;/a>
-.
-Chained by Eternity is an ambitious project, and I want to take you along on my journey as I tackle upcoming challenges of game development. As someone who enjoys reading how fellow game developers solve their problems, I hope this devlog might be helpful or inspiring to others as well.&lt;/p>
-&lt;h2 id="intention-and-goals">Intention and Goals&lt;/h2>
-&lt;p>This project began during my job search after graduating from university. I applied to several game studios and, unsurprisingly, was rejected by most of them almost immediately. That taught me a hard but valuable lesson: no matter how much knowledge or experience I might have, it doesn&amp;rsquo;t mean much if I can&amp;rsquo;t show and prove it.&lt;/p></description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Devlogs on David Burgstaller</title><link>/devlog/</link><description>Recent content in Devlogs on David Burgstaller</description><generator>Hugo -- gohugo.io</generator><language>en-gb</language><lastBuildDate>Mon, 10 Jun 2024 18:47:54 +0200</lastBuildDate><atom:link href="/devlog/index.xml" rel="self" type="application/rss+xml"/><item><title>#1 Project Introduction (Chained by Eternity)</title><link>/devlog/devlog1_cbe/</link><pubDate>Mon, 10 Jun 2024 18:47:54 +0200</pubDate><guid>/devlog/devlog1_cbe/</guid><description>&lt;blockquote>
+&lt;p>&lt;strong>Hey There!&lt;/strong>&lt;br>
+Thanks for taking the time to read my devlog.&lt;br>
+I would really appreciate any kind of &lt;strong>feedback&lt;/strong> - whether it’s about the project, my programming, or even my writing style - &lt;strong>it really helps!&lt;/strong>
+And if you just feel like chatting about game development or want to connect, feel free to reach out.
+You can find my contact info &lt;a href="https://david-burgstaller.de/about/" target="_blank" rel="noreferrer nofollow">here&lt;/a>
+&lt;/p>
+&lt;p>This devlog covers the development of my project, &lt;a href="https://www.david-burgstaller.de/project/chainedbyeternity/" target="_blank" rel="noreferrer nofollow">Chained by Eternity&lt;/a>
+.&lt;/p></description></item><item><title>#2 Flexible Input System (Chained by Eternity)</title><link>/devlog/devlog2_cbe/</link><pubDate>Mon, 10 Jun 2024 18:47:54 +0200</pubDate><guid>/devlog/devlog2_cbe/</guid><description>&lt;blockquote>
+&lt;p>&lt;strong>Hey There!&lt;/strong>&lt;br>
+Thanks for taking the time to read my devlog.&lt;br>
+I would really appreciate any kind of &lt;strong>feedback&lt;/strong> - whether it’s about the project, my programming, or even my writing style - &lt;strong>it really helps!&lt;/strong>
+And if you just feel like chatting about game development or want to connect, feel free to reach out.
+You can find my contact info &lt;a href="https://david-burgstaller.de/about/" target="_blank" rel="noreferrer nofollow">here&lt;/a>
+&lt;/p>
+&lt;p>This devlog covers the development of my project, &lt;a href="https://www.david-burgstaller.de/project/chainedbyeternity/" target="_blank" rel="noreferrer nofollow">Chained by Eternity&lt;/a>
+.&lt;/p></description></item><item><title>#3 Attribute System (Chained by Eternity)</title><link>/devlog/devlog3_cbe/</link><pubDate>Mon, 10 Jun 2024 18:47:54 +0200</pubDate><guid>/devlog/devlog3_cbe/</guid><description>&lt;blockquote>
+&lt;p>&lt;strong>Hey There!&lt;/strong>&lt;br>
+Thanks for taking the time to read my devlog.&lt;br>
+I would really appreciate any kind of &lt;strong>feedback&lt;/strong> - whether it’s about the project, my programming, or even my writing style - &lt;strong>it really helps!&lt;/strong>
+And if you just feel like chatting about game development or want to connect, feel free to reach out.
+You can find my contact info &lt;a href="https://david-burgstaller.de/about/" target="_blank" rel="noreferrer nofollow">here&lt;/a>
+&lt;/p>
+&lt;p>This devlog covers the development of my project, &lt;a href="https://www.david-burgstaller.de/project/chainedbyeternity/" target="_blank" rel="noreferrer nofollow">Chained by Eternity&lt;/a>
+.&lt;/p></description></item></channel></rss>
