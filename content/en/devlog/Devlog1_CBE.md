@@ -4,7 +4,15 @@ title = '#1 Project Introduction (Chained by Eternity)'
 author = 'David'
 draft = false
 +++
+> **Hey There!**  
+> Thanks for taking the time to read my devlog.  
+> I would really appreciate any kind of **feedback** - whether it’s about the project, my programming, or even my writing style - **it really helps!**
+> And if you just feel like chatting about game development or want to connect, feel free to reach out.
+> You can find my contact info [here](https://david-burgstaller.de/about/)
+>
+> This devlog covers the development of my project, [Chained by Eternity](https://www.david-burgstaller.de/project/chainedbyeternity/).
 
+<br>
 Welcome to my Devlog for [Chained by Eternity](https://www.david-burgstaller.de/project/chainedbyeternity/).
 Chained by Eternity is an ambitious project, and I want to take you along on my journey as I tackle upcoming challenges of game development. As someone who enjoys reading how fellow game developers solve their problems, I hope this devlog might be helpful or inspiring to others as well.
 

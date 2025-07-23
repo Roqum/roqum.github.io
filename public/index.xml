@@ -98,68 +98,96 @@ Since this is a portfolio presentation and not a tutorial, I won’t go into det
     
     <item>
       <title>#1 Project Introduction (Chained by Eternity)</title>
-      <link>//localhost:1313/devlog/devlog1/</link>
+      <link>//localhost:1313/devlog/devlog1_cbe/</link>
       <pubDate>Mon, 10 Jun 2024 18:47:54 +0200</pubDate>
       
-      <guid>//localhost:1313/devlog/devlog1/</guid>
+      <guid>//localhost:1313/devlog/devlog1_cbe/</guid>
       
-      <description>&lt;p&gt;Welcome to my Devlog for &lt;a href=&#34;https://www.david-burgstaller.de/project/chainedbyeternity/&#34;  target=&#34;_blank&#34; rel=&#34;noreferrer nofollow&#34;&gt;Chained by Eternity&lt;/a&gt;
-.
-Chained by Eternity is an ambitious project, and I want to take you along on my journey as I tackle upcoming challenges of game development. As someone who enjoys reading how fellow game developers solve their problems, I hope this devlog might be helpful or inspiring to others as well.&lt;/p&gt;
-&lt;h2 id=&#34;intention-and-goals&#34;&gt;Intention and Goals&lt;/h2&gt;
-&lt;p&gt;This project began during my job search after graduating from university. I applied to several game studios and, unsurprisingly, was rejected by most of them almost immediately. That taught me a hard but valuable lesson: no matter how much knowledge or experience I might have, it doesn&amp;rsquo;t mean much if I can&amp;rsquo;t show and prove it.&lt;/p&gt;</description>
+      <description>&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;Hey There!&lt;/strong&gt;&lt;br&gt;
+Thanks for taking the time to read my devlog.&lt;br&gt;
+I would really appreciate any kind of &lt;strong&gt;feedback&lt;/strong&gt; - whether it’s about the project, my programming, or even my writing style - &lt;strong&gt;it really helps!&lt;/strong&gt;
+And if you just feel like chatting about game development or want to connect, feel free to reach out.
+You can find my contact info &lt;a href=&#34;https://david-burgstaller.de/about/&#34;  target=&#34;_blank&#34; rel=&#34;noreferrer nofollow&#34;&gt;here&lt;/a&gt;
+&lt;/p&gt;
+&lt;p&gt;This devlog covers the development of my project, &lt;a href=&#34;https://www.david-burgstaller.de/project/chainedbyeternity/&#34;  target=&#34;_blank&#34; rel=&#34;noreferrer nofollow&#34;&gt;Chained by Eternity&lt;/a&gt;
+.&lt;/p&gt;</description>
+      
+    </item>
+    
+    <item>
+      <title>#2 Flexible Input System (Chained by Eternity)</title>
+      <link>//localhost:1313/devlog/devlog2_cbe/</link>
+      <pubDate>Mon, 10 Jun 2024 18:47:54 +0200</pubDate>
+      
+      <guid>//localhost:1313/devlog/devlog2_cbe/</guid>
+      
+      <description>&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;Hey There!&lt;/strong&gt;&lt;br&gt;
+Thanks for taking the time to read my devlog.&lt;br&gt;
+I would really appreciate any kind of &lt;strong&gt;feedback&lt;/strong&gt; - whether it’s about the project, my programming, or even my writing style - &lt;strong&gt;it really helps!&lt;/strong&gt;
+And if you just feel like chatting about game development or want to connect, feel free to reach out.
+You can find my contact info &lt;a href=&#34;https://david-burgstaller.de/about/&#34;  target=&#34;_blank&#34; rel=&#34;noreferrer nofollow&#34;&gt;here&lt;/a&gt;
+&lt;/p&gt;
+&lt;p&gt;This devlog covers the development of my project, &lt;a href=&#34;https://www.david-burgstaller.de/project/chainedbyeternity/&#34;  target=&#34;_blank&#34; rel=&#34;noreferrer nofollow&#34;&gt;Chained by Eternity&lt;/a&gt;
+.&lt;/p&gt;</description>
       
     </item>
     
     <item>
       <title>#2 Player Abilities</title>
-      <link>//localhost:1313/devlog/devlog4/</link>
+      <link>//localhost:1313/devlog/devlog5_cbe/</link>
       <pubDate>Mon, 10 Jun 2024 18:47:54 +0200</pubDate>
       
-      <guid>//localhost:1313/devlog/devlog4/</guid>
+      <guid>//localhost:1313/devlog/devlog5_cbe/</guid>
       
-      <description>&lt;p&gt;While there&amp;rsquo;s still much work to be done in this area, we’ve already implemented a foundational system that’s flexible and extensible - and at least one abilitiy that is worth showcasing.&lt;/p&gt;
-&lt;h4 id=&#34;abilities-architecture&#34;&gt;Abilities Architecture&lt;/h4&gt;
-&lt;p&gt;At the core of our system is a custom &lt;code&gt;UBaseGameplayAbility&lt;/code&gt; class, which inherits from GAS&amp;rsquo;s &lt;code&gt;UGameplayAbility&lt;/code&gt;. This base class stores an input &lt;code&gt;FGameplayTag&lt;/code&gt; and implements ability cooldown functionality.&lt;/p&gt;
-&lt;p&gt;This setup allows us to:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Activate the ability by it&amp;rsquo;s input &lt;code&gt;FGameplayTag&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;Dynamically bind an ability to a &lt;code&gt;InputAction&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;Let players assign abilities to their preferred input keys&lt;/li&gt;
-&lt;li&gt;Set the cooldown duration to any value&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;In addition, we’ve implemented a &lt;code&gt;UDamageGameplayAbility&lt;/code&gt; class that handles damage-specific abilities. This class defines:&lt;/p&gt;</description>
+      <description>&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;Hey There!&lt;/strong&gt;&lt;br&gt;
+Thanks for taking the time to read my devlog.&lt;br&gt;
+I would really appreciate any kind of &lt;strong&gt;feedback&lt;/strong&gt; - whether it’s about the project, my programming, or even my writing style - &lt;strong&gt;it really helps!&lt;/strong&gt;
+And if you just feel like chatting about game development or want to connect, feel free to reach out.
+You can find my contact info &lt;a href=&#34;https://david-burgstaller.de/about/&#34;  target=&#34;_blank&#34; rel=&#34;noreferrer nofollow&#34;&gt;here&lt;/a&gt;
+&lt;/p&gt;
+&lt;p&gt;This devlog covers the development of my project, &lt;a href=&#34;https://www.david-burgstaller.de/project/chainedbyeternity/&#34;  target=&#34;_blank&#34; rel=&#34;noreferrer nofollow&#34;&gt;Chained by Eternity&lt;/a&gt;
+.&lt;/p&gt;</description>
       
     </item>
     
     <item>
-      <title>#3 Flexible Input System (Chained by Eternity)</title>
-      <link>//localhost:1313/devlog/devlog2/</link>
+      <title>#3 Attribute System (Chained by Eternity)</title>
+      <link>//localhost:1313/devlog/devlog3_cbe/</link>
       <pubDate>Mon, 10 Jun 2024 18:47:54 +0200</pubDate>
       
-      <guid>//localhost:1313/devlog/devlog2/</guid>
+      <guid>//localhost:1313/devlog/devlog3_cbe/</guid>
       
-      <description>&lt;p&gt;Project of the devlog: &lt;a href=&#34;https://www.david-burgstaller.de/project/chainedbyeternity/&#34;  target=&#34;_blank&#34; rel=&#34;noreferrer nofollow&#34;&gt;Chained by Eternity&lt;/a&gt;
+      <description>&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;Hey There!&lt;/strong&gt;&lt;br&gt;
+Thanks for taking the time to read my devlog.&lt;br&gt;
+I would really appreciate any kind of &lt;strong&gt;feedback&lt;/strong&gt; - whether it’s about the project, my programming, or even my writing style - &lt;strong&gt;it really helps!&lt;/strong&gt;
+And if you just feel like chatting about game development or want to connect, feel free to reach out.
+You can find my contact info &lt;a href=&#34;https://david-burgstaller.de/about/&#34;  target=&#34;_blank&#34; rel=&#34;noreferrer nofollow&#34;&gt;here&lt;/a&gt;
 &lt;/p&gt;
-&lt;p&gt;One key conept of a RPG is to have a flexible and customable input system. The player should be able to decide which key he want to press to activate certain abilities or items.&lt;/p&gt;
-&lt;p&gt;So keeping that in mind I wanted to start my project by implementing my input system.&lt;/p&gt;
-&lt;h3 id=&#34;input-system&#34;&gt;Input System&lt;/h3&gt;
-&lt;p&gt;As I am using the &lt;strong&gt;Gameplay Ability System (GAS)&lt;/strong&gt; which is decoupling gameplay abilities very well, a great chunk of this flexible input system is allready solved for me. GAS allows me to assign certain gameplay abilities (&lt;code&gt;UGameplayAbility&lt;/code&gt;) to a player and activate a assigned ability by a simple tag (&lt;code&gt;FGameplayTag&lt;/code&gt;).&lt;/p&gt;</description>
+&lt;p&gt;This devlog covers the development of my project, &lt;a href=&#34;https://www.david-burgstaller.de/project/chainedbyeternity/&#34;  target=&#34;_blank&#34; rel=&#34;noreferrer nofollow&#34;&gt;Chained by Eternity&lt;/a&gt;
+.&lt;/p&gt;</description>
       
     </item>
     
     <item>
       <title>#3 Inventory &amp; Item System (Chained by Eternity)</title>
-      <link>//localhost:1313/devlog/devlog3/</link>
+      <link>//localhost:1313/devlog/devlog4_cbe/</link>
       <pubDate>Mon, 10 Jun 2024 18:47:54 +0200</pubDate>
       
-      <guid>//localhost:1313/devlog/devlog3/</guid>
+      <guid>//localhost:1313/devlog/devlog4_cbe/</guid>
       
-      <description>&lt;p&gt;Project of the devlog: &lt;a href=&#34;https://www.david-burgstaller.de/project/chainedbyeternity/&#34;  target=&#34;_blank&#34; rel=&#34;noreferrer nofollow&#34;&gt;Chained by Eternity&lt;/a&gt;
+      <description>&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;Hey There!&lt;/strong&gt;&lt;br&gt;
+Thanks for taking the time to read my devlog.&lt;br&gt;
+I would really appreciate any kind of &lt;strong&gt;feedback&lt;/strong&gt; - whether it’s about the project, my programming, or even my writing style - &lt;strong&gt;it really helps!&lt;/strong&gt;
+And if you just feel like chatting about game development or want to connect, feel free to reach out.
+You can find my contact info &lt;a href=&#34;https://david-burgstaller.de/about/&#34;  target=&#34;_blank&#34; rel=&#34;noreferrer nofollow&#34;&gt;here&lt;/a&gt;
 &lt;/p&gt;
-&lt;p&gt;One of the first things I implemented after the attribute set of my character was the inventory system since items play a major role in an ARPG. Almost everything is based or influenced by items, so I decided to take them on early.&lt;/p&gt;
-&lt;h2 id=&#34;inventory-and-item-system&#34;&gt;Inventory and Item System&lt;/h2&gt;
-&lt;p&gt;We use a grid-based, jigsaw-style inventory system in our game, inspired by classics like Diablo II. The core of this system is a custom &lt;code&gt;UObject&lt;/code&gt; class called &lt;code&gt;InventoryManager&lt;/code&gt;, stored in the player’s &lt;code&gt;PlayerState&lt;/code&gt;.&lt;/p&gt;</description>
+&lt;p&gt;This devlog covers the development of my project, &lt;a href=&#34;https://www.david-burgstaller.de/project/chainedbyeternity/&#34;  target=&#34;_blank&#34; rel=&#34;noreferrer nofollow&#34;&gt;Chained by Eternity&lt;/a&gt;
+.&lt;/p&gt;</description>
       
     </item>
     

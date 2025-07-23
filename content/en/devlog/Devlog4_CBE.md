@@ -5,8 +5,15 @@ author = 'David'
 draft = true
 +++
 
-Project of the devlog: [Chained by Eternity](https://www.david-burgstaller.de/project/chainedbyeternity/)
+> **Hey There!**  
+> Thanks for taking the time to read my devlog.  
+> I would really appreciate any kind of **feedback** - whether it’s about the project, my programming, or even my writing style - **it really helps!**
+> And if you just feel like chatting about game development or want to connect, feel free to reach out.
+> You can find my contact info [here](https://david-burgstaller.de/about/)
+>
+> This devlog covers the development of my project, [Chained by Eternity](https://www.david-burgstaller.de/project/chainedbyeternity/).
 
+<br>
 One of the first things I implemented after the attribute set of my character was the inventory system since items play a major role in an ARPG. Almost everything is based or influenced by items, so I decided to take them on early.
 
 ## Inventory and Item System

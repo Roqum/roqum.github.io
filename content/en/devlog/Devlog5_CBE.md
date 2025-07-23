@@ -5,6 +5,15 @@ author = 'David'
 draft = true
 +++
 
+> **Hey There!**  
+> Thanks for taking the time to read my devlog.  
+> I would really appreciate any kind of **feedback** - whether it’s about the project, my programming, or even my writing style - **it really helps!**
+> And if you just feel like chatting about game development or want to connect, feel free to reach out.
+> You can find my contact info [here](https://david-burgstaller.de/about/)
+>
+> This devlog covers the development of my project, [Chained by Eternity](https://www.david-burgstaller.de/project/chainedbyeternity/).
+
+<br>
 While there's still much work to be done in this area, we’ve already implemented a foundational system that’s flexible and extensible - and at least one abilitiy that is worth showcasing.
 
 #### Abilities Architecture
