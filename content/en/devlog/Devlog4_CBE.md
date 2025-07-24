@@ -150,3 +150,11 @@ With everything prepared, the final structure of my Melee Attack `GameplayAbilit
 - Then, I call `AbilityTask_WaitForGameplayTag` to listen for the `AnimNotify` tag embedded in the animation.
 - When the notify is received, I spawn an invisible hitbox sphere at the weapon’s socket location and check for any overlapping actors that implement `ICombatInterface`
 - For each valid target, I call `ApplyDamageToTarget()` as described earlier to apply the damage.
+
+All together is looks like this:
+
+<video width="100%" controls  style="display: block; width: 80%; margin: 0 auto;">
+  <source src="/videos/devlog4_CBE/FirstCombat.mp4" type="video/mp4">
+</video>
+
+It looks pretty clunky but it works. Enemies are hit, Damage is dealt and health is lost. So we can move on for now.
