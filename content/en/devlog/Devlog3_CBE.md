@@ -114,7 +114,7 @@ If you’ve played a game like `Path of Exile`, you’ll know how complex and la
 
 As recommended by Epic, I initialize my starting attributes using instant `GameplayEffects` - specifically, three separate ones for Primary, Secondary, and Vital attributes.
 
-Each of these `GameplayEffects` contains a modifier for the relevant attributes. For the Primary Attributes, I’m using scalable float values as modifiers. However, for the Secondary and Vital Attributes, the `Modifier Type` is set to `Custom Calculation Class.` This means the attribute values are calculated at runtime by a custom C++ class instead of using a fixed value. 
+Each of these `GameplayEffects` contains a modifier for the relevant attributes. For the Primary Attributes, I’m using scalable float values as modifiers. However, for the Secondary and Vital Attributes, the `Modifier Type` is set to `Custom Calculation Class`. This means the attribute values are calculated at runtime by a custom C++ class instead of using a fixed value. 
 To be able to select a class for my attribute calculation, I created a class derived from **UGameplayModMagnitudeCalculation (ModMagCalc or MMC)**. The key advantage of using a `ModMagCalc` is that it allows me to capture any other attributes from the source and/or target `AbilitySystemComponent` and include them in the output calculation. 
 
 Here’s an example of how I calculate the `MaxHealth` attribute based on several primary attributes:
