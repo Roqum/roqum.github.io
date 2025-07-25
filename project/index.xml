@@ -15,18 +15,20 @@
 &lt;p>This voxel engine serves as my learning environment. My goal is to build a simple voxel world using procedural generation and to focus on optimizing the rendering pipeline as much as possible. There are many algorithms I’ve read about and am eager to experiment with, combine, and refine. At the end, I want to gain a deep understanding of how things work under the hood in modern game engines.&lt;/p></description></item><item><title>Chained By Eternity (Main Project)</title><link>/project/chainedbyeternity/</link><pubDate>Thu, 26 Jun 2025 12:39:17 +0200</pubDate><guid>/project/chainedbyeternity/</guid><description>&lt;h2 id="project-info">Project Info&lt;/h2>
 &lt;br>
 &lt;div style="display: grid; grid-template-columns: 150px 1fr; ">
+&lt;div>Last page update:&lt;/div>&lt;div>25. Juli 2025&lt;/div>
 &lt;div>Status:&lt;/div>&lt;div>Currently in progress...&lt;/div>
 &lt;div>Started:&lt;/div>&lt;div>17. February 2024&lt;/div>
 &lt;div>Teamsize:&lt;/div>&lt;div>2 Programmers&lt;/div>
-&lt;div>My Working Hours:&lt;/div>&lt;div>~400h&lt;/div>
+&lt;div>My Working Hours:&lt;/div>&lt;div>~500h&lt;/div>
 &lt;div>Source Code:&lt;/div>&lt;div>Coming soon&lt;/div>
 &lt;div>Demo:&lt;/div>&lt;div>Coming soon&lt;/div>
 &lt;/div>
 &lt;br>
 &lt;blockquote>
 &lt;p>&lt;strong>Note:&lt;/strong> &lt;br>
-This project is built using &lt;strong>Unreal Engine 5 (UE5)&lt;/strong> and the &lt;strong>Gameplay Ability System (GAS)&lt;/strong>. We&amp;rsquo;re developing almost &lt;strong>entirely in C++&lt;/strong>, with minimal use of Blueprints.
-Since this is a portfolio presentation and not a tutorial, I won’t go into detailed explanations of UE5 or GAS concepts.&lt;/p></description></item><item><title>Charming Hell</title><link>/project/charminghell/</link><pubDate>Wed, 27 Dec 2023 16:12:33 +0200</pubDate><guid>/project/charminghell/</guid><description>&lt;h2 id="project-info">Project Info&lt;/h2>
+This project page is &lt;strong>meant purely for showcasing&lt;/strong> the current state of the game, with lots of images and minimal explanation.
+If you&amp;rsquo;re interested in implementation details, please check out my &lt;strong>devlogs&lt;/strong> &lt;a href="https://david-burgstaller.de/devlog/" target="_blank" rel="noreferrer nofollow">here&lt;/a>
+- they go much deeper into the technical side of development.&lt;/p></description></item><item><title>Charming Hell</title><link>/project/charminghell/</link><pubDate>Wed, 27 Dec 2023 16:12:33 +0200</pubDate><guid>/project/charminghell/</guid><description>&lt;h2 id="project-info">Project Info&lt;/h2>
 &lt;p>GitHub: &lt;a href="https://github.com/Roqum/CharmingHell_3DayGameJam" target="_blank" rel="noreferrer nofollow">github.com/Roqum/CharmingHell&lt;/a>
 &lt;br>
 Play in Browser: &lt;a href="https://roqum.itch.io/charming-hell" target="_blank" rel="noreferrer nofollow">roqum.itch.io/charming-hell&lt;/a>

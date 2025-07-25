@@ -15,18 +15,20 @@
 &lt;p>This voxel engine serves as my learning environment. My goal is to build a simple voxel world using procedural generation and to focus on optimizing the rendering pipeline as much as possible. There are many algorithms I’ve read about and am eager to experiment with, combine, and refine. At the end, I want to gain a deep understanding of how things work under the hood in modern game engines.&lt;/p></description></item><item><title>Chained By Eternity (Main Project)</title><link>/project/chainedbyeternity/</link><pubDate>Thu, 26 Jun 2025 12:39:17 +0200</pubDate><guid>/project/chainedbyeternity/</guid><description>&lt;h2 id="project-info">Project Info&lt;/h2>
 &lt;br>
 &lt;div style="display: grid; grid-template-columns: 150px 1fr; ">
+&lt;div>Last page update:&lt;/div>&lt;div>25. Juli 2025&lt;/div>
 &lt;div>Status:&lt;/div>&lt;div>Currently in progress...&lt;/div>
 &lt;div>Started:&lt;/div>&lt;div>17. February 2024&lt;/div>
 &lt;div>Teamsize:&lt;/div>&lt;div>2 Programmers&lt;/div>
-&lt;div>My Working Hours:&lt;/div>&lt;div>~400h&lt;/div>
+&lt;div>My Working Hours:&lt;/div>&lt;div>~500h&lt;/div>
 &lt;div>Source Code:&lt;/div>&lt;div>Coming soon&lt;/div>
 &lt;div>Demo:&lt;/div>&lt;div>Coming soon&lt;/div>
 &lt;/div>
 &lt;br>
 &lt;blockquote>
 &lt;p>&lt;strong>Note:&lt;/strong> &lt;br>
-This project is built using &lt;strong>Unreal Engine 5 (UE5)&lt;/strong> and the &lt;strong>Gameplay Ability System (GAS)&lt;/strong>. We&amp;rsquo;re developing almost &lt;strong>entirely in C++&lt;/strong>, with minimal use of Blueprints.
-Since this is a portfolio presentation and not a tutorial, I won’t go into detailed explanations of UE5 or GAS concepts.&lt;/p></description></item><item><title>About Me</title><link>/about/</link><pubDate>Mon, 21 Oct 2024 16:10:50 +0200</pubDate><guid>/about/</guid><description>&lt;p>Hi, I’m David - a full-time C++ software developer based in Frankfurt am Main, Germany. I&amp;rsquo;m married and recently became a father to a three-month-old child.&lt;/p>
+This project page is &lt;strong>meant purely for showcasing&lt;/strong> the current state of the game, with lots of images and minimal explanation.
+If you&amp;rsquo;re interested in implementation details, please check out my &lt;strong>devlogs&lt;/strong> &lt;a href="https://david-burgstaller.de/devlog/" target="_blank" rel="noreferrer nofollow">here&lt;/a>
+- they go much deeper into the technical side of development.&lt;/p></description></item><item><title>About Me</title><link>/about/</link><pubDate>Mon, 21 Oct 2024 16:10:50 +0200</pubDate><guid>/about/</guid><description>&lt;p>Hi, I’m David - a full-time C++ software developer based in Frankfurt am Main, Germany. I&amp;rsquo;m married and recently became a father to a three-month-old child.&lt;/p>
 &lt;p>I discovered programming at the age of 13 and quickly developed a strong interest in game development. Unfortunately, becoming a game programmer didn’t feel like a realistic career path at the time, and I lost a few valuable years exploring other options.&lt;/p>
 &lt;p>However, my passion for programming never faded. I pursued a degree in computer science and began building a professional career as a software developer. Over time, my perspective on game development shifted - and I’m now more determined than ever to enter the industry.&lt;/p></description></item><item><title>#1 Project Introduction (Chained by Eternity)</title><link>/devlog/devlog1_cbe/</link><pubDate>Mon, 10 Jun 2024 18:47:54 +0200</pubDate><guid>/devlog/devlog1_cbe/</guid><description>&lt;blockquote>
 &lt;p>&lt;strong>Hey There!&lt;/strong>&lt;br>
@@ -61,6 +63,14 @@ You can find my contact info &lt;a href="https://david-burgstaller.de/about/" ta
 &lt;/p>
 &lt;p>This devlog covers the development of my project, &lt;a href="https://www.david-burgstaller.de/project/chainedbyeternity/" target="_blank" rel="noreferrer nofollow">Chained by Eternity&lt;/a>
 .&lt;/p></description></item><item><title>#5 Inventory &amp; Item System (Chained by Eternity)</title><link>/devlog/devlog5_cbe/</link><pubDate>Mon, 10 Jun 2024 18:47:54 +0200</pubDate><guid>/devlog/devlog5_cbe/</guid><description>&lt;blockquote>
+&lt;p>&lt;strong>Hey There!&lt;/strong>&lt;br>
+Thanks for taking the time to read my devlog.&lt;br>
+I would really appreciate any kind of &lt;strong>feedback&lt;/strong> - whether it’s about the project, my programming, or even my writing style - &lt;strong>it really helps!&lt;/strong>
+And if you just feel like chatting about game development or want to connect, feel free to reach out.
+You can find my contact info &lt;a href="https://david-burgstaller.de/about/" target="_blank" rel="noreferrer nofollow">here&lt;/a>
+&lt;/p>
+&lt;p>This devlog covers the development of my project, &lt;a href="https://www.david-burgstaller.de/project/chainedbyeternity/" target="_blank" rel="noreferrer nofollow">Chained by Eternity&lt;/a>
+.&lt;/p></description></item><item><title>#6 Some small quality features (Chained by Eternity)</title><link>/devlog/devlog6_cbe/</link><pubDate>Mon, 10 Jun 2024 18:47:54 +0200</pubDate><guid>/devlog/devlog6_cbe/</guid><description>&lt;blockquote>
 &lt;p>&lt;strong>Hey There!&lt;/strong>&lt;br>
 Thanks for taking the time to read my devlog.&lt;br>
 I would really appreciate any kind of &lt;strong>feedback&lt;/strong> - whether it’s about the project, my programming, or even my writing style - &lt;strong>it really helps!&lt;/strong>
