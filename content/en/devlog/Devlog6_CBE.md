@@ -1,8 +1,8 @@
 +++
 date = '2024-06-10T18:47:54+02:00'
-title = '#2 Player Abilities'
+title = '#6 Some small quality features (Chained by Eternity)'
 author = 'David'
-draft = true
+draft = false
 +++
 
 > **Hey There!**  
@@ -14,85 +14,29 @@ draft = true
 > This devlog covers the development of my project, [Chained by Eternity](https://www.david-burgstaller.de/project/chainedbyeternity/).
 
 <br>
-While there's still much work to be done in this area, we’ve already implemented a foundational system that’s flexible and extensible - and at least one abilitiy that is worth showcasing.
 
-#### Abilities Architecture
+At this point, I had some solid systems in place. Of course, they’re far from finished, but I wanted to make sure I had a strong foundation that I’m happy to build upon. Otherwise, technical debt can easily pile up and turn working on the game into a painful experience later on.
 
-At the core of our system is a custom `UBaseGameplayAbility` class, which inherits from GAS's `UGameplayAbility`. This base class stores an input `FGameplayTag` and implements ability cooldown functionality.
+In this chapter, I’ll walk you through some small quality-of-life features and visual touches I added to the game.
 
-This setup allows us to:
-- Activate the ability by it's input `FGameplayTag`
-- Dynamically bind an ability to a `InputAction`
-- Let players assign abilities to their preferred input keys
-- Set the cooldown duration to any value
+### Highlighting Enemies
+I wanted to give the player a visual feedback on which enemy he is currently targeting. To do this, I integrated an enemy highlighting function to my coursor trace logic inside my custom `APlayerController`.
 
+The logic behind this feature is actually quite simple, since I’m already performing a trace each frame to determine the mouse world position. I extended this logic by checking whether the hit actor implements my custom `ICombatInterface`.
 
-In addition, we’ve implemented a `UDamageGameplayAbility` class that handles damage-specific abilities. This class defines:
-- Raw damage value
-- Damage types by `FGameplayTags`
-- A custom `ApplyDamage()` function that is using a custom `UGameplayEffectExecutionCalculation` class.
+If it does, I call a `HighlightActor()` function on that interface. To be able to diable the highlighting, I cache a pointer to the previously highlighted actor. If a newly hit actor is different from the cached one, I call a function to disable the highlight on the previous actor before highlighting the new one.
 
-This `UGameplayEffectExecutionCalculation` class is handling the complex damage calculations considering both source and target attributes. Since this class is relatively complex, I’ll describe it in more detail in a dedicated section.
+<img src="/images/devlog6_CBE/HighligthingEnemies.gif" alt="Highligthing" style="display: block; width: 65%; margin: 0 auto;">
 
+To achieve the actual highlighting effect, I added a `PostProcessVolume` to my level and assigned a custom post-process material to it. I didn’t create the material by myself, I found one online and edited it to my needs.
 
-#### Implemented Abilities
-We currently have three working prototype abilities.
+### Damage Numbers
 
-- Projectile Ability
-  Fires a projectile that applies a `UGameplayEffect` on hit.
-- Melee Combo Attack 
-  A close-range attack that supports combo chaining 
-- Rain of Arrows (AOE)
-  A area-of-effect ability that spawns multiple damaging projectiles raining down a targeted area.
+I also wanted to display damage numbers when an enemy is hit. This feature tends to divide players - some love the instant feedback and to get a feeling for theire DPS, while others feel it clutters the screen. To accommodate both preferences, I made it configurable in the game settings. Players will be able to toggle damage numbers on or off based on their personal taste.
 
-All of these abilities use Animation Montages for playing animations. To synchronize gameplay logic with the animation, we use Gameplay Events, which broadcast an FGameplayTag at specific animation frames.
+Since I already implemented my damage calculation class, I added an event trigger directly within it. For now, this event simply broadcasts the raw damage value. Later on, I’ll expand it to broadcast a struct containing more detailed information, such as whether the hit was a critical, blocked, or evaded, etc.
 
-Using GAS’s `AbilityTask_WaitGameplayTag`, we listen for these events to time key moments in the ability’s execution like spawning a hitbox or projectile at the correct moment.
+I also intend to include the location of the hit enemy in the event.  This allows me to animate the damage numbers away from the player, creating the illusion that the numbers are “knocked out” of them when struck. It’s a small touch, but it really enhances the impact of each hit.
 
-##### Melee Combo Attack 
-We decided to store references to the basic attack animation montages inside our weapon class - specifically, as an array of attack montages. This setup allows us to automate combo chaining directly within the ability logic.
-
-The melee ability reads this array to:
-- Determine the maximum number of combo steps
-- Play each montage in sequence as the player chains attacks
-
-To smooth out gameplay, we implemented two Gameplay Events inside each animation montage:
-
-- One event allows the next combo attack to be triggered before the current animation finishes (early input window)
-- The other resets the combo if the animation ends without input (combo timeout)
-
-This design gives us the flexibility to define unique combo chains for each weapon, simply by assigning different montages with the appropriate events.
-
-<img src="/images/ChainedByEternity/AttackMontage.png" alt="Inventory" style="display: block; width: 80%; margin: 0 auto;">
-<br>
-<img src="/images/ChainedByEternity/MeleeAttackCombo.gif" alt="Inventory" style="display: block; width: 80%; margin: 0 auto;">
-
-
-##### Rain of Arrows
-
-For this ability, we created a Niagara System that spawns multiple arrows in a circular pattern above the ground. These arrows rapidly shoot downward, "raining" onto enemies in the target area.
-
-To enhance combat feel and realism, I wanted the ability to hit enemies multiple times, as several arrows are hitting the enemy.
-
-I considered three possible approaches:
-
-1. **Spawn a large hitbox** covering the area and trigger it multiple times.
-2. **Predefine the arrow spawn positions**, send them to the Niagara system, and do a line trace from each point down to the ground.
-3. **Listen to Niagara particle collision events** and trigger a small hitbox at each impact location.
-
-The **first solution** would’ve been the simplest to implement - but I was aiming for something more realistic.
-
-The **third option** felt ideal at first: it's reactive and precise. However, it's not adviced to mix VFX with gameplay logic. Even though in my implementation, the VFX would only trigger an event (and the gameplay logic responds), this approach can cause problems - especially in multiplayer games. That’s because VFX systems like Niagara are often client-side only and not run on the server, meaning they can desynchronize from core gameplay.
-
-So in theory, the **second solution** is the cleanest: define spawn locations up front, trigger the VFX based on them, and handle all gameplay logic (e.g., line traces, damage) independently and safely.
-
-> **But… I still went with the third option.** 😅  
-> Why?  
-> Because we're making a single-player game, and I wanted it to get done before going on vacation! 😄
-
-Custom ability task for area-of-effect selection using a decal:
-<img src="/images/ChainedByEternity/RainOfArrowAreaSelection.gif" alt="Inventory" style="display: block; width: 80%; margin: 0 auto;">
-
-Rain of Arrows damaging enemies showcase:
-<img src="/images/ChainedByEternity/RainOfArrowDamage.gif" alt="Inventory" style="display: block; width: 80%; margin: 0 auto;">
-
+<img src="/images/devlog6_CBE/DamageNumbers
+.gif" alt="Highligthing" style="display: block; width: 65%; margin: 0 auto;">

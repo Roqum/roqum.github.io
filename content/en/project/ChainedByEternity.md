@@ -10,10 +10,11 @@ projectDescription = ["A vertical slice of a classic action RPG, built in Unreal
 
 <br>
 <div style="display: grid; grid-template-columns: 150px 1fr; ">
+  <div>Last page update:</div><div>25. Juli 2025</div>
   <div>Status:</div><div>Currently in progress...</div>
   <div>Started:</div><div>17. February 2024</div>
   <div>Teamsize:</div><div>2 Programmers</div>
-  <div>My Working Hours:</div><div>~400h</div>
+  <div>My Working Hours:</div><div>~500h</div>
   <div>Source Code:</div><div>Coming soon</div>
   <div>Demo:</div><div>Coming soon</div>
 
@@ -21,8 +22,8 @@ projectDescription = ["A vertical slice of a classic action RPG, built in Unreal
 <br>
 
 > **Note:** \
-This project is built using **Unreal Engine 5 (UE5)** and the **Gameplay Ability System (GAS)**. We're developing almost **entirely in C++**, with minimal use of Blueprints.
-Since this is a portfolio presentation and not a tutorial, I won’t go into detailed explanations of UE5 or GAS concepts.
+> This project page is **meant purely for showcasing** the current state of the game, with lots of images and minimal explanation.
+> If you're interested in implementation details, please check out my **devlogs** [here](https://david-burgstaller.de/devlog/) - they go much deeper into the technical side of development.
 
 > **Note 2:**  
 > Thanks for taking the time to read about my project.  
@@ -36,7 +37,9 @@ Since this is a portfolio presentation and not a tutorial, I won’t go into det
 Together with a friend, we set out to build something technically challenging. We knew early on that building a full-scale ARPG like *Path of Exile* or *Diablo* would be unrealistic for a two-person team. Instead, we focused on creating a **high-quality vertical slice** a playable snapshot of what a complete game could be. This includes real-time combat, a fully functional ability and progression system, an inventory and item systems loot mechanics, and many other core features typically found in a classic action RPG.
 
 
-## Current State
+## Technical Details
+
+This project is built using **Unreal Engine 5 (UE5)** and the **Gameplay Ability System (GAS)**. We're developing almost **entirely in C++**, with minimal use of Blueprints.
 
 ### Overview 
 We've already achieved a lot, but there's still a long road ahead. Many systems are implemented and working, but not yet at the level of quality we're aiming for. We're currently focused on building a solid foundation, following the principle:

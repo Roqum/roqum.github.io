@@ -58,6 +58,32 @@ Since this is a portfolio presentation and not a tutorial, I won’t go into det
     </item>
     
     <item>
+      <title>Niagara System: Export Particle Data to C&#43;&#43;/Blueprint</title>
+      <link>//localhost:1313/article/unrealeditorprogramming/</link>
+      <pubDate>Sat, 21 Jun 2025 18:47:54 +0200</pubDate>
+      
+      <guid>//localhost:1313/article/unrealeditorprogramming/</guid>
+      
+      <description>&lt;h2 id=&#34;overview&#34;&gt;Overview&lt;/h2&gt;
+&lt;p&gt;In a Niagara System you able to create events which are normaly bind to inside the System. But Unreal Engine offers you a have to bind to Niagara System Events even outside of the system.&lt;/p&gt;
+&lt;p&gt;But it should be said that its a not a good practive to mix VFX and gameplay logic, espacially in multiplayer games since VFX runs almost client side only. So use this with caution.&lt;/p&gt;</description>
+      
+    </item>
+    
+    <item>
+      <title>Gameplay Ability System</title>
+      <link>//localhost:1313/article/gameplayabilitysystem/</link>
+      <pubDate>Mon, 21 Oct 2024 18:47:54 +0200</pubDate>
+      
+      <guid>//localhost:1313/article/gameplayabilitysystem/</guid>
+      
+      <description>&lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;
+&lt;p&gt;I am creating this documentation to organize and deepen my knowledge of the Gameplay Ability System (GAS). Additionally, I’m happy if it can also help other developers along the way.&lt;/p&gt;
+&lt;p&gt;This documentation is still a work in progress. I will continue to update and expand it as I gain more experience while working with GAS. I can’t guarantee for absolute accuracy, but I will do my best to present the topics as clearly and correctly as possible. If you find any incorrect informations or have suggestions for improvement, please don’t hesitate to reach out to me via email.&lt;/p&gt;</description>
+      
+    </item>
+    
+    <item>
       <title>About Me</title>
       <link>//localhost:1313/about/</link>
       <pubDate>Mon, 21 Oct 2024 16:10:50 +0200</pubDate>
@@ -109,6 +135,25 @@ You can find my contact info &lt;a href=&#34;https://david-burgstaller.de/about/
     </item>
     
     <item>
+      <title>#2 Player Abilities</title>
+      <link>//localhost:1313/devlog/devlog7_cbe/</link>
+      <pubDate>Mon, 10 Jun 2024 18:47:54 +0200</pubDate>
+      
+      <guid>//localhost:1313/devlog/devlog7_cbe/</guid>
+      
+      <description>&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;Hey There!&lt;/strong&gt;&lt;br&gt;
+Thanks for taking the time to read my devlog.&lt;br&gt;
+I would really appreciate any kind of &lt;strong&gt;feedback&lt;/strong&gt; - whether it’s about the project, my programming, or even my writing style - &lt;strong&gt;it really helps!&lt;/strong&gt;
+And if you just feel like chatting about game development or want to connect, feel free to reach out.
+You can find my contact info &lt;a href=&#34;https://david-burgstaller.de/about/&#34;  target=&#34;_blank&#34; rel=&#34;noreferrer nofollow&#34;&gt;here&lt;/a&gt;
+&lt;/p&gt;
+&lt;p&gt;This devlog covers the development of my project, &lt;a href=&#34;https://www.david-burgstaller.de/project/chainedbyeternity/&#34;  target=&#34;_blank&#34; rel=&#34;noreferrer nofollow&#34;&gt;Chained by Eternity&lt;/a&gt;
+.&lt;/p&gt;</description>
+      
+    </item>
+    
+    <item>
       <title>#3 Attribute System (Chained by Eternity)</title>
       <link>//localhost:1313/devlog/devlog3_cbe/</link>
       <pubDate>Mon, 10 Jun 2024 18:47:54 +0200</pubDate>
@@ -133,6 +178,63 @@ You can find my contact info &lt;a href=&#34;https://david-burgstaller.de/about/
       <pubDate>Mon, 10 Jun 2024 18:47:54 +0200</pubDate>
       
       <guid>//localhost:1313/devlog/devlog4_cbe/</guid>
+      
+      <description>&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;Hey There!&lt;/strong&gt;&lt;br&gt;
+Thanks for taking the time to read my devlog.&lt;br&gt;
+I would really appreciate any kind of &lt;strong&gt;feedback&lt;/strong&gt; - whether it’s about the project, my programming, or even my writing style - &lt;strong&gt;it really helps!&lt;/strong&gt;
+And if you just feel like chatting about game development or want to connect, feel free to reach out.
+You can find my contact info &lt;a href=&#34;https://david-burgstaller.de/about/&#34;  target=&#34;_blank&#34; rel=&#34;noreferrer nofollow&#34;&gt;here&lt;/a&gt;
+&lt;/p&gt;
+&lt;p&gt;This devlog covers the development of my project, &lt;a href=&#34;https://www.david-burgstaller.de/project/chainedbyeternity/&#34;  target=&#34;_blank&#34; rel=&#34;noreferrer nofollow&#34;&gt;Chained by Eternity&lt;/a&gt;
+.&lt;/p&gt;</description>
+      
+    </item>
+    
+    <item>
+      <title>#4 First Basic Combat (Chained by Eternity)</title>
+      <link>//localhost:1313/devlog/devlog8_cbe/</link>
+      <pubDate>Mon, 10 Jun 2024 18:47:54 +0200</pubDate>
+      
+      <guid>//localhost:1313/devlog/devlog8_cbe/</guid>
+      
+      <description>&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;Hey There!&lt;/strong&gt;&lt;br&gt;
+Thanks for taking the time to read my devlog.&lt;br&gt;
+I would really appreciate any kind of &lt;strong&gt;feedback&lt;/strong&gt; - whether it’s about the project, my programming, or even my writing style - &lt;strong&gt;it really helps!&lt;/strong&gt;
+And if you just feel like chatting about game development or want to connect, feel free to reach out.
+You can find my contact info &lt;a href=&#34;https://david-burgstaller.de/about/&#34;  target=&#34;_blank&#34; rel=&#34;noreferrer nofollow&#34;&gt;here&lt;/a&gt;
+&lt;/p&gt;
+&lt;p&gt;This devlog covers the development of my project, &lt;a href=&#34;https://www.david-burgstaller.de/project/chainedbyeternity/&#34;  target=&#34;_blank&#34; rel=&#34;noreferrer nofollow&#34;&gt;Chained by Eternity&lt;/a&gt;
+.&lt;/p&gt;</description>
+      
+    </item>
+    
+    <item>
+      <title>#5 Inventory &amp; Item System (Chained by Eternity)</title>
+      <link>//localhost:1313/devlog/devlog5_cbe/</link>
+      <pubDate>Mon, 10 Jun 2024 18:47:54 +0200</pubDate>
+      
+      <guid>//localhost:1313/devlog/devlog5_cbe/</guid>
+      
+      <description>&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;Hey There!&lt;/strong&gt;&lt;br&gt;
+Thanks for taking the time to read my devlog.&lt;br&gt;
+I would really appreciate any kind of &lt;strong&gt;feedback&lt;/strong&gt; - whether it’s about the project, my programming, or even my writing style - &lt;strong&gt;it really helps!&lt;/strong&gt;
+And if you just feel like chatting about game development or want to connect, feel free to reach out.
+You can find my contact info &lt;a href=&#34;https://david-burgstaller.de/about/&#34;  target=&#34;_blank&#34; rel=&#34;noreferrer nofollow&#34;&gt;here&lt;/a&gt;
+&lt;/p&gt;
+&lt;p&gt;This devlog covers the development of my project, &lt;a href=&#34;https://www.david-burgstaller.de/project/chainedbyeternity/&#34;  target=&#34;_blank&#34; rel=&#34;noreferrer nofollow&#34;&gt;Chained by Eternity&lt;/a&gt;
+.&lt;/p&gt;</description>
+      
+    </item>
+    
+    <item>
+      <title>#6 Some small quality features</title>
+      <link>//localhost:1313/devlog/devlog6_cbe/</link>
+      <pubDate>Mon, 10 Jun 2024 18:47:54 +0200</pubDate>
+      
+      <guid>//localhost:1313/devlog/devlog6_cbe/</guid>
       
       <description>&lt;blockquote&gt;
 &lt;p&gt;&lt;strong&gt;Hey There!&lt;/strong&gt;&lt;br&gt;
