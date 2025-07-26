@@ -40,3 +40,18 @@ I also intend to include the location of the hit enemy in the event.  This allow
 
 <img src="/images/devlog6_CBE/DamageNumbers
 .gif" alt="Highligthing" style="display: block; width: 65%; margin: 0 auto;">
+
+
+### Dodge Roll
+
+Can I even call my game a souls-like without a dodge roll? That needed to change.
+
+I used a Mixamo animation, added a root bone so I could enable root motion in Unreal Engine, and created a montage including motion warping.
+The dodge is implemented as a Gameplay Ability that plays the animation and blocks any other ability activation during the roll.
+
+<br>
+<img src="/images/ChainedByEternity/DodgeRollShowcase.gif" alt="Main Menu" style="display: block; width: 60%; margin: 0 auto;">
+<br>
+
+Later on, I want to add a small window where the player in invincible.
+ 
