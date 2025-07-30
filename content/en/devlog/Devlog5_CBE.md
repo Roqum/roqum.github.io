@@ -1,6 +1,6 @@
 +++
-date = '2024-06-10T18:47:54+02:00'
-title = '#5 Inventory & Item System (Chained by Eternity)'
+date = '2024-08-17T18:47:54+02:00'
+title = '#5 Some small quality features (Chained by Eternity)'
 author = 'David'
 draft = false
 +++
@@ -14,95 +14,44 @@ draft = false
 > This devlog covers the development of my project, [Chained by Eternity](https://www.david-burgstaller.de/project/chainedbyeternity/).
 
 <br>
-Items are one of the most important core pillars of any ARPG. They are deeply interwoven with nearly every major system — from combat and progression to economy and crafting. Because of that, I needed to implement the item system early on, so I could design the rest of the game systems with item integration in mind.
 
-## Inventory
+At this point, I had some solid systems in place. Of course, they’re far from finished, but I wanted to make sure I had a strong foundation that I’m happy to build upon. Otherwise, technical debt can easily pile up and turn working on the game into a painful experience later on.
 
-I implemented a grid-based, jigsaw-style inventory system, inspired by classics like Diablo II. The core of this system is a custom `UObject` class called `UInventoryManager`, stored in the player’s `PlayerState`.
+In this chapter, I’ll walk you through some small quality-of-life features and visual touches I added to the game.
 
-The `InventoryManager` is responsible for all inventory logic, including:
- - Adding and removing items
- - Finding free space in the grid
- - Equipping and unequipping gear
- - Managing equipped items
- - Validating item requirements
+### Highlighting Enemies
+I wanted to give the player a visual feedback on which enemy he is currently targeting. To do this, I integrated an enemy highlighting function to my coursor trace logic inside my custom `APlayerController`.
 
-The items are stored inside a two dimensional array representing the grid while the equippments are stored inside a map:
+The logic behind this feature is actually quite simple, since I’m already performing a trace each frame to determine the mouse world position. I extended this logic by checking whether the hit actor implements my custom `ICombatInterface`.
 
-```cpp
-TArray<TArray<UItem*>> InventoryGrid;
-TMap<EEquipmentSlots, TObjectPtr<UEquipmentItem>> EquippedItems;
-``` 
+If it does, I call a `HighlightActor()` function on that interface. To be able to diable the highlighting, I cache a pointer to the previously highlighted actor. If a newly hit actor is different from the cached one, I call a function to disable the highlight on the previous actor before highlighting the new one.
 
-All of this logic is cleanly seperated from the UI, as I'm following a strict separation of concerns between gameplay logic and presentation. Communication between systems is handled via a custom event manager. The `InventoryManager` emits and responds to relevant UI events, keeping gameplay code decoupled.
+<img src="/images/devlog6_CBE/HighligthingEnemies.gif" alt="Highligthing" style="display: block; width: 65%; margin: 0 auto;">
 
-### Item Structure
-Items are represented as `UObjects` and store their data in a `FItemData` `FStruct`. Using `UObjects` rather than plain structs gives the ability to work with pointers, which simplifies management - for example, an empty inventory slot simply points to `nullptr`.
+To achieve the actual highlighting effect, I added a `PostProcessVolume` to my level and assigned a custom post-process material to it. I didn’t create the material by myself, I found one online and edited it to my needs.
 
-The item classes follow a hierarchical inheritance pattern like this:
-- `UItem` is the base class for all items and is the type the inventory system operates on.
-- `UEquipment` inherits from `UItem`, adding functionality for equipping and unequipping.
-- `UWeapon` inherits from `UEquipment`, and adds weapon-specific behavior like granting abilities and changing animation layers when equipped.
+### Damage Numbers
 
-The same inheritance pattern applies to the data structs:
-- `FItemData` contains data common to all items, such as icon, size in the inventory grid, and general properties.
-- `FEquipmentData` inherits from `FItemData`, adding data related to attribute modifiers and requirements for equippable items
-- `UWeapon` inherits from `FEquipmentData`, extending it with weapon-specific data like the mesh, granted abilities, and animation montages.
+I also wanted to display damage numbers when an enemy is hit. This feature tends to divide players - some love the instant feedback and to get a feeling for theire DPS, while others feel it clutters the screen. To accommodate both preferences, I made it configurable in the game settings. Players will be able to toggle damage numbers on or off based on their personal taste.
 
-Each data struct is made compatible with a DataTable by inheriting from FTableRowBase, allowing me to create separate databases for each item type to keep things organized.
+Since I already implemented my damage calculation class, I added an event trigger directly within it. For now, this event simply broadcasts the raw damage value. Later on, I’ll expand it to broadcast a struct containing more detailed information, such as whether the hit was a critical, blocked, or evaded, etc.
 
-I’m not yet sure if this is the most elegant approach, but after experimenting with several different setups, this one has proven to be both functional and relatively clean so far.
+I also intend to include the location of the hit enemy in the event.  This allows me to animate the damage numbers away from the player, creating the illusion that the numbers are “knocked out” of them when struck. It’s a small touch, but it really enhances the impact of each hit.
 
-Linking the `UWeapon` item to the actual weapon `AActor` I created during the last devlog worked without any issues. The same goes for implementing a `ItemPickUpActor` class, which holds a `UItem` instance, visually represents it in the world, and allows it to be picked up by the player.
+<img src="/images/devlog6_CBE/DamageNumbers
+.gif" alt="Highligthing" style="display: block; width: 65%; margin: 0 auto;">
 
-So for now, I’m happy with how the system is coming together. If it turns out to be problematic later on, I'll learn from the mistakes I made for the future.
 
-Down below, you can see the inventory system in action. The item in the inventory is directly linked to the weapon actor the player is holding. Equipping a different weapon not only swaps the mesh but also dynamically changes the animation layer the player uses.
+### Dodge Roll
 
-I’ve implemented an animation layer system similar to what’s shown in Unreal’s Lyra sample project. Since that system is already well-documented by many others, I won’t cover it in a separate devlog.
+Can I even call my game a souls-like without a dodge roll? That needed to change.
 
-<img src="/images/ChainedByEternity/ChangeWeapon.gif" alt="Inventory" style="display: block; width: 75%; margin: 0 auto;">
+I used a Mixamo animation, added a root bone so I could enable root motion in Unreal Engine, and created a montage including motion warping.
+The dodge is implemented as a Gameplay Ability that plays the animation and blocks any other ability activation during the roll.
 
-### Equipment Modifiers
-If you noticed in the (admittedly low-quality) GIF above, equipping the weapon also updates the attributes shown in the left panel of the inventory.   
-That’s because equipment applies a `GameplayEffect` to the player when equipped. This `GameplayEffect` is created and applied at runtime.
+<br>
+<img src="/images/ChainedByEternity/DodgeRollShowcase.gif" alt="Main Menu" style="display: block; width: 60%; margin: 0 auto;">
+<br>
 
-The actual modifier properties come from a separate `DataTable`. When a new equipment item drops, one or more modifiers are randomly selected from this table and assigned to the item’s `FEquipmentData`, defining its stats.
-
-```cpp
-USTRUCT(BlueprintType)
-struct FEquipmentModifiers : public FTableRowBase
-{
-	GENERATED_BODY()
-
-	UPROPERTY(EditAnywhere, Category = "Modifier Settings", meta = (Tooltip = "Select infinite for basic equipments"))
-	EGameplayEffectDurationType ModifierDuration;
-
-	UPROPERTY(EditAnywhere, Category = "Modifier Settings")
-	FGameplayAttribute EffectedAttribute;
-
-	UPROPERTY(EditAnywhere, Category = "Modifier Settings", meta = (Tooltip = "How should the attribute be effected by the value."))
-	TEnumAsByte<EGameplayModOp::Type> ModifierOperation;
-
-	UPROPERTY(EditAnywhere, Category = "Modifier Settings")
-	FGameplayEffectModifierMagnitude ModifierValue;
-
-	UPROPERTY(EditAnywhere, Category = "UI Representation")
-	EValueRepresentationType ValueRepresentationType;
-
-	FEquipmentModifiers()
-		: ModifierDuration(EGameplayEffectDurationType::Infinite), ModifierOperation(EGameplayModOp::Additive), ModifierValue(FScalableFloat(0.f))
-	{
-	}
-};
-```
-
-Doing it this way lays the foundation for a more advanced and dynamic item drop system in the future—one where rarer items can have more modifiers, or where certain modifiers are weighted to appear less frequently, making them more powerful and valuable.
-
-I wanted to kept the modifiers separate from the item itself to maintain a modular and flexible system.
-
-### Future Plans
-
-Later on, I plan to implement a `Consumable` item type that stores a reference to a `GameplayAbility`, which can be activated when the item is used. This approach would allow me to support items like health or mana potions, but also open the door for more creative mechanics—like throwable bombs, temporary buff potions, or teleport scrolls.  
-That said, I’ll wait and see what actually makes sense from a game design perspective before going too wild with ideas.
-
+Later on, I want to add a small window where the player in invincible.
+ 

@@ -10,7 +10,10 @@ I discovered programming at the age of 13 and quickly developed a strong interes
 
 However, my passion for programming never faded. I pursued a degree in computer science and began building a professional career as a software developer. Over time, my perspective on game development shifted - and I’m now more determined than ever to enter the industry.
 
-In my free time, I’m developing a game using Unreal Engine 5, focusing heavily on C++ and the Gameplay Ability System (GAS). It’s a way to advance and showcase my game programming skills. You can learn more about it [here](https://www.david-burgstaller.de/project/chainedbyeternity/)
+In my free time, I'm currently working on two project:
+- **Chained by Eternity** - a game using Unreal Engine 5, focusing heavily on C++ and the Gameplay Ability System (GAS). It’s a way to advance and showcase my game programming skills. You can learn more about it [here](https://www.david-burgstaller.de/project/chainedbyeternity/)
+
+- **Enxel Engine** - a voxel game engine I’m developing in C++ with Vulkan. It’s my go-to side project when I need a creative break or only have my laptop with me. Through it, I’m diving deep into C++ optimization, engine architecture, and build systems - I absolutely love it. You can find it here (here)[https://david-burgstaller.de/project/voxelengine/]
 
 ## Contact
 <div style="display: grid; grid-template-columns: 150px 1fr; ">

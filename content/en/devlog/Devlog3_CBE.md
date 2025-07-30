@@ -1,5 +1,5 @@
 +++
-date = '2024-06-10T18:47:54+02:00'
+date = '2024-03-07T18:47:54+02:00'
 title = '#3 Attribute System (Chained by Eternity)'
 author = 'David'
 draft = false

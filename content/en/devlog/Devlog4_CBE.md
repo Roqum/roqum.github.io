@@ -1,5 +1,5 @@
 +++
-date = '2024-06-10T18:47:54+02:00'
+date = '2024-04-11T18:47:54+02:00'
 title = '#4 First Basic Combat (Chained by Eternity)'
 author = 'David'
 draft = false
